@@ -26,18 +26,22 @@ export default function Home() {
         </section>
 
         {/* QUICK NAV BUTTONS */}
-        <section className="mt-12 flex flex-wrap justify-center gap-4">
+        <section className="mt-12 flex flex-wrap md:flex-nowrap justify-center gap-3 px-4">
           {[
             ["Leadership Journey", "/leadership"],
-            ["United Airlines Client Project", "/client"],
+            ["United Airlines Client Project", "/client", "primary"],
             ["My Projects", "/projects"],
             ["Career Path", "/career"],
             ["Wellness Journey", "/wellness"],
-          ].map(([label, href]) => (
+          ].map(([label, href, variant]) => (
             <a
               key={href}
               href={href}
-              className="px-5 py-2 bg-slate-50 border border-zinc-200 rounded-lg text-slate-700 hover:text-emerald-600 hover:border-emerald-500 transition"
+              className={
+                variant === "primary"
+                  ? "px-5 py-2 text-sm md:text-base text-center whitespace-nowrap rounded-md bg-emerald-600 text-white border border-emerald-600 hover:bg-emerald-700 hover:border-emerald-700 transition font-medium"
+                  : "px-4 py-2 text-sm md:text-base text-center whitespace-nowrap rounded-md bg-slate-50 border border-zinc-200 text-slate-700 hover:text-emerald-600 hover:border-emerald-500 transition"
+              }
             >
               {label}
             </a>
