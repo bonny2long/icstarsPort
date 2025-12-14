@@ -13,9 +13,11 @@ export default function Projects() {
         />
       </Section>
 
+      {/* ===================== */}
       {/* SYNCUP PROJECT */}
+      {/* ===================== */}
       <Section bg="subtle">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+        <h2 className="text-2xl font-semibold text-slate-900 mb-2">
           SyncUp — Collaboration & Mentorship Platform
         </h2>
 
@@ -27,14 +29,32 @@ export default function Projects() {
           and direction.
         </p>
 
-        <p className="mb-6 text-zinc-700">
+        <p className="mb-4 text-zinc-700">
           The goal is to create a central hub where people can find collaborators,
           share opportunities, log reflections, and support each other across
           cycles.
         </p>
-             <div className="mb-6 w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm">
-  SyncUp UI screenshot
-</div>
+
+        {/* Project Links */}
+        <div className="flex flex-wrap gap-4 mb-6">
+          <a
+            href="https://github.com/sofieicstars/SyncUp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-600 font-medium hover:text-indigo-700 transition"
+          >
+            View GitHub Repository →
+          </a>
+          <span className="text-sm text-zinc-500">
+            Live demo coming soon
+          </span>
+        </div>
+
+        {/* Screenshot Placeholder */}
+        <div className="mb-6 w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm">
+          SyncUp dashboard screenshot
+        </div>
+
         <Card title="SyncUp — Stack & Responsibilities">
           <p className="mb-2 font-medium">Tech stack:</p>
           <ul className="list-disc list-inside mb-3 space-y-1">
@@ -61,21 +81,38 @@ export default function Projects() {
         </Card>
       </Section>
 
+      {/* ===================== */}
       {/* CHEFBONBON PROJECT */}
+      {/* ===================== */}
       <Section bg="default">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+        <h2 className="text-2xl font-semibold text-slate-900 mb-2">
           ChefBonBon (ChefBot) — AI-Powered Recipe App
         </h2>
 
-        <p className="mb-6 text-zinc-700">
+        <p className="mb-4 text-zinc-700">
           ChefBonBon is an AI-driven recipe generator that helps people cook with
           what they already have. It started as a personal project before
           i.c.stars and evolved as my understanding of relational databases and
           architecture grew.
         </p>
-          <div className="mb-6 w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm">
-  SyncUp UI screenshot
-</div>
+
+        {/* Project Links */}
+        <div className="flex flex-wrap gap-4 mb-6">
+          <a
+            href="https://chefbonbon.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-600 font-medium hover:text-emerald-700 transition"
+          >
+            View Live App →
+          </a>
+        </div>
+
+        {/* Screenshot Placeholder */}
+        <div className="mb-6 w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm">
+          ChefBonBon app screenshot
+        </div>
+
         <Card title="From Firebase to Supabase">
           <p className="mb-3">
             The first version used Firebase and was a fully functional MVP.
