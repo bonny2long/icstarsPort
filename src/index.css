@@ -1,0 +1,149 @@
+/* src/index.css - Final Reliable Configuration */
+
+/* This single line tells the @tailwindcss/vite plugin to inject ALL default styles 
+   (base, components, and utilities), and it's what your setup expects. */
+@import "tailwindcss";
+
+/* Tell Tailwind v4 where to scan for classes - this is REQUIRED! 
+   Without this, Tailwind won't find classes in your component files. */
+@source "../**/*.{js,jsx,ts,tsx,html}"; 
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  /* Primary color: Emerald (matching old portfolio) */
+  --color-primary: #10b981; /* emerald-500 */
+  --color-primary-dark: #059669; /* emerald-600 */
+  --color-accent: #0d9488; /* teal-600 for variety */
+}
+
+/* Base layer: Set default colors for the entire app */
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-700;
+  }
+  
+  /* Section headings in emerald like old portfolio */
+  h1, h2 {
+    @apply text-emerald-600 font-bold;
+  }
+  
+  h3, h4, h5, h6 {
+    @apply text-slate-800 font-semibold;
+  }
+  
+  /* Links default to emerald */
+  a {
+    @apply text-emerald-600 hover:text-emerald-500 transition-colors;
+  }
+}
+
+/* Component styles matching old portfolio */
+@layer components {
+  /* Dark hero section like old portfolio */
+  .hero-dark {
+    @apply bg-slate-900 text-white py-20;
+  }
+  
+  .hero-dark h1 {
+    @apply text-white;
+  }
+  
+  .hero-dark p {
+    @apply text-slate-300;
+  }
+  
+  .hero-dark .accent {
+    @apply text-emerald-400;
+  }
+  
+  /* Dark navbar to match hero */
+  .navbar-dark {
+    @apply bg-slate-900 text-white shadow-lg;
+  }
+  
+  .navbar-dark a {
+    @apply text-slate-300 hover:text-emerald-400;
+  }
+  
+  /* Content sections with white cards on gray background */
+  .section-light {
+    @apply bg-slate-50 py-16;
+  }
+  
+  .section-white {
+    @apply bg-white py-16;
+  }
+
+  /* Primary button - bright emerald like old site */
+  .btn-primary {
+    @apply px-6 py-2.5 bg-emerald-500 text-white font-semibold rounded-lg 
+           hover:bg-emerald-600 transition-all shadow-sm hover:shadow-md;
+  }
+  
+  /* Secondary/outline button */
+  .btn-secondary {
+    @apply px-6 py-2.5 bg-white text-slate-700 font-semibold rounded-lg 
+           border border-slate-300 hover:border-emerald-500 hover:text-emerald-600 transition-all;
+  }
+  
+  /* Card with left emerald border (like Resume section in old portfolio) */
+  .card-accent {
+    @apply bg-slate-50 border-l-4 border-emerald-500 p-6 rounded-r-lg;
+  }
+  
+  /* Standard card */
+  .card {
+    @apply bg-white p-6 rounded-xl shadow-sm border border-slate-200 
+           hover:shadow-md transition-shadow;
+  }
+  
+  /* Section header style */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-emerald-600 mb-4;
+  }
+  
+  /* Tech badges like old portfolio */
+  .badge {
+    @apply px-3 py-1 text-xs font-medium rounded-full;
+  }
+  .badge-react { @apply bg-teal-500 text-white; }
+  .badge-node { @apply bg-green-600 text-white; }
+  .badge-nextjs { @apply bg-slate-800 text-white; }
+  .badge-express { @apply bg-slate-600 text-white; }
+  .badge-supabase { @apply bg-emerald-500 text-white; }
+  .badge-azure { @apply bg-blue-500 text-white; }
+  .badge-mongodb { @apply bg-green-700 text-white; }
+}
+
+/* 
+ * SAFELIST: Force Tailwind to generate these classes even when used dynamically.
+ * These classes are used in ternary operators, template literals, or dynamic expressions.
+ * Tailwind's JIT can't detect them at build time, so we list them here.
+ */
+@layer utilities {
+  /* Text colors used dynamically in Navbar, Home, etc. */
+  .safelist-text-indigo-600 { @apply text-indigo-600; }
+  .safelist-text-slate-700 { @apply text-slate-700; }
+  .safelist-text-slate-900 { @apply text-slate-900; }
+  .safelist-text-zinc-600 { @apply text-zinc-600; }
+  .safelist-text-zinc-700 { @apply text-zinc-700; }
+  .safelist-text-gray-600 { @apply text-gray-600; }
+  .safelist-text-gray-700 { @apply text-gray-700; }
+  .safelist-text-white { @apply text-white; }
+  
+  /* Background colors used dynamically */
+  .safelist-bg-slate-50 { @apply bg-slate-50; }
+  .safelist-bg-white { @apply bg-white; }
+  .safelist-bg-gray-100 { @apply bg-gray-100; }
+  .safelist-bg-emerald-600 { @apply bg-emerald-600; }
+  .safelist-bg-indigo-600 { @apply bg-indigo-600; }
+  
+  /* Hover states used dynamically */
+  .safelist-hover-text-indigo-600 { @apply hover:text-indigo-600; }
+  .safelist-hover-shadow-lg { @apply hover:shadow-lg; }
+  
+  /* Border colors */
+  .safelist-border-zinc-200 { @apply border-zinc-200; }
+}
