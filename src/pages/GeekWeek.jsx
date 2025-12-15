@@ -13,7 +13,7 @@ export default function GeekWeek() {
 
         <p className="mb-4 text-zinc-700">
           Geek Week was one of the most intense parts of i.c.stars. We had fifteen
-          technical tasks — SQL, Excel, hotkeys, data analysis, and more — all
+          technical tasks — SQL, Excel, hotkeys, data analysis, and more, all
           under strict time and performance expectations. Everything was tracked.
         </p>
 
@@ -36,7 +36,7 @@ export default function GeekWeek() {
   </div>
 
         <p className="text-zinc-700">
-          The pressure wasn’t just technical — it was mental. I started measuring
+          The pressure wasn’t just technical, it was mental. I started measuring
           myself against others instead of focusing on my own progress.
         </p>
       </Section>
@@ -51,7 +51,7 @@ export default function GeekWeek() {
 
         <p className="mb-4 text-zinc-700">
           Momentum built with each small win. By the end of the day, I was close,
-          but not done — so I came back on Saturday.
+          but not done, so I came back on Saturday.
         </p>
 
         <div className="w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm mb-8">
@@ -79,7 +79,7 @@ export default function GeekWeek() {
           <li>Stronger SQL fundamentals.</li>
           <li>Faster, more accurate Excel work and hotkeys.</li>
           <li>Better debugging under time pressure.</li>
-          <li>More disciplined use of GitHub and version control.</li>
+          
         </ul>
 
         <p className="mb-3 font-medium text-slate-900">

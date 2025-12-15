@@ -58,11 +58,11 @@ export default function Home() {
 
           <p className="text-zinc-700 leading-relaxed mb-4">
             This site is more than a list of projects. It is a snapshot of who
-            I've become — someone who shows up prepared and builds with intent.
+            I've become, someone who shows up prepared and builds with intent.
           </p>
 
           <p className="text-zinc-700 leading-relaxed font-medium">
-            My purpose is to empower — with code, leadership, and consistency.
+            My purpose is to empower with code, leadership, and consistency.
           </p>
         </section>
       </Section>

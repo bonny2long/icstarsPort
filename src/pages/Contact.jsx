@@ -38,8 +38,8 @@ export default function Contact() {
           {/* Intro text */}
           <p className="mb-6 text-zinc-700">
             Thank you for taking the time to explore my work and journey. If
-            anything here resonates — whether it&apos;s my engineering approach,
-            leadership mindset, or the systems I&apos;ve built — I&apos;d love
+            anything here resonates, whether it&apos;s my engineering approach,
+            leadership mindset, or the systems I&apos;ve built. I&apos;d love
             to connect.
           </p>
 
