@@ -132,7 +132,8 @@ export default function Wellness() {
               <img
                 src={journalImage}
                 alt="Daily journaling reflection"
-                className="w-cover h-48 sm:h-56 rounded-lg object-cover object-top mb-3"
+                className="w-cover
+                 h-48 sm:h-56 rounded-lg object-cover object-top mb-3"
               />
               <p className="text-sm text-zinc-600">
                 Daily journaling to reset my mindset, process pressure, and
