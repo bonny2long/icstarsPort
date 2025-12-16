@@ -41,6 +41,34 @@ export default function ClientProject() {
           data visualizations that helped leaders understand customer feedback
           across hubs.
         </p>
+
+        {/* DEMO LOGIN HELP */}
+        <div className="mt-8 max-w-2xl mx-auto rounded-xl border border-emerald-100 bg-emerald-50 px-5 py-4 text-slate-900">
+          <h3 className="text-lg font-semibold mb-2">Try the live demo</h3>
+          <p className="text-sm text-slate-700 mb-3">
+            Use one of these demo accounts to sign in and explore the dashboard flows:
+          </p>
+          <ul className="text-sm space-y-3 text-slate-800">
+            <li>
+              <p className="font-semibold text-slate-900">Executive</p>
+              <p className="text-slate-700">
+                Username: <code>exec</code> &nbsp;|&nbsp; Password: <code>exec123</code>
+              </p>
+            </li>
+            <li>
+              <p className="font-semibold text-slate-900">Admin</p>
+              <p className="text-slate-700">
+                Username: <code>admin</code> &nbsp;|&nbsp; Password: <code>admin123</code>
+              </p>
+            </li>
+            <li>
+              <p className="font-semibold text-slate-900">Analyst</p>
+              <p className="text-slate-700">
+                Username: <code>cfa</code> &nbsp;|&nbsp; Password: <code>cfa123</code>
+              </p>
+            </li>
+          </ul>
+        </div>
       </Section>
 
       {/* BUSINESS PROBLEM */}
