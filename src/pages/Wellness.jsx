@@ -1,6 +1,8 @@
 import SectionHeader from "../components/ui/SectionHeader.jsx";
 import Card from "../components/ui/Card.jsx";
 import Section from "../components/layout/Section";
+import journalImage from "../assets/photos/journal.jpg";
+import habitTrackerImage from "../assets/photos/habitTracker.jpg";
 
 export default function Wellness() {
   return (
@@ -71,7 +73,9 @@ export default function Wellness() {
               to learn how to reset, refocus, and protect my momentum.
             </p>
 
-            <p className="mb-2 font-medium">Strategies that help me stay steady:</p>
+            <p className="mb-2 font-medium">
+              Strategies that help me stay steady:
+            </p>
             <ul className="list-disc list-inside space-y-1">
               <li>Short breaks to reset focus.</li>
               <li>Journaling when I feel overwhelmed.</li>
@@ -118,28 +122,34 @@ export default function Wellness() {
           </h2>
 
           <p className="text-zinc-600 text-center max-w-2xl mx-auto mb-8">
-            These aren’t concepts they’re daily practices I use to stay grounded,
-            focused, and consistent.
+            These aren’t concepts — they’re daily practices I use to stay
+            grounded, focused, and consistent.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
+            {/* JOURNAL */}
             <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-              <div className="w-full h-56 bg-slate-200 rounded-lg flex items-center justify-center text-slate-500 text-sm mb-3">
-                Journal reflection screenshot
-              </div>
+              <img
+                src={journalImage}
+                alt="Daily journaling reflection"
+                className="w-cover h-48 sm:h-56 rounded-lg object-cover object-top mb-3"
+              />
               <p className="text-sm text-zinc-600">
-                Daily journaling to reset my mindset, process pressure, and reinforce
-                disciplined self-talk.
+                Daily journaling to reset my mindset, process pressure, and
+                reinforce disciplined self-talk.
               </p>
             </div>
 
+            {/* HABIT TRACKER */}
             <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-              <div className="w-full h-56 bg-slate-200 rounded-lg flex items-center justify-center text-slate-500 text-sm mb-3">
-                Habit / routine tracker screenshot
-              </div>
+              <img
+                src={habitTrackerImage}
+                alt="Habit and routine tracking"
+                className="w-cover h-48 sm:h-56 rounded-lg object-cover object-top mb-3"
+              />
               <p className="text-sm text-zinc-600">
-                Simple habit tracking to protect energy, sleep, and consistency during
-                high-intensity weeks.
+                Simple habit tracking to protect energy, sleep, and consistency
+                during high-intensity weeks.
               </p>
             </div>
           </div>

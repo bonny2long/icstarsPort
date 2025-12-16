@@ -1,6 +1,7 @@
 import SectionHeader from "../components/ui/SectionHeader.jsx";
 import Card from "../components/ui/Card.jsx";
 import Section from "../components/layout/Section";
+import accenturePhoto from "../assets/photos/accenture.jpg";
 
 export default function CareerPath() {
   return (
@@ -75,32 +76,35 @@ export default function CareerPath() {
       </Section>
 
       {/* INDUSTRY LESSONS */}
-  {/* INDUSTRY EXPOSURE IMAGE */}
-<Section bg="subtle">
-  <div className="mb-8 w-full h-56 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm">
-    Accenture / Salesforce workshop or professional setting
-  </div>
+      <Section bg="subtle">
+        {/* INDUSTRY EXPOSURE IMAGE */}
+        <div className="mb-8">
+          <img
+            src={accenturePhoto}
+            alt="Industry workshop with Accenture"
+            className="w-full h-48 sm:h-56 rounded-xl object-contain"
+          />
+        </div>
 
-  <Card title="Lessons From Industry & Mentors">
-    <p className="mb-3">
-      Workshops with partners like Accenture and Salesforce, plus guidance
-      from mentors and Tea Hosts, shaped how I see my career.
-    </p>
+        <Card title="Lessons From Industry & Mentors">
+          <p className="mb-3">
+            Workshops with partners like Accenture and Salesforce, plus guidance
+            from mentors and Tea Hosts, shaped how I see my career.
+          </p>
 
-    <ul className="list-disc list-inside space-y-1">
-      <li>Define the problem clearly before writing code.</li>
-      <li>Design systems around real users, not assumptions.</li>
-      <li>Communicate simply, even when the system is complex.</li>
-      <li>Lead with consistency, reliability, and presence.</li>
-    </ul>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Define the problem clearly before writing code.</li>
+            <li>Design systems around real users, not assumptions.</li>
+            <li>Communicate simply, even when the system is complex.</li>
+            <li>Lead with consistency, reliability, and presence.</li>
+          </ul>
 
-    <p className="mt-3">
-      I leave i.c.stars with not just technical skills, but a clearer sense
-      of who I am as a developer and the kind of leader I&apos;m becoming.
-    </p>
-  </Card>
-</Section>
-
+          <p className="mt-3">
+            I leave i.c.stars with not just technical skills, but a clearer sense
+            of who I am as a developer and the kind of leader I&apos;m becoming.
+          </p>
+        </Card>
+      </Section>
     </>
   );
 }

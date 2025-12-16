@@ -1,5 +1,7 @@
 import SectionHeader from "../components/ui/SectionHeader.jsx";
 import Section from "../components/layout/Section";
+import geekWeekPhoto from "../assets/photos/geekweek.jpg";
+import geekWeekPhotoTwo from "../assets/photos/geekweek2.jpg";
 
 export default function GeekWeek() {
   return (
@@ -13,7 +15,7 @@ export default function GeekWeek() {
 
         <p className="mb-4 text-zinc-700">
           Geek Week was one of the most intense parts of i.c.stars. We had fifteen
-          technical tasks — SQL, Excel, hotkeys, data analysis, and more, all
+          technical tasks: SQL, Excel, hotkeys, data analysis, and more, all
           under strict time and performance expectations. Everything was tracked.
         </p>
 
@@ -31,9 +33,13 @@ export default function GeekWeek() {
           had finished five out of fifteen and felt like everyone else was moving
           forward while I was stuck.
         </p>
-        <div className="w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm mb-8">
-    Geek Week progress / sticker photo
-  </div>
+        <div className="w-full h-52 sm:h-64 rounded-xl mb-8 overflow-hidden">
+          <img
+            src={geekWeekPhoto}
+            alt="Geek Week progress board with stickers"
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
 
         <p className="text-zinc-700">
           The pressure wasn’t just technical, it was mental. I started measuring
@@ -54,9 +60,13 @@ export default function GeekWeek() {
           but not done, so I came back on Saturday.
         </p>
 
-        <div className="w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm mb-8">
-    Geek Week progress / sticker photo
-  </div>
+        <div className="w-full h-52 sm:h-64 rounded-xl mb-8 overflow-hidden">
+          <img
+            src={geekWeekPhotoTwo}
+            alt="Completing the Geek Week challenge board"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
         <p className="text-zinc-700 font-medium">
           I completed task fifteen that Saturday and earned the Geek Week

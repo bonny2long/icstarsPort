@@ -1,6 +1,9 @@
 import SectionHeader from "../components/ui/SectionHeader.jsx";
 import Card from "../components/ui/Card.jsx";
 import Section from "../components/layout/Section";
+import syncupScreenshot from "../assets/photos/syncup.png";
+import chefbonbonScreenshot from "../assets/photos/chefbot.png";
+
 
 export default function Projects() {
   return (
@@ -50,10 +53,12 @@ export default function Projects() {
           </span>
         </div>
 
-        {/* Screenshot Placeholder */}
-        <div className="mb-6 w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm">
-          SyncUp dashboard screenshot
-        </div>
+        {/* SyncUp Screenshot */}
+        <img
+          src={syncupScreenshot}
+          alt="SyncUp collaboration and mentorship dashboard"
+          className="mb-6 w-full h-52 sm:h-64 rounded-xl object-cover object-top"
+        />
 
         <Card title="SyncUp — Stack & Responsibilities">
           <p className="mb-2 font-medium">Tech stack:</p>
@@ -96,7 +101,7 @@ export default function Projects() {
           architecture grew.
         </p>
 
-        {/* Project Links */}
+        {/* Project Link */}
         <div className="flex flex-wrap gap-4 mb-6">
           <a
             href="https://chefbonbon.netlify.app/"
@@ -108,10 +113,12 @@ export default function Projects() {
           </a>
         </div>
 
-        {/* Screenshot Placeholder */}
-        <div className="mb-6 w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm">
-          ChefBonBon app screenshot
-        </div>
+        {/* ChefBonBon Screenshot */}
+        <img
+          src={chefbonbonScreenshot}
+          alt="ChefBonBon AI-powered recipe application"
+          className="mb-6 w-full h-52 sm:h-64 rounded-xl object-cover object-top"
+        />
 
         <Card title="From Firebase to Supabase">
           <p className="mb-3">
