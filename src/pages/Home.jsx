@@ -11,7 +11,7 @@ export default function Home() {
           </h1>
 
           <p className="text-zinc-600 text-sm md:text-base tracking-wide mb-6">
-            Full Stack Software Developer | Builder | Leader in Training
+            Full Stack Software Engineer | Builder | Leader in Training
           </p>
 
           <p className="text-zinc-700 leading-relaxed mb-4">
@@ -69,3 +69,4 @@ export default function Home() {
     </>
   );
 }
+
