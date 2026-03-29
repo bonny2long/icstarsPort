@@ -1,89 +1,95 @@
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import resumePdf from "../../data/Bonny_Makaniankhondo_Resume_FSD.pdf";
+import Button from "../ui/Button";
+
+const navItems = [
+  { label: "Home", to: "/" },
+  { label: "Projects", to: "/projects" },
+  { label: "Leadership", to: "/leadership" },
+  { label: "Contact", to: "/contact" },
+];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="w-full bg-slate-900 shadow-lg sticky top-0 z-50">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* LOGO / NAME */}
-        <Link
-          to="/"
-          className="text-xl font-display font-bold text-white hover:text-emerald-400 transition"
-          onClick={closeMenu}
-        >
-          Bonny*
-        </Link>
+    <nav className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="rounded-[1.75rem] border border-white/70 bg-white/80 px-4 py-3 shadow-[0_18px_60px_-40px_rgba(15,23,42,0.45)] backdrop-blur-xl sm:px-6">
+          <div className="flex items-center justify-between gap-6">
+            <Link to="/" onClick={closeMenu} className="min-w-0">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                Bonny Makaniankhondo
+              </p>
+              <p className="mt-1 truncate text-base font-semibold tracking-tight text-slate-950 sm:text-lg">
+                Full Stack Software Engineer
+              </p>
+            </Link>
 
-        {/* DESKTOP NAV LINKS */}
-        <div className="hidden md:flex gap-6 text-sm font-medium">
-          <NavItem to="/leadership" label="Leadership" />
-          <NavItem to="/client" label="Client Project" />
-          <NavItem to="/projects" label="Projects" />
-          <NavItem to="/geekweek" label="Geek Week" />
-          <NavItem to="/wellness" label="Wellness" />
-          <NavItem to="/career" label="Career Path" />
-          <NavItem to="/contact" label="Contact" />
-        </div>
+            <div className="hidden items-center gap-2 md:flex">
+              {navItems.map((item) => (
+                <NavItem key={item.to} label={item.label} to={item.to} />
+              ))}
+            </div>
 
-        {/* HAMBURGER BUTTON - visible only on mobile */}
-        <button
-          className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400"
-          onClick={toggleMenu}
-          aria-label="Toggle navigation menu"
-          aria-expanded={isMenuOpen}
-        >
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-out ${
-              isMenuOpen ? "rotate-45 translate-y-1.5" : ""
-            }`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-out my-1 ${
-              isMenuOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-out ${
-              isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-            }`}
-          />
-        </button>
-      </div>
+            <div className="hidden md:block">
+              <Button href={resumePdf} download variant="secondary">
+                Resume
+              </Button>
+            </div>
 
-      {/* MOBILE MENU */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="px-6 py-4 bg-slate-800 border-t border-slate-700 flex flex-col gap-4">
-          <MobileNavItem to="/leadership" label="Leadership" onClick={closeMenu} />
-          <MobileNavItem to="/client" label="Client Project" onClick={closeMenu} />
-          <MobileNavItem to="/projects" label="Projects" onClick={closeMenu} />
-          <MobileNavItem to="/geekweek" label="Geek Week" onClick={closeMenu} />
-          <MobileNavItem to="/wellness" label="Wellness" onClick={closeMenu} />
-          <MobileNavItem to="/career" label="Career Path" onClick={closeMenu} />
-          <MobileNavItem to="/contact" label="Contact" onClick={closeMenu} />
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 transition hover:border-slate-950 md:hidden"
+              onClick={() => setIsMenuOpen((value) => !value)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+
+          {isMenuOpen ? (
+            <div className="mt-4 border-t border-slate-200 pt-4 md:hidden">
+              <div className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <MobileNavItem
+                    key={item.to}
+                    label={item.label}
+                    onClick={closeMenu}
+                    to={item.to}
+                  />
+                ))}
+                <Button
+                  className="mt-2 w-full justify-center"
+                  href={resumePdf}
+                  download
+                  variant="secondary"
+                >
+                  Download Resume
+                </Button>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </nav>
   );
 }
 
-function NavItem({ to, label }) {
+function NavItem({ label, to }) {
   return (
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `transition ${
+        `rounded-full px-4 py-2 text-sm font-semibold transition ${
           isActive
-            ? "text-emerald-400 font-semibold"
-            : "text-slate-300 hover:text-emerald-400"
+            ? "bg-slate-950 text-white"
+            : "text-slate-600 hover:bg-slate-100 hover:text-slate-950"
         }`
       }
     >
@@ -92,16 +98,16 @@ function NavItem({ to, label }) {
   );
 }
 
-function MobileNavItem({ to, label, onClick }) {
+function MobileNavItem({ label, onClick, to }) {
   return (
     <NavLink
       to={to}
       onClick={onClick}
       className={({ isActive }) =>
-        `block py-2 px-3 rounded-lg text-base font-medium transition-all ${
+        `rounded-2xl px-4 py-3 text-sm font-semibold transition ${
           isActive
-            ? "text-emerald-400 bg-slate-700/50 font-semibold"
-            : "text-slate-300 hover:text-emerald-400 hover:bg-slate-700/30"
+            ? "bg-slate-950 text-white"
+            : "bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-950"
         }`
       }
     >

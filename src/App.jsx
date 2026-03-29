@@ -1,31 +1,28 @@
-import Navbar from "./components/layout/Navbar";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Footer from "./components/layout/Footer";
-import { Routes, Route } from "react-router-dom";
-
+import Navbar from "./components/layout/Navbar";
+import ScrollManager from "./components/layout/ScrollManager";
+import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Leadership from "./pages/Leadership";
-import Client from "./pages/ClientProject";
 import Projects from "./pages/Projects";
-import GeekWeek from "./pages/GeekWeek";
-import Wellness from "./pages/Wellness";
-import Career from "./pages/CareerPath";
-import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen text-slate-900">
+      <ScrollManager />
       <Navbar />
 
-      <main className="pt-20">
+      <main className="overflow-x-clip pt-24 sm:pt-28">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/leadership" element={<Leadership />} />
-          <Route path="/client" element={<Client />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/geekweek" element={<GeekWeek />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/wellness" element={<Wellness />} />
+          <Route path="/leadership" element={<Leadership />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/client" element={<Navigate to="/projects" replace />} />
+          <Route path="/geekweek" element={<Navigate to="/leadership" replace />} />
+          <Route path="/career" element={<Navigate to="/leadership" replace />} />
+          <Route path="/wellness" element={<Navigate to="/leadership" replace />} />
         </Routes>
       </main>
 

@@ -1,171 +1,154 @@
-import SectionHeader from "../components/ui/SectionHeader.jsx";
 import Section from "../components/layout/Section";
-import teamWeekPhoto from "../assets/photos/teamweek.jpg";
-import ancestorsDinnerPhoto from "../assets/photos/dinner.jpg";
-import teaHostPhoto from "../assets/photos/teaguest.jpg";
-import dreamSpeechVideo from "../assets/photos/dreamspeach.MOV";
+import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
+import SectionIntro from "../components/ui/SectionIntro";
+import {
+  leadershipImages,
+  leadershipPillars,
+} from "../data/portfolioContent";
 
+const performanceLessons = [
+  "Reset quickly after mistakes instead of spiraling.",
+  "Keep momentum by stacking small wins when the pressure rises.",
+  "Ask for help early instead of hiding confusion.",
+  "Stay useful under pressure, even when the plan changes.",
+];
 
+const listeningLessons = [
+  "Leadership starts with listening before reacting.",
+  "Community is built through trust, not just coordination.",
+  "Presence matters when speaking with mentors, clients, and teammates.",
+];
 
 export default function Leadership() {
   return (
     <>
-      {/* PAGE INTRO */}
-      <Section bg="default">
-        <SectionHeader
-          title="Leadership Journey"
-          subtitle="How i.c.stars shaped my mindset, confidence, and voice."
-        />
-      </Section>
-
-      {/* TEAM WEEK */}
-      <Section bg="subtle">
-        <div className="mb-8">
-          <img
-            src={teamWeekPhoto}
-            alt="Team Week cohort activities"
-            className="w-full h-52 sm:h-64 rounded-xl object-cover object-[50%_40%]"
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,400px)] lg:items-end">
+          <SectionIntro
+            eyebrow="Leadership"
+            title="The goal is not just to write code well. It’s to become someone teams can rely on."
+            subtitle="My leadership growth shows up in how I communicate, how I listen, how I handle pressure, and how I keep moving when the work gets hard."
           />
+
+          <Card eyebrow="Employer-facing" title="What teams can expect from me">
+            <p>
+              Clear communication, steady follow-through, fast learning, and a
+              willingness to take ownership without losing sight of the people using
+              the system or the people building it together.
+            </p>
+          </Card>
         </div>
-        <h2 className="text-2xl font-semibold text-slate-900 mb-2">
-          Team Week — Learning Each Other First
-        </h2>
-        <p className="text-zinc-700">
-          Team Week was the first time our cohort came together not to write
-          code, but to understand each other as people. We spent the week on
-          structured walks, shared lunches, and small group activities where we
-          heard each other&apos;s stories, backgrounds, and motivations.
-        </p>
-        <p className="mt-4 text-zinc-700">
-          I learned that leadership starts with listening and that a strong team
-          is built on relationships, not just tasks.
-        </p>
       </Section>
 
-    {/* GIFT PROJECT */}
-<Section bg="default">
-  <div className="grid md:grid-cols-2 gap-10 items-center">
-    
-    {/* TEXT */}
-    <div>
-      <h2 className="text-2xl font-semibold text-slate-900 mb-3">
-        Gift Project — Ancestor&apos;s Dinner
-      </h2>
-
-      <p className="mb-4 text-zinc-700">
-        For the Gift Project, our team designed the Ancestor&apos;s Dinner — a
-        potluck where everyone brought a dish from their heritage and shared
-        the story behind it.
-      </p>
-
-      <p className="mb-4 text-zinc-700">
-        I brought rice and beef stew, the kind of meal I grew up eating with my
-        family while we shared stories around the table. Creating that space
-        for culture, vulnerability, and connection reminded me that leadership
-        is also about building environments where people feel seen.
-      </p>
-
-      <p className="text-zinc-700">
-        This project taught me how powerful it is to intentionally create
-        community inside a high-pressure program.
-      </p>
-    </div>
-
-    {/* IMAGE SLOT */}
-    <img
-      src={ancestorsDinnerPhoto}
-      alt="Ancestor&apos;s Dinner potluck"
-      className="w-full h-52 sm:h-64 rounded-xl object-cover"
-    />
-
-  </div>
-</Section>
-
-
-      {/* PLANETARY RESPONSIBILITY */}
-      <Section bg="subtle">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-2">
-          Planetary Responsibility — Defining My Impact
-        </h2>
-        <p className="text-zinc-700">
-          Planetary Responsibility pushed me to think beyond myself. I started
-          shaping my mission: to build technology that makes life easier,
-          fairer, and more accessible, especially for communities that are often
-          overlooked.
-        </p>
-        <p className="mt-4 text-zinc-700">
-          It was the first time I clearly articulated the kind of world I want
-          to help build and the responsibility that comes with technical skills.
-        </p>
+      <Section tone="subtle">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {leadershipPillars.map((pillar) => (
+            <Card key={pillar.title} title={pillar.title}>
+              <p>{pillar.body}</p>
+            </Card>
+          ))}
+        </div>
       </Section>
 
-     {/* TEA HOSTS */}
-<Section bg="default">
-  <div className="max-w-4xl mx-auto">
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,420px)] lg:items-center">
+          <div>
+            <SectionIntro
+              eyebrow="Resilience under pressure"
+              title="Geek Week changed how I perform when the work gets intense."
+              subtitle="It was one of the clearest moments in my growth: a week that exposed gaps in confidence early, then forced me to adapt, reset, and finish strong."
+            />
 
-    <img
-      src={teaHostPhoto}
-      alt="High Tea with Chicago tech leaders"
-      className="w-full h-52 sm:h-64 rounded-xl object-cover object-[50%_30%] mb-6"
-    />
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {performanceLessons.map((lesson) => (
+                <Card key={lesson}>
+                  <p>{lesson}</p>
+                </Card>
+              ))}
+            </div>
 
-    <h2 className="text-2xl font-semibold text-slate-900 mb-2">
-      Tea Hosts — Learning From Chicago&apos;s Leaders
-    </h2>
+            <p className="mt-8 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
+              The technical part mattered, but the bigger lesson was performance:
+              how to stay steady, keep learning, and keep moving even when the week
+              stops going the way I expected.
+            </p>
+          </div>
 
-    <p className="mb-4 text-zinc-700">
-      Each High Tea brought in leaders from across Chicago who shared their
-      journeys, failures, and wisdom. Hosting and engaging in those
-      conversations taught me how to ask better questions, listen with
-      intention, and speak with presence.
-    </p>
+          <div className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-slate-950 shadow-[0_28px_80px_-55px_rgba(15,23,42,0.35)]">
+            <img
+              src={leadershipImages.geekWeek}
+              alt="Geek Week challenge board"
+              className="h-96 w-full object-cover"
+            />
+          </div>
+        </div>
+      </Section>
 
-    <p className="text-zinc-700">
-      Through their feedback and encouragement, I started to see a pattern:
-      when I speak, people listen. That&apos;s a responsibility I carry
-      forward as I grow in tech and leadership.
-    </p>
+      <Section tone="subtle">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div className="space-y-6">
+            <div className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-slate-950">
+              <img
+                src={leadershipImages.teamWeek}
+                alt="Team week activities"
+                className="h-72 w-full object-cover"
+              />
+            </div>
+            <Card eyebrow="Listening" title="Leadership starts with understanding people first">
+              <p>
+                Team-centered work taught me that strong collaboration starts with
+                listening well, paying attention to context, and building trust before
+                trying to drive outcomes.
+              </p>
+              <ul className="mt-4 space-y-2">
+                {listeningLessons.map((lesson) => (
+                  <li key={lesson} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-teal-500" />
+                    <span>{lesson}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </div>
 
-  </div>
-</Section>
+          <div className="space-y-6">
+            <div className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-slate-950">
+              <img
+                src={leadershipImages.teaHost}
+                alt="High Tea leadership event"
+                className="h-72 w-full object-cover object-[50%_30%]"
+              />
+            </div>
+            <Card eyebrow="Presence" title="Client and mentor conversations sharpened my delivery">
+              <p>
+                High-pressure conversations with mentors, leaders, and stakeholders
+                pushed me to ask better questions, speak more clearly, and carry more
+                confidence in technical and professional settings.
+              </p>
+              <p className="mt-4">
+                That growth matters because being useful on a team is not only about
+                writing the code. It is also about helping people understand the
+                problem, the constraints, and the path forward.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </Section>
 
+      <Section>
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <div className="max-w-3xl">
+            <SectionIntro
+              eyebrow="Long-term"
+              title="I’m growing toward the kind of engineer who can solve problems, support people, and keep teams steady."
+              subtitle="That means continuing to build technical depth while becoming more reliable in communication, delivery, and collaboration."
+            />
+          </div>
 
-     {/* DREAM SPEECH */}
-<Section bg="subtle">
-  <div className="max-w-4xl mx-auto">
-
-    <h2 className="text-2xl font-semibold text-slate-900 mb-4">
-      Dream Speech — Meeting My Future Self
-    </h2>
-
-    {/* VIDEO */}
-    <video
-      src={dreamSpeechVideo}
-      controls
-      playsInline
-      className="w-full aspect-video rounded-xl mb-6"
-    />
-
-    <p className="mb-4 text-zinc-700">
-      In my Dream Speech, I imagined myself in 2050 receiving a Tech Leader
-      Award for building systems that make technology accessible and useful
-      for small businesses and communities.
-    </p>
-
-    <p className="mb-4 text-zinc-700">
-      I talked about my journey from entry-level developer to senior engineer,
-      CTO, and co-founder of Métis, and the projects that made a difference
-      along the way.
-    </p>
-
-    <p className="text-zinc-700">
-      The Dream Speech wasn&apos;t just about the future. It was about deciding
-      who I want to be today and aligning my actions with that version of myself.
-    </p>
-
-  </div>
-</Section>
-
+          <Button to="/contact">Connect with me</Button>
+        </div>
+      </Section>
     </>
   );
 }

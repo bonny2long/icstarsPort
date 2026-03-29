@@ -1,70 +1,355 @@
+import {
+  ArrowRight,
+  Cpu,
+  Database,
+  Download,
+  MessageSquareText,
+  Workflow,
+} from "lucide-react";
 import Section from "../components/layout/Section";
+import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
+import PretextHeading from "../components/ui/PretextHeading";
+import ProjectCard from "../components/ui/ProjectCard";
+import SectionIntro from "../components/ui/SectionIntro";
+import resumePdf from "../data/Bonny_Makaniankhondo_Resume_FSD.pdf";
+import {
+  aboutSignals,
+  buildPrinciples,
+  leadershipImages,
+  leadershipPillars,
+  portfolioProjects,
+} from "../data/portfolioContent";
+
+const heroCards = [
+  {
+    icon: <Database className="h-5 w-5 text-teal-300" />,
+    title: "Backend-first thinking",
+    body: "I start with data flow, system shape, and API responsibility before I move into interface polish.",
+  },
+  {
+    icon: <Workflow className="h-5 w-5 text-teal-300" />,
+    title: "Workflow ownership",
+    body: "I like turning messy manual processes into systems that are clear, repeatable, and useful.",
+  },
+  {
+    icon: <Cpu className="h-5 w-5 text-teal-300" />,
+    title: "AI workflow experience",
+    body: "I use AI where it improves alignment, speed, and signal instead of treating it like a gimmick.",
+  },
+  {
+    icon: <MessageSquareText className="h-5 w-5 text-teal-300" />,
+    title: "Client-facing delivery",
+    body: "I am growing into the kind of engineer who can build, explain the system, and handle feedback well.",
+  },
+];
 
 export default function Home() {
   return (
     <>
-      {/* HERO + QUICK NAV */}
-      <Section bg="default">
-        <section className="text-center max-w-3xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-3">
-            Bonny Makaniankhondo
-          </h1>
+      <Section className="pt-4 sm:pt-8">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,420px)] lg:items-center">
+          <div className="max-w-[42rem]">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+              Systems-minded full stack engineer
+            </p>
 
-          <p className="text-zinc-600 text-sm md:text-base tracking-wide mb-6">
-            Full Stack Software Developer | Builder | Leader in Training
-          </p>
+            <h1 className="mt-6 text-5xl font-semibold leading-[0.94] tracking-[-0.05em] text-slate-950 sm:text-6xl lg:text-8xl">
+              Bonny Makaniankhondo
+            </h1>
 
-          <p className="text-zinc-700 leading-relaxed mb-4">
-            I build systems that solve real problems. I lead with curiosity,
-            discipline, and a commitment to lifting others as I grow.
-          </p>
+            <PretextHeading
+              as="p"
+              className="mt-6 text-slate-950"
+              lineClassName="font-display text-stone-700"
+              sizes={[
+                {
+                  minWidth: 0,
+                  fontFamily: '"Instrument Serif"',
+                  fontSize: 34,
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  idealLines: 2,
+                  letterSpacing: "-0.03em",
+                  lineHeight: 38,
+                },
+                {
+                  minWidth: 640,
+                  fontFamily: '"Instrument Serif"',
+                  fontSize: 46,
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  idealLines: 2,
+                  letterSpacing: "-0.035em",
+                  lineHeight: 48,
+                },
+                {
+                  minWidth: 960,
+                  fontFamily: '"Instrument Serif"',
+                  fontSize: 56,
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  idealLines: 2,
+                  letterSpacing: "-0.04em",
+                  lineHeight: 56,
+                },
+              ]}
+              text="Full Stack Software Engineer"
+            />
 
-          <p className="text-zinc-700 leading-relaxed">
-            I walked in as someone who loved technology. I walk out as someone
-            who understands leadership, consulting, and problem-solving.
-          </p>
-        </section>
+            <p className="mt-8 max-w-2xl text-xl leading-8 text-slate-800 sm:text-2xl">
+              I build systems from the ground up, connecting backend logic,
+              data, and UI into clear, scalable products.
+            </p>
 
-        {/* QUICK NAV BUTTONS */}
-        <section className="mt-12 flex flex-wrap md:flex-nowrap justify-center gap-3 px-4">
-          {[
-            ["Leadership Journey", "/leadership"],
-            ["United Airlines Client Project", "/client", "primary"],
-            ["My Projects", "/projects"],
-            ["Career Path", "/career"],
-            ["Wellness Journey", "/wellness"],
-          ].map(([label, href, variant]) => (
-            <a
-              key={href}
-              href={href}
-              className={
-                variant === "primary"
-                  ? "px-5 py-2 text-sm md:text-base text-center whitespace-nowrap rounded-md bg-emerald-600 text-white border border-emerald-600 hover:bg-emerald-700 hover:border-emerald-700 transition font-medium"
-                  : "px-4 py-2 text-sm md:text-base text-center whitespace-nowrap rounded-md bg-slate-50 border border-zinc-200 text-slate-700 hover:text-emerald-600 hover:border-emerald-500 transition"
-              }
-            >
-              {label}
-            </a>
-          ))}
-        </section>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+              Focused on performance, structure, and real-world impact.
+            </p>
+
+            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+              Growing fast in a changing landscape, looking for teams and
+              mentors that push me to the next level.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Button to="/projects">
+                View Projects
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+              <Button to="/contact" variant="secondary">
+                Contact Me
+              </Button>
+            </div>
+          </div>
+
+          <aside className="relative">
+            <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_top_left,rgba(13,148,136,0.22),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(245,158,11,0.18),transparent_36%)] blur-2xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-slate-950 p-6 text-white shadow-[0_30px_80px_-50px_rgba(15,23,42,0.9)] sm:p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-teal-200/80">
+                What I bring
+              </p>
+              <p className="mt-4 text-2xl font-semibold tracking-tight text-white">
+                Builder mindset, strong systems instincts, and fast growth.
+              </p>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {heroCards.map(({ body, icon, title }) => (
+                  <div
+                    key={title}
+                    className="rounded-[1.25rem] border border-white/10 bg-white/5 p-4"
+                  >
+                    {icon}
+                    <p className="mt-4 text-sm font-semibold text-white">
+                      {title}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-slate-300">
+                      {body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 rounded-[1.4rem] border border-white/10 bg-white/6 px-5 py-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-300">
+                  Target roles
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-200">
+                  Full Stack Software Engineer, Backend and API-focused roles,
+                  and solutions or consulting-oriented engineering work.
+                </p>
+              </div>
+            </div>
+          </aside>
+        </div>
       </Section>
 
-      {/* WHAT THIS PORTFOLIO REPRESENTS */}
-      <Section bg="subtle">
-        <section className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-            What This Portfolio Represents
-          </h2>
+      <Section id="selected-work" tone="subtle">
+        <div className="grid gap-10 lg:grid-cols-[minmax(240px,300px)_minmax(0,1fr)] lg:items-start">
+          <SectionIntro
+            eyebrow="Selected Work"
+            title="Selected Work"
+            subtitle="The strongest proof of my work is how I turn ambiguous requirements into structured, working systems."
+            experimental
+            titleSizes={[
+              {
+                minWidth: 0,
+                fontFamily: '"Manrope"',
+                fontSize: 34,
+                fontWeight: 800,
+                idealLines: 2,
+                letterSpacing: "-0.05em",
+                lineHeight: 36,
+              },
+              {
+                minWidth: 640,
+                fontFamily: '"Manrope"',
+                fontSize: 42,
+                fontWeight: 800,
+                idealLines: 2,
+                letterSpacing: "-0.055em",
+                lineHeight: 44,
+              },
+            ]}
+          />
 
-          <p className="text-zinc-700 leading-relaxed mb-4">
-            This site is more than a list of projects. It is a snapshot of who
-            I've become, someone who shows up prepared and builds with intent.
-          </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            {portfolioProjects.map((project, index) => (
+              <ProjectCard
+                key={project.slug}
+                featured={index === 0}
+                project={project}
+              />
+            ))}
+          </div>
+        </div>
+      </Section>
 
-          <p className="text-zinc-700 leading-relaxed font-medium">
-            My purpose is to empower with code, leadership, and consistency.
-          </p>
-        </section>
+      <Section id="about">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+          <SectionIntro
+            eyebrow="About"
+            title="I’m a systems-minded full stack engineer who approaches problems from the ground up."
+            subtitle="I focus on backend structure, data flow, and architecture before moving into the UI, making sure everything I build is clear, maintainable, and useful."
+          />
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            {aboutSignals.map((signal) => (
+              <Card key={signal.title} title={signal.title}>
+                <p>{signal.body}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
+          My background and experiences have shaped how I think about systems:
+          design with intention, build for reliability, and always keep the user
+          in mind.
+        </div>
+      </Section>
+
+      <Section id="how-i-build" tone="subtle">
+        <div className="grid gap-12 lg:grid-cols-[minmax(260px,330px)_minmax(0,1fr)]">
+          <SectionIntro
+            eyebrow="How I Build"
+            title="I start with the system, not the interface."
+            subtitle="Every project begins with understanding the problem, designing the data flow, and building a strong backend foundation before refining the user experience."
+            experimental
+            titleSizes={[
+              {
+                minWidth: 0,
+                fontFamily: '"Manrope"',
+                fontSize: 36,
+                fontWeight: 800,
+                idealLines: 3,
+                letterSpacing: "-0.05em",
+                lineHeight: 38,
+              },
+              {
+                minWidth: 640,
+                fontFamily: '"Manrope"',
+                fontSize: 48,
+                fontWeight: 800,
+                idealLines: 3,
+                letterSpacing: "-0.055em",
+                lineHeight: 48,
+              },
+            ]}
+          />
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {buildPrinciples.map((principle) => (
+              <Card key={principle.title} title={principle.title}>
+                <p>{principle.body}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white/70 px-6 py-5 text-base leading-7 text-slate-800 sm:text-lg">
+          I care about clarity over complexity, performance and efficiency,
+          maintainable systems that scale, and building things people actually
+          use. If the system doesn’t solve a real problem, it doesn’t matter how
+          polished it looks.
+        </div>
+      </Section>
+
+      <Section id="beyond-code">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:items-start">
+          <div>
+            <SectionIntro
+              eyebrow="Beyond Code"
+              title="My growth as an engineer is tied to how I show up, not just what I build."
+              subtitle="Through real client work, team environments, and high-pressure challenges, I’ve learned how to communicate clearly, stay consistent under pressure, adapt quickly when things break, and support others while growing myself."
+            />
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {leadershipPillars.map((pillar) => (
+                <Card key={pillar.title} title={pillar.title}>
+                  <p>{pillar.body}</p>
+                </Card>
+              ))}
+            </div>
+
+            <p className="mt-8 max-w-3xl text-base leading-7 text-slate-800 sm:text-lg">
+              I don’t just want to write code. I want to build systems and be
+              someone teams can rely on.
+            </p>
+          </div>
+
+          <div className="space-y-5">
+            <div className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-slate-950">
+              <img
+                src={leadershipImages.unitedTeam}
+                alt="Bonny and team celebrating after the United Airlines project"
+                className="h-80 w-full object-cover"
+              />
+            </div>
+
+            <Card
+              eyebrow="Discipline"
+              title="Consistency is part of the engineering story"
+            >
+              <p>
+                I keep a performance mindset outside the code too. Routine,
+                discipline, and staying steady under pressure matter because
+                they affect how I show up for delivery, learning, and the people
+                around me.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="accent">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <SectionIntro
+            eyebrow="Let’s Build Something"
+            eyebrowClassName="text-teal-200"
+            title="If you're looking for someone who learns fast, thinks in systems, and takes ownership, I’d love to connect."
+            titleClassName="text-white"
+            subtitle="I’m looking for strong teams, meaningful product work, and environments that value clarity, performance, and growth."
+            subtitleClassName="text-slate-300"
+          />
+
+          <div className="flex flex-wrap gap-3">
+            <Button
+              to="/contact"
+              variant="secondary"
+              className="border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white"
+            >
+              Contact Me
+            </Button>
+            <Button
+              href={resumePdf}
+              download
+              className="bg-white text-slate-950 hover:bg-stone-100"
+            >
+              Download Resume
+              <Download className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
       </Section>
     </>
   );

@@ -1,106 +1,113 @@
-import SectionHeader from "../components/ui/SectionHeader.jsx";
-import Button from "../components/ui/Button.jsx";
 import Section from "../components/layout/Section";
-import headshot from "../assets/photos/headshot_contact.jpg";
+import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
+import SectionIntro from "../components/ui/SectionIntro";
 import resumePdf from "../data/Bonny_Makaniankhondo_Resume_FSD.pdf";
+import { contactLinks, leadershipImages } from "../data/portfolioContent";
+
+const strengths = [
+  "Systems-minded engineering from backend structure to UI delivery",
+  "Strong problem solving in fast-moving, ambiguous environments",
+  "Client-facing communication and ownership mindset",
+  "Growth orientation with real interest in strong teams and mentors",
+];
 
 export default function Contact() {
   return (
     <>
-      {/* PAGE INTRO */}
-      <Section bg="default">
-        <SectionHeader
-          title="Contact Me"
-          subtitle="Let's connect, collaborate, or build something meaningful."
-        />
-      </Section>
-
-      {/* CONTACT CARD */}
-      <Section bg="subtle">
-        <div className="bg-white border border-slate-200 rounded-xl shadow-sm ring-1 ring-slate-100 p-6 sm:p-8 max-w-2xl mx-auto text-center">
-          
-          {/* Headshot + Identity */}
-          <div className="flex flex-col items-center mb-8">
-            <img
-              src={headshot}
-              alt="Bonny Makaniankhondo headshot"
-              className="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover object-top mb-4 ring-2 ring-slate-200"
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,400px)] lg:items-center">
+          <div>
+            <SectionIntro
+              eyebrow="Contact"
+              title="Full Stack Software Engineer | Systems-Minded Builder | Problem Solver"
+              subtitle="If you’re building products that need thoughtful engineering, strong problem solving, and someone who can grow quickly in a fast-moving environment, I’d love to connect."
             />
 
-            <h2 className="text-2xl font-semibold text-slate-900">
-              Bonny Makaniankhondo
-            </h2>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button href="mailto:bmakaniankhondo@icstars.org">Contact Me</Button>
+              <Button href={resumePdf} download variant="secondary">
+                Download Resume
+              </Button>
+            </div>
 
-            {/* subtle identity accent */}
-            <div className="w-12 h-1 bg-emerald-500 rounded-full my-3"></div>
+            <div className="mt-8 grid gap-3">
+              {strengths.map((strength) => (
+                <div
+                  key={strength}
+                  className="flex items-start gap-3 rounded-[1.25rem] border border-slate-200/80 bg-white/80 px-4 py-3 text-sm leading-6 text-slate-700"
+                >
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-teal-500" />
+                  <span>{strength}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-            <p className="text-zinc-600">
-              Full Stack Software Developer | Builder | Problem Solver
+          <div className="rounded-[2rem] border border-slate-200/80 bg-white/85 p-6 shadow-[0_28px_80px_-55px_rgba(15,23,42,0.35)] backdrop-blur-sm sm:p-8">
+            <div className="overflow-hidden rounded-[1.5rem] bg-slate-950">
+              <img
+                src={leadershipImages.headshot}
+                alt="Bonny Makaniankhondo headshot"
+                className="h-[28rem] w-full object-cover object-top"
+              />
+            </div>
+
+            <div className="mt-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                Current focus
+              </p>
+              <p className="mt-3 text-lg font-semibold tracking-tight text-slate-950">
+                Strong teams, meaningful product work, and environments that value
+                clarity, performance, and growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="subtle">
+        <div className="grid gap-4 lg:grid-cols-2">
+          {contactLinks.map((link) => (
+            <Card key={link.label} title={link.label}>
+              <a
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : "_self"}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="text-base font-semibold text-slate-950 transition hover:text-teal-700"
+              >
+                {link.value}
+              </a>
+            </Card>
+          ))}
+
+          <Card title="Resume">
+            <p className="mb-4">
+              If you want a quick summary of my experience, projects, and current
+              direction, you can download my resume here.
             </p>
-          </div>
-
-          {/* Intro text */}
-          <p className="mb-6 text-zinc-700">
-            Thank you for taking the time to explore my work and journey. If
-            anything here resonates, whether it&apos;s my engineering approach,
-            leadership mindset, or the systems I&apos;ve built, I&apos;d love
-            to connect.
-          </p>
-
-          {/* Contact Details */}
-          <div className="space-y-3 mb-6">
-            <div className="flex items-center justify-center gap-3 text-zinc-700">
-              <span className="font-semibold text-slate-900">Email</span>
-              <span className="text-slate-400">—</span>
-              <a
-                href="mailto:bmakaniankhondo@icstars.org"
-                className="text-indigo-600 font-medium hover:text-indigo-700 transition"
-              >
-                bmakaniankhondo@icstars.org
-              </a>
-            </div>
-
-            <div className="flex items-center justify-center gap-3 text-zinc-700">
-              <span className="font-semibold text-slate-900">GitHub</span>
-              <span className="text-slate-400">—</span>
-              <a
-                href="https://github.com/bonny2long"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-indigo-600 font-medium hover:text-indigo-700 transition"
-              >
-                github.com/bonny2long
-              </a>
-            </div>
-
-            <div className="flex items-center justify-center gap-3 text-zinc-700">
-              <span className="font-semibold text-slate-900">LinkedIn</span>
-              <span className="text-slate-400">—</span>
-              <a
-                href="https://www.linkedin.com/in/bonny-makaniankhondo-bb95a3321/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-indigo-600 font-medium hover:text-indigo-700 transition"
-              >
-                linkedin.com/in/bonny-makaniankhondo
-              </a>
-            </div>
-          </div>
-
-          {/* Resume CTA */}
-          <div className="mb-8">
-            <Button href={resumePdf} download>
+            <Button href={resumePdf} download variant="secondary">
               Download Resume
             </Button>
-          </div>
+          </Card>
+        </div>
+      </Section>
 
-          {/* Closing statement */}
-          <p className="text-zinc-700">
-            I&apos;m moving into the next stage of my career with the same
-            discipline, curiosity, and resilience that shaped my time at
-            i.c.stars. If you&apos;re looking for someone who learns fast, takes
-            ownership, and builds with purpose, let&apos;s talk.
-          </p>
+      <Section>
+        <div className="rounded-[2rem] border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_80px_-55px_rgba(15,23,42,0.6)] sm:p-10">
+          <SectionIntro
+            eyebrow="Let’s connect"
+            eyebrowClassName="text-teal-200"
+            title="If you need a strong systems-minded engineer who can learn fast and take ownership, I’d like to hear about the work."
+            titleClassName="text-white"
+            subtitle="I’m especially interested in full stack, backend/API-focused, and solutions-oriented engineering roles where I can keep growing while contributing real value."
+            subtitleClassName="text-slate-300"
+          />
+          <div className="mt-6">
+            <Button href="mailto:bmakaniankhondo@icstars.org" className="bg-white text-slate-950 hover:bg-stone-100">
+              Email Me
+            </Button>
+          </div>
         </div>
       </Section>
     </>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SectionHeader from "../components/ui/SectionHeader.jsx";
 import Card from "../components/ui/Card.jsx";
 import Section from "../components/layout/Section";
@@ -5,6 +6,17 @@ import journalImage from "../assets/photos/journal.jpg";
 import habitTrackerImage from "../assets/photos/habitTracker.jpg";
 
 export default function Wellness() {
+  const [modal, setModal] = useState({
+    open: false,
+    src: "",
+    alt: "",
+    caption: "",
+  });
+
+  const openModal = (payload) => setModal({ open: true, ...payload });
+  const closeModal = () =>
+    setModal({ open: false, src: "", alt: "", caption: "" });
+
   return (
     <>
       {/* PAGE INTRO */}
@@ -26,15 +38,15 @@ export default function Wellness() {
               just reacts to the moment.
             </p>
 
-            <p className="mb-2 font-medium">Short-term goals (6–12 months):</p>
+            <p className="mb-2 font-medium">Short-term goals (6-12 months):</p>
             <ul className="list-disc list-inside mb-3 space-y-1">
-              <li>Build a 3–6 month emergency fund.</li>
+              <li>Build a 3-6 month emergency fund.</li>
               <li>Create a consistent budgeting routine.</li>
               <li>Track monthly expenses and reduce wasteful spending.</li>
               <li>Save toward learning resources and tools.</li>
             </ul>
 
-            <p className="mb-2 font-medium">Long-term goals (1–5 years):</p>
+            <p className="mb-2 font-medium">Long-term goals (1-5 years):</p>
             <ul className="list-disc list-inside space-y-1">
               <li>Pay down debt strategically.</li>
               <li>Build investment habits and retirement savings.</li>
@@ -85,7 +97,7 @@ export default function Wellness() {
             </ul>
 
             <p className="mt-3">
-              These aren&apos;t just coping tools — they are performance tools
+              These aren't just coping tools - they are performance tools
               that help me show up as a better developer and teammate.
             </p>
           </Card>
@@ -122,40 +134,101 @@ export default function Wellness() {
           </h2>
 
           <p className="text-zinc-600 text-center max-w-2xl mx-auto mb-8">
-            These aren’t concepts — they’re daily practices I use to stay
+            These aren't concepts - they are daily practices I use to stay
             grounded, focused, and consistent.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
             {/* JOURNAL */}
             <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-              <img
-                src={journalImage}
-                alt="Daily journaling reflection"
-                className="w-cover
-                 h-48 sm:h-56 rounded-lg object-cover object-top mb-3"
-              />
-              <p className="text-sm text-zinc-600">
-                Daily journaling to reset my mindset, process pressure, and
-                reinforce disciplined self-talk.
-              </p>
+              <div className="flex flex-col items-center text-center md:flex-row md:text-left md:items-center md:gap-4">
+                <button
+                  type="button"
+                  onClick={() =>
+                    openModal({
+                      src: journalImage,
+                      alt: "Daily journaling reflection",
+                      caption:
+                        "Daily journaling to reset my mindset, process pressure, and reinforce disciplined self-talk.",
+                    })
+                  }
+                  className="w-full md:w-40 lg:w-48 h-48 sm:h-56 rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                  aria-label="Open journaling photo"
+                >
+                  <img
+                    src={journalImage}
+                    alt="Daily journaling reflection"
+                    className="w-cover h-full object-cover object-top"
+                  />
+                </button>
+                <p className="text-sm text-zinc-600 mt-3 md:mt-0">
+                  Daily journaling to reset my mindset, process pressure, and
+                  reinforce disciplined self-talk.
+                </p>
+              </div>
             </div>
 
             {/* HABIT TRACKER */}
             <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-              <img
-                src={habitTrackerImage}
-                alt="Habit and routine tracking"
-                className="w-cover h-48 sm:h-56 rounded-lg object-cover object-top mb-3"
-              />
-              <p className="text-sm text-zinc-600">
-                Simple habit tracking to protect energy, sleep, and consistency
-                during high-intensity weeks.
-              </p>
+              <div className="flex flex-col items-center text-center md:flex-row md:text-left md:items-center md:gap-4">
+                <button
+                  type="button"
+                  onClick={() =>
+                    openModal({
+                      src: habitTrackerImage,
+                      alt: "Habit and routine tracking",
+                      caption:
+                        "Simple habit tracking to protect energy, sleep, and consistency during high-intensity weeks.",
+                    })
+                  }
+                  className="w-full md:w-40 lg:w-48 h-48 sm:h-56 rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                  aria-label="Open habit tracker photo"
+                >
+                  <img
+                    src={habitTrackerImage}
+                    alt="Habit and routine tracking"
+                    className="w-cover h-full object-cover object-top"
+                  />
+                </button>
+                <p className="text-sm text-zinc-600 mt-3 md:mt-0">
+                  Simple habit tracking to protect energy, sleep, and consistency
+                  during high-intensity weeks.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </Section>
+
+      {modal.open && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative bg-black">
+              <img
+                src={modal.src}
+                alt={modal.alt}
+                className="w-full max-h-[70vh] object-contain"
+              />
+              <button
+                type="button"
+                onClick={closeModal}
+                className="absolute top-3 right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/90 text-slate-700 shadow focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                aria-label="Close modal"
+              >
+                
+7
+              </button>
+            </div>
+            <div className="p-4 text-sm text-slate-700">{modal.caption}</div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

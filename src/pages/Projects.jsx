@@ -1,153 +1,64 @@
-import SectionHeader from "../components/ui/SectionHeader.jsx";
-import Card from "../components/ui/Card.jsx";
 import Section from "../components/layout/Section";
-import syncupScreenshot from "../assets/photos/syncup.png";
-import chefbonbonScreenshot from "../assets/photos/chefbot.png";
+import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
+import ProjectCaseStudy from "../components/ui/ProjectCaseStudy";
+import SectionIntro from "../components/ui/SectionIntro";
+import { portfolioProjects } from "../data/portfolioContent";
 
+const summaryCards = [
+  {
+    title: "Systems first",
+    body: "The common thread across these projects is structure: understanding the problem, shaping the data flow, and building a system that stays useful as it grows.",
+  },
+  {
+    title: "AI with purpose",
+    body: "I’m interested in AI when it improves real workflows, whether that means insight generation, content alignment, or reducing repetitive work.",
+  },
+  {
+    title: "Ownership",
+    body: "I work best when I can take a problem from ambiguity to a clearer architecture, a functional product, and a better delivery story.",
+  },
+];
 
 export default function Projects() {
   return (
     <>
-      {/* PAGE INTRO */}
-      <Section bg="default">
-        <SectionHeader
-          title="Projects"
-          subtitle="Full stack systems that show my growth as an engineer."
+      <Section>
+        <SectionIntro
+          eyebrow="Projects"
+          title="Case studies built around systems, not just screens."
+          subtitle="These projects show how I think: define the problem, design the flow, make the system understandable, and build something people can actually use."
         />
+
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {summaryCards.map((card) => (
+            <Card key={card.title} title={card.title}>
+              <p>{card.body}</p>
+            </Card>
+          ))}
+        </div>
       </Section>
 
-      {/* ===================== */}
-      {/* SYNCUP PROJECT */}
-      {/* ===================== */}
-      <Section bg="subtle">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-2">
-          SyncUp — Collaboration & Mentorship Platform
-        </h2>
-
-        <p className="mb-4 text-zinc-700">
-          SyncUp is a full-stack platform in active development designed to help
-          interns, alumni, and mentors in the i.c.stars community connect,
-          collaborate, and track growth. It started as a two-person project and
-          has grown into a system where I now own the architecture, development,
-          and direction.
-        </p>
-
-        <p className="mb-4 text-zinc-700">
-          The goal is to create a central hub where people can find collaborators,
-          share opportunities, log reflections, and support each other across
-          cycles.
-        </p>
-
-        {/* Project Links */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          <a
-            href="https://github.com/sofieicstars/SyncUp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-indigo-600 font-medium hover:text-indigo-700 transition"
-          >
-            View GitHub Repository →
-          </a>
-          <span className="text-sm text-zinc-500">
-            Live demo coming soon
-          </span>
+      <Section tone="subtle">
+        <div className="space-y-8">
+          {portfolioProjects.map((project, index) => (
+            <ProjectCaseStudy key={project.slug} index={index} project={project} />
+          ))}
         </div>
-
-        {/* SyncUp Screenshot */}
-        <img
-          src={syncupScreenshot}
-          alt="SyncUp collaboration and mentorship dashboard"
-          className="mb-6 w-full h-52 sm:h-64 rounded-xl object-cover object-top"
-        />
-
-        <Card title="SyncUp — Stack & Responsibilities">
-          <p className="mb-2 font-medium">Tech stack:</p>
-          <ul className="list-disc list-inside mb-3 space-y-1">
-            <li>Frontend: React 19, Vite 7, Tailwind CSS 4, Lucide React</li>
-            <li>Backend: Node.js, Express 5</li>
-            <li>Database: MySQL (local), planning for Azure SQL</li>
-            <li>Cloud/Analytics: Azure Cognitive Services, Power BI (planned)</li>
-          </ul>
-
-          <p className="mb-2 font-medium">What it does:</p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Connects interns, alumni, and mentors.</li>
-            <li>Helps people find and join projects.</li>
-            <li>Tracks skills and reflections over time.</li>
-            <li>Supports feedback loops between mentors and interns.</li>
-          </ul>
-
-          <p className="mt-3">
-            I have driven the SDLC end-to-end: discovery, requirements, data
-            modeling, architecture planning, UI design, full stack development,
-            and iteration. This project demonstrates that I don&apos;t just build
-            features — I design systems.
-          </p>
-        </Card>
       </Section>
 
-      {/* ===================== */}
-      {/* CHEFBONBON PROJECT */}
-      {/* ===================== */}
-      <Section bg="default">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-2">
-          ChefBonBon (ChefBot) — AI-Powered Recipe App
-        </h2>
+      <Section>
+        <div className="rounded-[2rem] border border-slate-200/80 bg-white/85 p-8 shadow-[0_28px_80px_-55px_rgba(15,23,42,0.35)] backdrop-blur-sm sm:p-10">
+          <SectionIntro
+            eyebrow="Next"
+            title="I’m looking for environments where I can keep building and keep getting sharper."
+            subtitle="If you need a systems-minded engineer who can grow quickly, work across backend and UI concerns, and contribute in client-facing environments, let’s talk."
+          />
 
-        <p className="mb-4 text-zinc-700">
-          ChefBonBon is an AI-driven recipe generator that helps people cook with
-          what they already have. It started as a personal project before
-          i.c.stars and evolved as my understanding of relational databases and
-          architecture grew.
-        </p>
-
-        {/* Project Link */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          <a
-            href="https://chefbonbon.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-emerald-600 font-medium hover:text-emerald-700 transition"
-          >
-            View Live App →
-          </a>
+          <div className="mt-6">
+            <Button to="/contact">Start a conversation</Button>
+          </div>
         </div>
-
-        {/* ChefBonBon Screenshot */}
-        <img
-          src={chefbonbonScreenshot}
-          alt="ChefBonBon AI-powered recipe application"
-          className="mb-6 w-full h-52 sm:h-64 rounded-xl object-cover object-top"
-        />
-
-        <Card title="From Firebase to Supabase">
-          <p className="mb-3">
-            The first version used Firebase and was a fully functional MVP.
-            Users could enter ingredients, generate recipes with AI, and save
-            favorites. After learning SQL and relational modeling at i.c.stars,
-            I realized the app needed a more scalable backend, so I migrated it
-            to Supabase with PostgreSQL.
-          </p>
-
-          <p className="mb-2 font-medium">Why I migrated:</p>
-          <ul className="list-disc list-inside mb-3 space-y-1">
-            <li>Cleaner relational schema using SQL.</li>
-            <li>Better long-term performance and querying.</li>
-            <li>More control over data, indexing, and policies.</li>
-            <li>Lower cost for scaling over time.</li>
-          </ul>
-
-          <p className="mb-2 font-medium">What I learned:</p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>How to plan and execute a real backend migration.</li>
-            <li>How to normalize relational data.</li>
-            <li>How to refactor front-end logic around new APIs.</li>
-            <li>
-              How to think like an engineer — choosing tools based on structure
-              and scalability.
-            </li>
-          </ul>
-        </Card>
       </Section>
     </>
   );
