@@ -336,14 +336,14 @@ export default function Home() {
             <Button
               to="/contact"
               variant="secondary"
-              className="border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white"
+              className="!border-white/45 !bg-white/12 !text-white shadow-lg shadow-black/20 hover:!bg-white/20 hover:!text-white"
             >
               Contact Me
             </Button>
             <Button
               href={resumePdf}
               download
-              className="bg-white text-slate-950 hover:bg-stone-100"
+              className="!border-white !bg-white !text-slate-950 shadow-lg shadow-black/20 hover:!bg-stone-100 hover:!text-slate-950"
             >
               Download Resume
               <Download className="h-4 w-4" />
