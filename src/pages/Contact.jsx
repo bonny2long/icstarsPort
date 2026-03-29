@@ -114,7 +114,10 @@ export default function Contact() {
             subtitleClassName="text-slate-300"
           />
           <div className="mt-6">
-            <Button href="mailto:bmakaniankhondo@icstars.org" className="bg-white text-slate-950 hover:bg-stone-100">
+            <Button
+              href="mailto:bmakaniankhondo@icstars.org"
+              className="!border-white !bg-white !text-slate-950 shadow-lg shadow-black/20 hover:!bg-stone-100 hover:!text-slate-950"
+            >
               Email Me
             </Button>
           </div>
