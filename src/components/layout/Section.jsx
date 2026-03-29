@@ -17,7 +17,7 @@ export default function Section({
       id={id}
       className={`relative py-16 sm:py-20 lg:py-24 ${tones[tone]} ${className}`}
     >
-      <div className={`mx-auto w-full max-w-7xl px-6 lg:px-8 ${innerClassName}`}>
+      <div className={`mx-auto w-full max-w-7xl px-4 sm:px-5 lg:px-8 ${innerClassName}`}>
         {children}
       </div>
     </section>

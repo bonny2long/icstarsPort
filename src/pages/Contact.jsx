@@ -24,9 +24,19 @@ export default function Contact() {
               subtitle="If you’re building products that need thoughtful engineering, strong problem solving, and someone who can grow quickly in a fast-moving environment, I’d love to connect."
             />
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="mailto:bmakaniankhondo@icstars.org">Contact Me</Button>
-              <Button href={resumePdf} download variant="secondary">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button
+                href="mailto:bmakaniankhondo@icstars.org"
+                className="w-full justify-center sm:w-auto"
+              >
+                Contact Me
+              </Button>
+              <Button
+                href={resumePdf}
+                download
+                variant="secondary"
+                className="w-full justify-center sm:w-auto"
+              >
                 Download Resume
               </Button>
             </div>

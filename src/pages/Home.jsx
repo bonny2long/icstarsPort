@@ -54,7 +54,7 @@ export default function Home() {
               Systems-minded full stack engineer
             </p>
 
-            <h1 className="mt-6 text-5xl font-semibold leading-[0.94] tracking-[-0.05em] text-slate-950 sm:text-6xl lg:text-8xl">
+            <h1 className="mt-6 text-4xl font-semibold leading-[0.94] tracking-[-0.05em] text-slate-950 sm:text-5xl md:text-6xl lg:text-8xl">
               Bonny Makaniankhondo
             </h1>
 
@@ -111,12 +111,16 @@ export default function Home() {
               mentors that push me to the next level.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Button to="/projects">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button to="/projects" className="w-full justify-center sm:w-auto">
                 View Projects
                 <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button to="/contact" variant="secondary">
+              <Button
+                to="/contact"
+                variant="secondary"
+                className="w-full justify-center sm:w-auto"
+              >
                 Contact Me
               </Button>
             </div>
@@ -332,18 +336,18 @@ export default function Home() {
             subtitleClassName="text-slate-300"
           />
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button
               to="/contact"
               variant="secondary"
-              className="!border-white/45 !bg-white/12 !text-white shadow-lg shadow-black/20 hover:!bg-white/20 hover:!text-white"
+              className="w-full justify-center !border-white/45 !bg-white/12 !text-white shadow-lg shadow-black/20 hover:!bg-white/20 hover:!text-white sm:w-auto"
             >
               Contact Me
             </Button>
             <Button
               href={resumePdf}
               download
-              className="!border-white !bg-white !text-slate-950 shadow-lg shadow-black/20 hover:!bg-stone-100 hover:!text-slate-950"
+              className="w-full justify-center !border-white !bg-white !text-slate-950 shadow-lg shadow-black/20 hover:!bg-stone-100 hover:!text-slate-950 sm:w-auto"
             >
               Download Resume
               <Download className="h-4 w-4" />
