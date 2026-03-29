@@ -1,9 +1,9 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
+import ProjectImagePreview from "./ProjectImagePreview";
 
 export default function ProjectCard({ featured = false, project }) {
-  const imageHref = project.liveHref ?? project.githubHref;
-
   return (
     <article
       className={`group overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white/85 shadow-[0_24px_70px_-45px_rgba(15,23,42,0.35)] backdrop-blur-sm ${
@@ -12,31 +12,13 @@ export default function ProjectCard({ featured = false, project }) {
     >
       <div className={`grid h-full ${featured ? "lg:grid-cols-[1.05fr_0.95fr]" : ""}`}>
         <div className="overflow-hidden bg-slate-950">
-          {imageHref ? (
-            <a
-              href={imageHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open ${project.title} ${project.liveHref ? "live app" : "GitHub repository"}`}
-              className="block"
-            >
-              <img
-                src={project.image}
-                alt={project.imageAlt}
-                className={`w-full object-cover object-top transition duration-500 group-hover:scale-[1.03] ${
-                  featured ? "h-full min-h-[18rem] lg:min-h-[19rem]" : "h-56"
-                }`}
-              />
-            </a>
-          ) : (
-            <img
-              src={project.image}
-              alt={project.imageAlt}
-              className={`w-full object-cover object-top ${
-                featured ? "h-full min-h-[18rem] lg:min-h-[19rem]" : "h-56"
-              }`}
-            />
-          )}
+          <ProjectImagePreview
+            alt={project.imageAlt}
+            frameClassName={featured ? "aspect-[16/10] lg:h-full" : "aspect-[16/10]"}
+            image={project.image}
+            imageClassName="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+            title={project.shortTitle ?? project.title}
+          />
         </div>
 
         <div className="flex h-full flex-col p-6 sm:p-7">
@@ -74,26 +56,26 @@ export default function ProjectCard({ featured = false, project }) {
             ))}
           </ul>
 
-          <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
+          <div className="mt-6 flex flex-wrap gap-3">
             {project.liveHref ? (
-              <a
+              <Button
                 href={project.liveHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-950 transition hover:text-teal-700"
+                variant="primary"
+                className="px-4 py-2.5"
               >
                 Live App
-              </a>
+                <ArrowUpRight className="h-4 w-4" />
+              </Button>
             ) : null}
             {project.githubHref ? (
-              <a
+              <Button
                 href={project.githubHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-950 transition hover:text-teal-700"
+                variant="secondary"
+                className="px-4 py-2.5"
               >
                 GitHub
-              </a>
+                <ArrowUpRight className="h-4 w-4" />
+              </Button>
             ) : null}
           </div>
 

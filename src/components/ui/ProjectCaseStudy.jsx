@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import Button from "./Button";
 import Card from "./Card";
+import ProjectImagePreview from "./ProjectImagePreview";
 
 function DetailBlock({ items, text, title }) {
   return (
@@ -22,7 +23,6 @@ function DetailBlock({ items, text, title }) {
 
 export default function ProjectCaseStudy({ index = 0, project }) {
   const reverse = index % 2 === 1;
-  const imageHref = project.liveHref ?? project.githubHref;
   const links = [
     project.liveHref
       ? { label: "Live App", href: project.liveHref, primary: true }
@@ -44,27 +44,13 @@ export default function ProjectCaseStudy({ index = 0, project }) {
       >
         <div className="space-y-5">
           <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950">
-            {imageHref ? (
-              <a
-                href={imageHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open ${project.title} ${project.liveHref ? "live app" : "GitHub repository"}`}
-                className="block"
-              >
-                <img
-                  src={project.image}
-                  alt={project.imageAlt}
-                  className="h-72 w-full object-cover object-top sm:h-80"
-                />
-              </a>
-            ) : (
-              <img
-                src={project.image}
-                alt={project.imageAlt}
-                className="h-72 w-full object-cover object-top sm:h-80"
-              />
-            )}
+            <ProjectImagePreview
+              alt={project.imageAlt}
+              frameClassName="aspect-[16/10]"
+              image={project.image}
+              imageClassName="object-cover object-top"
+              title={project.title}
+            />
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">

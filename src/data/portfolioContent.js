@@ -6,7 +6,7 @@ import teaHostImage from "../assets/photos/teaguest.jpg";
 import teamWeekImage from "../assets/photos/teamweek.jpg";
 import unitedTeamImage from "../assets/photos/winning_team.jpg";
 import unitedImage from "../assets/photos/dasha.png";
-import workingImage from "../assets/photos/working.jpg";
+import workingImage from "../assets/photos/working.png";
 
 export const portfolioProjects = [
   {
