@@ -1,50 +1,60 @@
-# Bonny Makaniankhondo - Portfolio
+# Bonny Makaniankhondo Portfolio
 
-A personal portfolio website showcasing my journey as a Full Stack Software Developer, including leadership experience, client projects, and technical skills developed through the iC Stars program.
+A React portfolio site for presenting my work as a systems-minded full stack engineer. The site combines project case studies, leadership experience, and contact information in a polished single-page style experience with dedicated routes for deeper reading.
 
 ## About
 
-I build systems that solve real problems. I lead with curiosity, discipline, and a commitment to lifting others as I grow. This portfolio represents more than a list of projects - it is a snapshot of who I've become as a developer and leader.
+This portfolio is designed to show more than screenshots. It focuses on how I think about systems, product workflows, backend structure, and real-world delivery.
+
+The current project lineup includes:
+
+- **Time Ledger** - a live multi-tenant SaaS application for timesheets, project tracking, billing, team invites, and workspace management
+- **Resume Agent** - an AI-assisted workflow system for tailored job application materials
+- **United Airlines Dashboard** - a client-facing analytics product built under real delivery constraints
+- **SyncUp** - a mentorship and collaboration platform
+- **ChefBonBon** - an AI recipe product redesigned around a stronger relational backend
+
+## Live Project Highlight
+
+- **Time Ledger Live App**: https://timeledger.netlify.app/
 
 ## Tech Stack
 
-- **Frontend**: React 19, React Router v7
-- **Styling**: Tailwind CSS v4, Custom CSS
+- **Frontend**: React 19, React Router 7
+- **Styling**: Tailwind CSS 4 and custom application styles
 - **Build Tool**: Vite 7
-- **Animations**: Framer Motion
+- **Typography / Experimental UI**: `@chenglou/pretext`
 - **Icons**: Lucide React
 
-## Features
+## Site Features
 
-- Responsive design with mobile-first approach
-- Hamburger navigation menu for mobile devices
-- Clean, professional UI with emerald accent colors
-- Multiple pages showcasing different aspects of my journey
+- Responsive layout across desktop and mobile
+- Project cards on the home page with deeper case studies on the projects page
+- Image preview modals for portfolio screenshots
+- Leadership and growth storytelling alongside technical work
+- Resume download and direct contact links
+- Shared data-driven project content powering multiple pages
 
-## Pages
+## Routes
 
-- **Home** - Introduction and quick navigation
-- **Leadership Journey** - My growth as a leader
-- **Client Project** - United Airlines dashboard project
-- **Projects** - Technical projects and applications
-- **Geek Week** - Hackathon and intensive learning experiences
-- **Wellness** - Personal wellness journey
-- **Career Path** - Professional development roadmap
-- **Contact** - Ways to connect with me
+- **Home (`/`)** - introduction, featured work, engineering approach, and leadership highlights
+- **Projects (`/projects`)** - full project case studies including Time Ledger
+- **Leadership (`/leadership`)** - leadership experience, growth, and team-facing context
+- **Contact (`/contact`)** - ways to connect
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js 18 or higher
-- npm or yarn
+- npm
 
 ### Installation
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/bonnyMakaniankhondo/bonnyPort.git
-   cd bonnyPort
+   git clone https://github.com/bonny2long/icstarsPort.git
+   cd icstarsPort
    ```
 
 2. Install dependencies
@@ -57,30 +67,30 @@ I build systems that solve real problems. I lead with curiosity, discipline, and
    npm run dev
    ```
 
-4. Open your browser to `http://localhost:5173`
+4. Open `http://localhost:5173`
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Build the site for production |
+| `npm run preview` | Preview the production build locally |
 | `npm run lint` | Run ESLint |
 
 ## Project Structure
 
-```
+```text
 src/
+  assets/         Static images and media
   components/
-    layout/     - Page layout components (Navbar, Section)
-    ui/         - Reusable UI components
-  pages/        - Page components for each route
-  assets/       - Static assets (images, icons)
-  data/         - Data files and constants
-  index.css     - Global styles and Tailwind configuration
-  App.jsx       - Main app with routing
-  main.jsx      - Entry point
+    layout/       Shared page layout components
+    ui/           Reusable interface components
+  data/           Portfolio content and resume assets
+  pages/          Route-level page components
+  App.jsx         Application routes
+  index.css       Global styles
+  main.jsx        React entry point
 ```
 
 ## Author
@@ -88,7 +98,7 @@ src/
 **Bonny Makaniankhondo**
 
 - LinkedIn: [linkedin.com/in/bonny-makaniankhondo-bb95a3321](https://www.linkedin.com/in/bonny-makaniankhondo-bb95a3321/)
-- GitHub: [github.com/bonnyMakaniankhondo](https://github.com/bonnyMakaniankhondo)
+- GitHub: [github.com/bonny2long](https://github.com/bonny2long)
 
 ## License
 
