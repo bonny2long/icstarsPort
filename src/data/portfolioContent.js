@@ -4,11 +4,64 @@ import headshotImage from "../assets/photos/headshot_contact.jpg";
 import syncUpImage from "../assets/photos/syncup.png";
 import teaHostImage from "../assets/photos/teaguest.jpg";
 import teamWeekImage from "../assets/photos/teamweek.jpg";
+import timeLedgerPrimaryImage from "../assets/photos/timeledger1 2.png";
+import timeLedgerSecondaryImage from "../assets/photos/timeledger2.png";
 import unitedTeamImage from "../assets/photos/winning_team.jpg";
 import unitedImage from "../assets/photos/dasha.png";
 import workingImage from "../assets/photos/working.png";
 
 export const portfolioProjects = [
+  {
+    slug: "time-ledger",
+    eyebrow: "Full-stack SaaS",
+    title: "Time Ledger",
+    shortTitle: "Time Ledger",
+    summary:
+      "A multi-tenant SaaS application for timesheets, project tracking, client billing, team invites, and workspace management.",
+    secondary:
+      "Built as a real end-to-end product across React, FastAPI, Supabase, SQLAlchemy, auth, migrations, and billing workflows.",
+    highlights: [
+      "Multi-workspace SaaS architecture with organization isolation",
+      "Role-based permissions for admins, managers, and members",
+      "Weekly timesheet grid, billing summaries, and invoice-ready text generation",
+      "FastAPI, SQLAlchemy, Alembic, Supabase Auth, and React 19",
+    ],
+    problem:
+      "Teams often track hours, clients, and billing across disconnected spreadsheets, messages, and manual calculations. Time Ledger brings time tracking, workspace permissions, billing summaries, and team operations into one product with clean boundaries between organizations and users.",
+    systemTitle: "Architecture / stack",
+    systemText:
+      "The product is organized as a three-layer system with a React SPA on the front end, a FastAPI service in the middle, and Supabase PostgreSQL plus Supabase Auth for data and identity.",
+    system: [
+      "Multi-tenant workspace model with every query scoped by organization",
+      "React 19, TypeScript, Vite, TanStack Query, Recharts, and Tailwind on the frontend",
+      "FastAPI, SQLAlchemy 2.x, Alembic, and Pydantic settings on the backend",
+      "Invite flows, onboarding, archived record handling, and account lifecycle protections",
+    ],
+    owned: [
+      "Built the full-stack product surface across frontend, backend, database, and auth concerns",
+      "Designed the workspace, membership, client, project, invitation, and time-entry data flows",
+      "Implemented billing and reporting workflows that turn tracked time into invoice-ready output",
+    ],
+    decisions: [
+      "Use multi-tenant workspace isolation from the start instead of retrofitting permissions later",
+      "Enforce role-aware behavior so teammates can collaborate without cross-user editing",
+      "Treat migrations, deletion protections, and non-overlapping time-entry rules as core product logic",
+    ],
+    interesting:
+      "Time Ledger stands out because it is not just a polished dashboard. It covers the real product surface of a SaaS system: tenancy, auth, invites, role-aware permissions, billing logic, data modeling, onboarding, and lifecycle safeguards.",
+    note: "This project demonstrates full-stack product engineering end to end. The repository is private, so this case study focuses on architecture, workflows, and product decisions.",
+    status: "Private build",
+    image: timeLedgerPrimaryImage,
+    imageAlt: "Time Ledger workspace dashboard and timesheet interface",
+    liveHref: "https://timeledger.netlify.app/",
+    gallery: [
+      {
+        image: timeLedgerSecondaryImage,
+        alt: "Time Ledger billing and reporting interface",
+        title: "Billing and reporting view",
+      },
+    ],
+  },
   {
     slug: "resume-agent",
     eyebrow: "Featured build",

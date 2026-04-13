@@ -31,6 +31,16 @@ export default function ProjectCaseStudy({ index = 0, project }) {
       ? { label: "GitHub", href: project.githubHref, primary: !project.liveHref }
       : null,
   ].filter(Boolean);
+  const galleryItems = project.gallery?.length
+    ? [
+        {
+          image: project.image,
+          alt: project.imageAlt,
+          title: project.title,
+        },
+        ...project.gallery,
+      ]
+    : null;
 
   return (
     <article
@@ -119,6 +129,36 @@ export default function ProjectCaseStudy({ index = 0, project }) {
           <DetailBlock items={project.owned} title="What I owned" />
           <DetailBlock items={project.decisions} title="Technical decisions that mattered" />
         </div>
+
+        {galleryItems ? (
+          <div className="rounded-[1.5rem] border border-slate-200 bg-stone-50/80 p-5 sm:p-6">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                Interface views
+              </p>
+              <p className="text-xs text-slate-500">
+                {galleryItems.length} screenshots
+              </p>
+            </div>
+
+            <div className="mt-4 grid gap-4 lg:grid-cols-2">
+              {galleryItems.map((item) => (
+                <div
+                  key={`${project.slug}-${item.title}`}
+                  className="overflow-hidden rounded-[1.25rem] border border-slate-200 bg-slate-950"
+                >
+                  <ProjectImagePreview
+                    alt={item.alt}
+                    frameClassName="aspect-[16/10]"
+                    image={item.image}
+                    imageClassName="object-cover object-top"
+                    title={item.title}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
 
         <div className="w-full rounded-[1.5rem] bg-slate-950 px-6 py-5 text-white sm:px-7 sm:py-6">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-200">
