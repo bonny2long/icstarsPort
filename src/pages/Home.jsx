@@ -40,7 +40,7 @@ const heroCards = [
   {
     icon: <MessageSquareText className="h-5 w-5 text-teal-300" />,
     title: "Client-facing delivery",
-    body: "I am growing into the kind of engineer who can build, explain the system, and handle feedback well.",
+    body: "I work toward being the kind of engineer who can build clearly, explain tradeoffs, and handle feedback well.",
   },
 ];
 
@@ -98,17 +98,17 @@ export default function Home() {
             />
 
             <p className="mt-8 max-w-2xl text-xl leading-8 text-slate-800 sm:text-2xl">
-              I build systems from the ground up, connecting backend logic,
-              data, and UI into clear, scalable products.
+              I build products from the backend out, connecting data, APIs, and
+              UI into systems that are clear, scalable, and useful.
             </p>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-              Focused on performance, structure, and real-world impact.
+              Focused on structure, performance, and real-world workflows.
             </p>
 
             <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-              Growing fast in a changing landscape, looking for teams and
-              mentors that push me to the next level.
+              Looking for strong teams where I can keep shipping, keep learning,
+              and keep raising my technical bar.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -158,7 +158,7 @@ export default function Home() {
                   Target roles
                 </p>
                 <p className="mt-3 text-sm leading-6 text-slate-200">
-                  Full Stack Software Engineer, Backend and API-focused roles,
+                  Full Stack Software Engineer, backend and API-focused roles,
                   and solutions or consulting-oriented engineering work.
                 </p>
               </div>
@@ -171,8 +171,8 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-[minmax(240px,300px)_minmax(0,1fr)] lg:items-start">
           <SectionIntro
             eyebrow="Selected Work"
-            title="Selected Work"
-            subtitle="The strongest proof of my work is how I turn ambiguous requirements into structured, working systems."
+            title="Projects that show how I think in systems."
+            subtitle="The strongest proof of my work is taking an unclear problem, defining the structure, and shipping something people can actually use."
             experimental
             titleSizes={[
               {
@@ -212,8 +212,8 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <SectionIntro
             eyebrow="About"
-            title="I’m a systems-minded full stack engineer who approaches problems from the ground up."
-            subtitle="I focus on backend structure, data flow, and architecture before moving into the UI, making sure everything I build is clear, maintainable, and useful."
+            title="I'm a systems-minded full stack engineer who starts with structure."
+            subtitle="I focus on backend shape, data flow, and architecture before moving into the UI, so the product stays clear, maintainable, and useful."
           />
 
           <div className="grid gap-4 sm:grid-cols-3">
@@ -237,7 +237,7 @@ export default function Home() {
           <SectionIntro
             eyebrow="How I Build"
             title="I start with the system, not the interface."
-            subtitle="Every project begins with understanding the problem, designing the data flow, and building a strong backend foundation before refining the user experience."
+            subtitle="Every project starts with the problem, the data flow, and the backend responsibilities before I refine the interface."
             experimental
             titleSizes={[
               {
@@ -273,7 +273,7 @@ export default function Home() {
         <div className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white/70 px-6 py-5 text-base leading-7 text-slate-800 sm:text-lg">
           I care about clarity over complexity, performance and efficiency,
           maintainable systems that scale, and building things people actually
-          use. If the system doesn’t solve a real problem, it doesn’t matter how
+          use. If the system doesn't solve a real problem, it doesn't matter how
           polished it looks.
         </div>
       </Section>
@@ -284,7 +284,7 @@ export default function Home() {
             <SectionIntro
               eyebrow="Beyond Code"
               title="My growth as an engineer is tied to how I show up, not just what I build."
-              subtitle="Through real client work, team environments, and high-pressure challenges, I’ve learned how to communicate clearly, stay consistent under pressure, adapt quickly when things break, and support others while growing myself."
+              subtitle="Through client work, team environments, and high-pressure challenges, I've learned how to communicate clearly, stay steady under pressure, adapt quickly, and support the people around me."
             />
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -296,7 +296,7 @@ export default function Home() {
             </div>
 
             <p className="mt-8 max-w-3xl text-base leading-7 text-slate-800 sm:text-lg">
-              I don’t just want to write code. I want to build systems and be
+              I don't just want to write code. I want to build systems and be
               someone teams can rely on.
             </p>
           </div>
@@ -328,11 +328,11 @@ export default function Home() {
       <Section tone="accent">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <SectionIntro
-            eyebrow="Let’s Build Something"
+            eyebrow="Let's Build Something"
             eyebrowClassName="text-teal-200"
-            title="If you're looking for someone who learns fast, thinks in systems, and takes ownership, I’d love to connect."
+            title="If you're looking for someone who learns fast, thinks in systems, and takes ownership, I'd love to connect."
             titleClassName="text-white"
-            subtitle="I’m looking for strong teams, meaningful product work, and environments that value clarity, performance, and growth."
+            subtitle="I'm looking for strong teams, meaningful product work, and environments that value clarity, performance, and growth."
             subtitleClassName="text-slate-300"
           />
 

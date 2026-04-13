@@ -17,9 +17,9 @@ export const portfolioProjects = [
     title: "Time Ledger",
     shortTitle: "Time Ledger",
     summary:
-      "A multi-tenant SaaS application for timesheets, project tracking, client billing, team invites, and workspace management.",
+      "A full-stack, multi-tenant SaaS application for timesheets, project tracking, client billing, team invites, and workspace management.",
     secondary:
-      "Built as a real end-to-end product across React, FastAPI, Supabase, SQLAlchemy, auth, migrations, and billing workflows.",
+      "Built end to end across React, FastAPI, Supabase, SQLAlchemy, auth, migrations, and billing workflows.",
     highlights: [
       "Multi-workspace SaaS architecture with organization isolation",
       "Role-based permissions for admins, managers, and members",
@@ -27,7 +27,7 @@ export const portfolioProjects = [
       "FastAPI, SQLAlchemy, Alembic, Supabase Auth, and React 19",
     ],
     problem:
-      "Teams often track hours, clients, and billing across disconnected spreadsheets, messages, and manual calculations. Time Ledger brings time tracking, workspace permissions, billing summaries, and team operations into one product with clean boundaries between organizations and users.",
+      "Teams often track hours, clients, and billing across disconnected spreadsheets, messages, and manual calculations. Time Ledger brings time tracking, workspace permissions, billing summaries, and team operations into one product with clear boundaries between organizations and users.",
     systemTitle: "Architecture / stack",
     systemText:
       "The product is organized as a three-layer system with a React SPA on the front end, a FastAPI service in the middle, and Supabase PostgreSQL plus Supabase Auth for data and identity.",
@@ -48,7 +48,7 @@ export const portfolioProjects = [
       "Treat migrations, deletion protections, and non-overlapping time-entry rules as core product logic",
     ],
     interesting:
-      "Time Ledger stands out because it is not just a polished dashboard. It covers the real product surface of a SaaS system: tenancy, auth, invites, role-aware permissions, billing logic, data modeling, onboarding, and lifecycle safeguards.",
+      "Time Ledger stands out because it covers the real product surface of a SaaS system: tenancy, auth, invites, role-aware permissions, billing logic, data modeling, onboarding, and lifecycle safeguards.",
     note: "This project demonstrates full-stack product engineering end to end. The repository is private, so this case study focuses on architecture, workflows, and product decisions.",
     status: "Private build",
     image: timeLedgerPrimaryImage,
