@@ -53,7 +53,7 @@ export const portfolioProjects = [
     status: "Private build",
     image: timeLedgerPrimaryImage,
     imageAlt: "Time Ledger workspace dashboard and timesheet interface",
-    liveHref: "https://timeledger.netlify.app/",
+    liveHref: "https://timeledger.me/",
     gallery: [
       {
         image: timeLedgerSecondaryImage,

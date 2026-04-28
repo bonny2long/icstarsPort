@@ -112,7 +112,10 @@ export default function Home() {
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Button to="/projects" className="w-full justify-center sm:w-auto">
+              <Button
+                to="/projects"
+                className="w-full justify-center sm:w-auto"
+              >
                 View Projects
                 <ArrowRight className="h-4 w-4" />
               </Button>
