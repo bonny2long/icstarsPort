@@ -1,7 +1,8 @@
 import chefBonBonImage from "../assets/photos/chefbot.png";
 import geekWeekImage from "../assets/photos/geekweek2.jpg";
 import headshotImage from "../assets/photos/headshot_contact.jpg";
-import syncUpImage from "../assets/photos/syncup.png";
+import syncUpLoginImage from "../assets/photos/syncup-login.png";
+import syncUpRegisterImage from "../assets/photos/syncup-register.png";
 import teaHostImage from "../assets/photos/teaguest.jpg";
 import teamWeekImage from "../assets/photos/teamweek.jpg";
 import timeLedgerPrimaryImage from "../assets/photos/timeledger1 2.png";
@@ -17,20 +18,20 @@ export const portfolioProjects = [
     title: "Time Ledger",
     shortTitle: "Time Ledger",
     summary:
-      "A full-stack, multi-tenant SaaS application for timesheets, project tracking, client billing, team invites, and workspace management.",
+      "A live full-stack SaaS product for weekly timesheets, client billing, project tracking, team invites, and workspace operations.",
     secondary:
-      "Built end to end across React, FastAPI, Supabase, SQLAlchemy, auth, migrations, and billing workflows.",
+      "Built across React, TypeScript, FastAPI, Supabase Auth, PostgreSQL, SQLAlchemy, Alembic, TanStack Query, and billing/reporting workflows.",
     highlights: [
-      "Multi-workspace SaaS architecture with organization isolation",
-      "Role-based permissions for admins, managers, and members",
-      "Weekly timesheet grid, billing summaries, and invoice-ready text generation",
-      "FastAPI, SQLAlchemy, Alembic, Supabase Auth, and React 19",
+      "Live product at timeledger.me for time tracking and billing workflows",
+      "Multi-workspace SaaS architecture with organization-level data isolation",
+      "Role-aware workflows for admins, managers, members, clients, projects, and time entries",
+      "Weekly timesheet grid, billing summaries, invoice-ready text, onboarding, and invite flows",
     ],
     problem:
-      "Teams often track hours, clients, and billing across disconnected spreadsheets, messages, and manual calculations. Time Ledger brings time tracking, workspace permissions, billing summaries, and team operations into one product with clear boundaries between organizations and users.",
+      "Small teams and independent contractors often manage clients, projects, hours, and billing across disconnected spreadsheets and messages. Time Ledger centralizes that workflow so teams can track work, review weekly totals, and generate cleaner client-ready billing summaries from one system.",
     systemTitle: "Architecture / stack",
     systemText:
-      "The product is organized as a three-layer system with a React SPA on the front end, a FastAPI service in the middle, and Supabase PostgreSQL plus Supabase Auth for data and identity.",
+      "Time Ledger is structured as a product-grade SaaS system: a React and TypeScript frontend, a FastAPI service layer, Supabase Auth for identity, and PostgreSQL-backed relational workflows for workspaces, memberships, clients, projects, time entries, and billing summaries.",
     system: [
       "Multi-tenant workspace model with every query scoped by organization",
       "React 19, TypeScript, Vite, TanStack Query, Recharts, and Tailwind on the frontend",
@@ -38,19 +39,19 @@ export const portfolioProjects = [
       "Invite flows, onboarding, archived record handling, and account lifecycle protections",
     ],
     owned: [
-      "Built the full-stack product surface across frontend, backend, database, and auth concerns",
-      "Designed the workspace, membership, client, project, invitation, and time-entry data flows",
-      "Implemented billing and reporting workflows that turn tracked time into invoice-ready output",
+      "Built the product end to end across frontend, backend, database, authentication, deployment, and workflow design",
+      "Designed the workspace, membership, client, project, invitation, time-entry, and billing data flows",
+      "Implemented the product workflows that turn tracked time into weekly summaries and invoice-ready client communication",
     ],
     decisions: [
-      "Use multi-tenant workspace isolation from the start instead of retrofitting permissions later",
-      "Enforce role-aware behavior so teammates can collaborate without cross-user editing",
-      "Treat migrations, deletion protections, and non-overlapping time-entry rules as core product logic",
+      "Designed around multi-tenant workspace isolation instead of treating permissions as an afterthought",
+      "Kept billing and reporting close to the time-entry workflow so users can move from logged work to client-ready output quickly",
+      "Used migrations, archived states, account lifecycle rules, and guarded data flows to make the product easier to maintain as it grows",
     ],
     interesting:
-      "Time Ledger stands out because it covers the real product surface of a SaaS system: tenancy, auth, invites, role-aware permissions, billing logic, data modeling, onboarding, and lifecycle safeguards.",
-    note: "This project demonstrates full-stack product engineering end to end. The repository is private, so this case study focuses on architecture, workflows, and product decisions.",
-    status: "Private build",
+      "Time Ledger is the strongest portfolio proof point because it covers the real surface area of a SaaS product: tenancy, auth, invites, role-aware behavior, data modeling, billing logic, reporting, onboarding, deployment, and lifecycle safeguards.",
+    note: "The live product is public at timeledger.me. The repository is private, so this case study focuses on architecture, workflow decisions, and product behavior rather than source-code access.",
+    status: "Live product",
     image: timeLedgerPrimaryImage,
     imageAlt: "Time Ledger workspace dashboard and timesheet interface",
     liveHref: "https://timeledger.me/",
@@ -63,48 +64,50 @@ export const portfolioProjects = [
     ],
   },
   {
-    slug: "resume-agent",
-    eyebrow: "Featured build",
-    title: "Resume Agent",
+    slug: "syncup",
+    eyebrow: "Community platform",
+    title: "ICAA Headquarters / SyncUp",
+    shortTitle: "ICAA Headquarters",
     summary:
-      "An AI-powered system that automates the job application process by analyzing job descriptions, generating tailored resumes and cover letters, and tracking applications.",
+      "A community operations platform evolving from SyncUp into an ICAA headquarters for alumni, residents, mentors, projects, events, and collaboration workflows.",
     secondary:
-      "Built to remove the repetitive work of applying while improving alignment with real job requirements.",
+      "Built around role-aware dashboards, member visibility, collaboration tools, and operational workflows for a growing community.",
     highlights: [
-      "AI-driven resume and cover letter generation",
-      "Job description parsing and semantic matching",
-      "Application tracking system",
-      "Workflow automation for outreach",
+      "Role-aware dashboards for alumni, residents, mentors, and administrators",
+      "Member directory, project visibility, collaboration, and event-style workflow foundations",
+      "React, Tailwind, Node.js, Express, relational data modeling, and Supabase direction",
     ],
     problem:
-      "Applying to multiple roles usually means repeated rewriting and inconsistent alignment. Resume Agent is designed to turn that messy process into a repeatable system.",
-    systemTitle: "System focus",
-    systemText:
-      "The current case study centers on workflow architecture first: job intake, parsing, tailored generation, tracking, and outreach automation.",
+      "Communities can have strong people and weak systems. ICAA Headquarters is designed to centralize member visibility, collaboration, mentorship, project activity, and operational workflows so the community has a stronger digital home.",
+    systemTitle: "Stack / system",
     system: [
-      "Parsed job requirements feed each generation step",
-      "Tailored resume and cover-letter outputs stay tied to the source role",
-      "Tracking is treated as part of the product, not an afterthought",
-      "Automation is used to reduce repetitive work without losing usefulness",
+      "React 19, Vite, and Tailwind CSS on the front end",
+      "Node.js and Express for API structure",
+      "Relational data modeling for users, projects, and skills",
+      "Platform architecture built around mentorship and collaboration workflows",
     ],
     owned: [
-      "Framing the product around a real workflow problem instead of a one-off AI demo",
-      "Designing the system flow from job description intake to tailored application output",
-      "Structuring the case study so deeper implementation details can be added cleanly over time",
+      "Owned the architecture direction and day-to-day development",
+      "Drove discovery, requirements, data modeling, and iteration",
+      "Treated the product as a system design problem, not just a collection of pages",
     ],
     decisions: [
-      "Start from structured requirements rather than generic content generation",
-      "Keep the system useful for real applications, not just prompt experimentation",
-      "Separate parsing, generation, tracking, and outreach into clear workflow stages",
+      "Model relationships clearly so the platform can grow without becoming brittle",
+      "Keep the product centered on useful collaboration flows",
+      "Design with long-term maintainability in mind from the start",
     ],
     interesting:
-      "It combines AI output with system thinking. The interesting part is not just generating documents, but building a workflow that stays aligned with real job requirements and reduces actual user friction.",
-    note: "This is an expanding portfolio case study. The current version documents the product goal, workflow architecture, and automation layers while leaving room for implementation detail as the build evolves.",
-    status: "Active build",
-    image: workingImage,
-    imageAlt:
-      "Bonny working on a laptop, representing the Resume Agent build in progress",
-    githubHref: "https://github.com/bonny2long/resume-agent",
+      "This project shows ownership beyond feature building. It required product direction, role semantics, data modeling, admin workflows, UI polish, and a clear understanding of how a real community might operate inside software.",
+    status: "Active platform build",
+    image: syncUpLoginImage,
+    imageAlt: "SyncUp login screen with Chicago skyline background",
+    gallery: [
+      {
+        image: syncUpRegisterImage,
+        alt: "SyncUp registration screen for the iCAA community",
+        title: "Community registration flow",
+      },
+    ],
   },
   {
     slug: "united-airlines-dashboard",
@@ -149,45 +152,6 @@ export const portfolioProjects = [
     githubHref: "https://github.com/bonny2long/Metis",
   },
   {
-    slug: "syncup",
-    eyebrow: "Platform design",
-    title: "SyncUp",
-    shortTitle: "SyncUp",
-    summary:
-      "A mentorship and collaboration platform designed to connect interns, alumni, and teams while tracking growth and skills over time.",
-    secondary:
-      "The goal is to create a central place for collaboration, skill visibility, and long-term community support.",
-    highlights: [
-      "React front end with a Node and Express backend foundation",
-      "Relational data modeling for people, projects, and skills",
-      "Architecture focused on collaboration instead of isolated features",
-    ],
-    problem:
-      "Communities often have strong people but weak systems for keeping collaboration, mentoring, and growth visible over time. SyncUp is designed to make those connections actionable.",
-    systemTitle: "Stack / system",
-    system: [
-      "React 19, Vite, and Tailwind CSS on the front end",
-      "Node.js and Express for API structure",
-      "Relational data modeling for users, projects, and skills",
-      "Platform architecture built around mentorship and collaboration workflows",
-    ],
-    owned: [
-      "Owned the architecture direction and day-to-day development",
-      "Drove discovery, requirements, data modeling, and iteration",
-      "Treated the product as a system design problem, not just a collection of pages",
-    ],
-    decisions: [
-      "Model relationships clearly so the platform can grow without becoming brittle",
-      "Keep the product centered on useful collaboration flows",
-      "Design with long-term maintainability in mind from the start",
-    ],
-    interesting:
-      "What makes SyncUp interesting is the mix of community context and system design. It is a product about relationships, but the engineering challenge is structuring those relationships clearly.",
-    image: syncUpImage,
-    imageAlt: "SyncUp collaboration platform dashboard",
-    githubHref: "https://github.com/bonny2long/SyncUp",
-  },
-  {
     slug: "chefbonbon",
     eyebrow: "AI product",
     title: "ChefBonBon",
@@ -226,6 +190,50 @@ export const portfolioProjects = [
     imageAlt: "ChefBonBon recipe application interface",
     liveHref: "https://chefbonbon.netlify.app/",
     githubHref: "https://github.com/bonny2long/ChefBonBon",
+  },
+  {
+    slug: "resume-agent",
+    eyebrow: "AI workflow system",
+    title: "Resume Agent",
+    summary:
+      "An AI-assisted application workflow system that analyzes job descriptions, evaluates alignment, and generates tailored application materials from structured experience data.",
+    secondary:
+      "Built around semantic matching, structured scoring, document generation, and workflow automation instead of generic one-off prompting.",
+    highlights: [
+      "Job description parsing and structured requirement extraction",
+      "Semantic matching with PostgreSQL and pgvector concepts",
+      "ATS-style scoring rules and tailored document generation",
+      "Multi-provider LLM fallback strategy for reliability",
+    ],
+    problem:
+      "Applying to multiple roles usually means repeated rewriting and inconsistent alignment. Resume Agent is designed to turn that messy process into a repeatable system.",
+    systemTitle: "System focus",
+    systemText:
+      "The current case study centers on workflow architecture first: job intake, parsing, tailored generation, tracking, and outreach automation.",
+    system: [
+      "Parsed job requirements feed each generation step",
+      "Tailored resume and cover-letter outputs stay tied to the source role",
+      "Tracking is treated as part of the product, not an afterthought",
+      "Automation is used to reduce repetitive work without losing usefulness",
+    ],
+    owned: [
+      "Framing the product around a real workflow problem instead of a one-off AI demo",
+      "Designing the system flow from job description intake to tailored application output",
+      "Structuring the case study so deeper implementation details can be added cleanly over time",
+    ],
+    decisions: [
+      "Start from structured requirements rather than generic content generation",
+      "Keep the system useful for real applications, not just prompt experimentation",
+      "Separate parsing, generation, tracking, and outreach into clear workflow stages",
+    ],
+    interesting:
+      "It combines AI output with system thinking. The interesting part is not just generating documents, but building a workflow that stays aligned with real job requirements and reduces actual user friction.",
+    note: "This is an expanding portfolio case study. The current version documents the product goal, workflow architecture, and automation layers while leaving room for implementation detail as the build evolves.",
+    status: "Active build",
+    image: workingImage,
+    imageAlt:
+      "Bonny working on a laptop, representing the Resume Agent build in progress",
+    githubHref: "https://github.com/bonny2long/resume-agent",
   },
 ];
 

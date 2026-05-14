@@ -8,15 +8,15 @@ This portfolio is designed to show more than screenshots. It focuses on how I th
 
 The current project lineup includes:
 
-- **Time Ledger** - a live multi-tenant SaaS application for timesheets, project tracking, billing, team invites, and workspace management
-- **Resume Agent** - an AI-assisted workflow system for tailored job application materials
+- **Time Ledger** - a live full-stack SaaS product for weekly timesheets, client billing, project tracking, team invites, and workspace operations
+- **ICAA Headquarters / SyncUp** - an active community operations platform for alumni, residents, mentors, projects, events, and collaboration workflows
 - **United Airlines Dashboard** - a client-facing analytics product built under real delivery constraints
-- **SyncUp** - a mentorship and collaboration platform
 - **ChefBonBon** - an AI recipe product redesigned around a stronger relational backend
+- **Resume Agent** - an AI-assisted workflow system for tailored job application materials
 
 ## Live Project Highlight
 
-- **Time Ledger Live App**: https://timeledger.netlify.app/
+- **Time Ledger Live App**: https://timeledger.me/
 
 ## Tech Stack
 

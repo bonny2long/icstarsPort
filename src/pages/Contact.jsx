@@ -20,8 +20,8 @@ export default function Contact() {
           <div>
             <SectionIntro
               eyebrow="Contact"
-              title="Full Stack Software Engineer | Systems-Minded Builder | Problem Solver"
-              subtitle="If you’re building products that need thoughtful engineering, strong problem solving, and someone who can grow quickly in a fast-moving environment, I’d love to connect."
+              title="Full Stack Software Engineer building product systems across frontend, backend, data, and AI workflows."
+              subtitle="If you're building products that need thoughtful engineering, strong problem solving, and someone who can grow quickly in a fast-moving environment, I'd love to connect."
             />
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -68,8 +68,8 @@ export default function Contact() {
                 Current focus
               </p>
               <p className="mt-3 text-lg font-semibold tracking-tight text-slate-950">
-                Strong teams, meaningful product work, and environments that value
-                clarity, performance, and growth.
+                Strong teams, meaningful product work, and environments that
+                value clarity, performance, and growth.
               </p>
             </div>
           </div>
@@ -83,7 +83,9 @@ export default function Contact() {
               <a
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : "_self"}
-                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                rel={
+                  link.href.startsWith("http") ? "noopener noreferrer" : undefined
+                }
                 className="text-base font-semibold text-slate-950 transition hover:text-teal-700"
               >
                 {link.value}
@@ -93,8 +95,8 @@ export default function Contact() {
 
           <Card title="Resume">
             <p className="mb-4">
-              If you want a quick summary of my experience, projects, and current
-              direction, you can download my resume here.
+              If you want a quick summary of my experience, projects, and
+              current direction, you can download my resume here.
             </p>
             <Button href={resumePdf} download variant="secondary">
               Download Resume
@@ -106,11 +108,11 @@ export default function Contact() {
       <Section>
         <div className="rounded-[2rem] border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_80px_-55px_rgba(15,23,42,0.6)] sm:p-10">
           <SectionIntro
-            eyebrow="Let’s connect"
+            eyebrow="Let's connect"
             eyebrowClassName="text-teal-200"
-            title="If you need a strong systems-minded engineer who can learn fast and take ownership, I’d like to hear about the work."
+            title="If you need a full stack engineer who can take ownership, understand the workflow, and build across UI, backend, data, and deployment, I'd like to hear about the work."
             titleClassName="text-white"
-            subtitle="I’m especially interested in full stack, backend/API-focused, and solutions-oriented engineering roles where I can keep growing while contributing real value."
+            subtitle="I'm especially interested in full stack, backend/API-focused, and solutions-oriented engineering roles where I can keep growing while contributing real value."
             subtitleClassName="text-slate-300"
           />
           <div className="mt-6">

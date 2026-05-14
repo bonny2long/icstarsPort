@@ -1,7 +1,7 @@
 import {
   ArrowRight,
+  Code2,
   Cpu,
-  Database,
   Download,
   MessageSquareText,
   Workflow,
@@ -23,9 +23,9 @@ import {
 
 const heroCards = [
   {
-    icon: <Database className="h-5 w-5 text-teal-300" />,
-    title: "Backend-first thinking",
-    body: "I start with data flow, system shape, and API responsibility before I move into interface polish.",
+    icon: <Code2 className="h-5 w-5 text-teal-200" />,
+    title: "Live SaaS product",
+    body: "Built Time Ledger for real timesheet, billing, workspace, and team operations workflows.",
   },
   {
     icon: <Workflow className="h-5 w-5 text-teal-300" />,
@@ -41,6 +41,25 @@ const heroCards = [
     icon: <MessageSquareText className="h-5 w-5 text-teal-300" />,
     title: "Client-facing delivery",
     body: "I work toward being the kind of engineer who can build clearly, explain tradeoffs, and handle feedback well.",
+  },
+];
+
+const skillGroups = [
+  {
+    title: "Languages & Core",
+    body: "TypeScript, JavaScript, Python, SQL",
+  },
+  {
+    title: "Frontend",
+    body: "React, Next.js, Vite, Tailwind CSS, React Router, TanStack Query, Recharts",
+  },
+  {
+    title: "Backend & Data",
+    body: "FastAPI, Node.js, Express, REST APIs, GraphQL, PostgreSQL, MySQL, Supabase, SQLAlchemy, Prisma",
+  },
+  {
+    title: "AI, Auth & Delivery",
+    body: "LLM APIs, RAG concepts, pgvector, Supabase Auth, RBAC, Docker, Railway, Netlify, GitHub Actions",
   },
 ];
 
@@ -98,12 +117,15 @@ export default function Home() {
             />
 
             <p className="mt-8 max-w-2xl text-xl leading-8 text-slate-800 sm:text-2xl">
-              I build products from the backend out, connecting data, APIs, and
-              UI into systems that are clear, scalable, and useful.
+              I build full-stack products that connect real workflows, backend
+              systems, data, and UI into software people can actually use.
             </p>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-              Focused on structure, performance, and real-world workflows.
+              My strongest work sits at the intersection of product thinking
+              and engineering execution: live SaaS products, client dashboards,
+              AI-supported workflows, authentication, data modeling, and clear
+              user flows.
             </p>
 
             <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
@@ -136,7 +158,8 @@ export default function Home() {
                 What I bring
               </p>
               <p className="mt-4 text-2xl font-semibold tracking-tight text-white">
-                Builder mindset, strong systems instincts, and fast growth.
+                Live product experience, strong systems instincts, and fast
+                growth.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -232,6 +255,24 @@ export default function Home() {
           My background and experiences have shaped how I think about systems:
           design with intention, build for reliability, and always keep the user
           in mind.
+        </div>
+      </Section>
+
+      <Section id="technical-skills" tone="subtle">
+        <div className="grid gap-10 lg:grid-cols-[minmax(240px,300px)_minmax(0,1fr)] lg:items-start">
+          <SectionIntro
+            eyebrow="Technical Skills"
+            title="A full-stack toolkit for product systems."
+            subtitle="I work across the frontend, backend, data layer, auth, deployment, and AI-supported workflows."
+          />
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {skillGroups.map((group) => (
+              <Card key={group.title} title={group.title}>
+                <p>{group.body}</p>
+              </Card>
+            ))}
+          </div>
         </div>
       </Section>
 
