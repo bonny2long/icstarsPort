@@ -8,11 +8,11 @@ import { portfolioProjects } from "../data/portfolioContent";
 const summaryCards = [
   {
     title: "Systems first",
-    body: "The common thread across these projects is structure: understanding the problem, shaping the data flow, and building a system that stays useful as it grows.",
+    body: "The common thread across my projects is structure: understanding the problem, shaping the data flow, and building a system that can keep growing.",
   },
   {
     title: "AI with purpose",
-    body: "I'm interested in AI when it improves real workflows, whether that means insight generation, content alignment, or reducing repetitive work.",
+    body: "I am interested in AI when it improves real workflows, whether that means insight generation, semantic matching, structured recommendations, or reducing repetitive work.",
   },
   {
     title: "Ownership",
@@ -27,7 +27,7 @@ export default function Projects() {
         <SectionIntro
           eyebrow="Projects"
           title="Case studies shaped by architecture, workflow, and delivery."
-          subtitle="These projects show how I work: define the problem, design the system, and build something people can actually use."
+          subtitle="These projects show how I work: define the problem, model the system, build the product, and keep improving it until it is useful in real life."
         />
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -52,7 +52,7 @@ export default function Projects() {
           <SectionIntro
             eyebrow="Next"
             title="I'm looking for environments where I can keep building and getting sharper."
-            subtitle="If you need a systems-minded engineer who can work across backend and UI concerns and grow in client-facing environments, let's talk."
+            subtitle="If you need a systems-minded engineer who can work across backend, frontend, data, and AI-enabled workflows, let's talk."
           />
 
           <div className="mt-6">

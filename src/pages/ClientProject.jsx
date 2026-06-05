@@ -35,36 +35,41 @@ export default function ClientProject() {
         </div>
 
         <p className="mt-8 text-zinc-700 max-w-3xl mx-auto">
-          During the client project, our cohort partnered with United Airlines to
-          solve a real business challenge. Our team, Metis, delivered a customer
-          analytics platform with AI-powered insights, executive dashboards, and
-          data visualizations that helped leaders understand customer feedback
-          across hubs.
+          During the client project, our cohort partnered with United Airlines
+          to solve a real business challenge around customer feedback,
+          executive visibility, and operational insight. Our team, Metis,
+          delivered a customer analytics platform with AI-powered insights, KPI
+          dashboards, and data visualizations that helped leaders understand
+          customer feedback across hubs.
         </p>
 
         {/* DEMO LOGIN HELP */}
         <div className="mt-8 max-w-2xl mx-auto rounded-xl border border-emerald-100 bg-emerald-50 px-5 py-4 text-slate-900">
           <h3 className="text-lg font-semibold mb-2">Try the live demo</h3>
           <p className="text-sm text-slate-700 mb-3">
-            Use one of these demo accounts to sign in and explore the dashboard flows:
+            Use one of these demo accounts to sign in and explore the dashboard
+            flows.
           </p>
           <ul className="text-sm space-y-3 text-slate-800">
             <li>
               <p className="font-semibold text-slate-900">Executive</p>
               <p className="text-slate-700">
-                Username: <code>exec</code> &nbsp;|&nbsp; Password: <code>exec123</code>
+                Username: <code>exec</code> &nbsp;|&nbsp; Password:{" "}
+                <code>exec123</code>
               </p>
             </li>
             <li>
               <p className="font-semibold text-slate-900">Admin</p>
               <p className="text-slate-700">
-                Username: <code>admin</code> &nbsp;|&nbsp; Password: <code>admin123</code>
+                Username: <code>admin</code> &nbsp;|&nbsp; Password:{" "}
+                <code>admin123</code>
               </p>
             </li>
             <li>
               <p className="font-semibold text-slate-900">Analyst</p>
               <p className="text-slate-700">
-                Username: <code>cfa</code> &nbsp;|&nbsp; Password: <code>cfa123</code>
+                Username: <code>cfa</code> &nbsp;|&nbsp; Password:{" "}
+                <code>cfa123</code>
               </p>
             </li>
           </ul>
@@ -79,11 +84,11 @@ export default function ClientProject() {
 
         <p className="text-zinc-700 max-w-3xl">
           United receives massive amounts of customer feedback through surveys,
-          comments, and internal systems. Executives needed a faster way to see
-          sentiment trends, feedback volume, and loyalty metrics across hubs, and
-          to identify issues that required immediate attention. They needed one
-          place for clear, real-time insight instead of scattered reports and
-          manual analysis.
+          comments, and internal systems. Executives and analysts needed a
+          faster way to see sentiment trends, feedback volume, loyalty metrics,
+          and hub-level issues that required attention. They needed one place
+          for clear insight instead of scattered reports and manual
+          interpretation.
         </p>
       </Section>
 
@@ -102,17 +107,17 @@ export default function ClientProject() {
         </h2>
 
         <p className="mb-4 text-zinc-700 max-w-3xl">
-          We treated the engagement like a real consulting project. We met with
-          stakeholders to understand the decisions they needed to make, designed
-          wireframes around executive workflows, and planned an architecture
-          that combined a React-based dashboard, AI insights powered by
-          Anthropic Claude, and Power BI integration for deeper reporting.
+          We treated the engagement like a real consulting project. We listened
+          to the business problem first, then designed the dashboard around the
+          decisions stakeholders needed to make. The system combined a
+          React-based dashboard, AI-generated insight summaries, role-aware
+          access, and Power BI-supported reporting.
         </p>
 
         <p className="text-zinc-700 max-w-3xl">
-          We focused on clarity, speed, and usability: fast filtering, clear
-          KPIs, hub comparisons, and AI summaries that surfaced what mattered
-          most.
+          We focused on clarity, speed, and usefulness: fast filtering, clear
+          KPIs, hub comparisons, customer sentiment, and structured AI
+          recommendations that surfaced what mattered most.
         </p>
       </Section>
 
@@ -133,9 +138,15 @@ export default function ClientProject() {
 
           <Card title="AI Integration & Data Logic">
             <ul className="list-disc list-inside space-y-1">
-              <li>Worked on prompt and response flow for Sparky AI.</li>
-              <li>Shaped how AI insights surfaced for executives.</li>
-              <li>Connected front-end components to data and state.</li>
+              <li>
+                Worked on the prompt and response flow for AI-generated insight
+                summaries.
+              </li>
+              <li>
+                Shaped how AI recommendations surfaced for executives and
+                analysts.
+              </li>
+              <li>Connected frontend components to data and state.</li>
             </ul>
           </Card>
 
@@ -143,7 +154,7 @@ export default function ClientProject() {
             <ul className="list-disc list-inside space-y-1">
               <li>Debugged under tight deadlines with the team.</li>
               <li>Helped present the solution to United stakeholders.</li>
-              <li>Owned complex dashboard sections end-to-end.</li>
+              <li>Owned complex dashboard sections from build through delivery.</li>
             </ul>
           </Card>
         </div>
@@ -164,15 +175,14 @@ export default function ClientProject() {
         </h2>
 
         <p className="mb-4 text-zinc-700 max-w-3xl">
-          Four teams competed to solve United&apos;s challenge. Metis won. United
-          told us we were the team that truly understood the problem and
+          Four teams competed to solve United&apos;s challenge. Metis won.
+          United told us we were the team that truly understood the problem and
           delivered a functional product aligned with their needs.
         </p>
 
         <p className="mb-6 text-zinc-700 max-w-3xl">
-          That recognition from a global airline confirmed that I can deliver
-          at a professional level right now, in both engineering and consulting
-          environments.
+          That recognition confirmed that I can deliver at a professional level
+          in both engineering and consulting-style environments.
         </p>
 
         {/* SECONDARY CTA */}
@@ -194,10 +204,10 @@ export default function ClientProject() {
 
         <p className="mb-3 font-medium text-slate-900">Technical growth:</p>
         <ul className="list-disc list-inside mb-6 space-y-1 text-zinc-700">
-          <li>Scalable React dashboard architecture.</li>
-          <li>Designing for executive decision-making.</li>
-          <li>Integrating AI into real business workflows.</li>
-          <li>Managing state, filters, and performance.</li>
+          <li>Building dashboard systems around real business questions.</li>
+          <li>Designing KPI layouts for executive decision-making.</li>
+          <li>Connecting AI-generated insight to structured user workflows.</li>
+          <li>Debugging and delivering under real client deadlines.</li>
         </ul>
 
         <p className="mb-3 font-medium text-slate-900">

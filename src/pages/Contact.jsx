@@ -6,10 +6,11 @@ import resumePdf from "../data/Bonny_Makaniankhondo_Resume_FSD.pdf";
 import { contactLinks, leadershipImages } from "../data/portfolioContent";
 
 const strengths = [
-  "Systems-minded engineering from backend structure to UI delivery",
-  "Strong problem solving in fast-moving, ambiguous environments",
-  "Client-facing communication and ownership mindset",
-  "Growth orientation with real interest in strong teams and mentors",
+  "Systems-minded engineering from backend structure to UI delivery.",
+  "Practical experience building live SaaS, client dashboards, and AI-enabled workflows.",
+  "Strong problem solving in fast-moving, ambiguous environments.",
+  "Client-facing communication and ownership mindset.",
+  "Growth orientation with real interest in strong teams and mentors.",
 ];
 
 export default function Contact() {
@@ -20,8 +21,8 @@ export default function Contact() {
           <div>
             <SectionIntro
               eyebrow="Contact"
-              title="Full Stack Software Engineer building product systems across frontend, backend, data, and AI workflows."
-              subtitle="If you're building products that need thoughtful engineering, strong problem solving, and someone who can grow quickly in a fast-moving environment, I'd love to connect."
+              title="Full Stack Software Engineer building product systems across frontend, backend, data, authentication, and AI workflows."
+              subtitle="If you are building products that need thoughtful engineering, strong problem solving, and someone who can grow quickly in a fast-moving environment, I would like to connect."
             />
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -69,7 +70,7 @@ export default function Contact() {
               </p>
               <p className="mt-3 text-lg font-semibold tracking-tight text-slate-950">
                 Strong teams, meaningful product work, and environments that
-                value clarity, performance, and growth.
+                value clarity, reliability, and growth.
               </p>
             </div>
           </div>
@@ -95,8 +96,8 @@ export default function Contact() {
 
           <Card title="Resume">
             <p className="mb-4">
-              If you want a quick summary of my experience, projects, and
-              current direction, you can download my resume here.
+              For a quick summary of my experience, projects, and current
+              direction, download my latest resume.
             </p>
             <Button href={resumePdf} download variant="secondary">
               Download Resume
@@ -110,9 +111,9 @@ export default function Contact() {
           <SectionIntro
             eyebrow="Let's connect"
             eyebrowClassName="text-teal-200"
-            title="If you need a full stack engineer who can take ownership, understand the workflow, and build across UI, backend, data, and deployment, I'd like to hear about the work."
+            title="If you need a full stack engineer who can take ownership, understand the workflow, and build across UI, backend, data, authentication, and deployment, I would like to hear about the work."
             titleClassName="text-white"
-            subtitle="I'm especially interested in full stack, backend/API-focused, and solutions-oriented engineering roles where I can keep growing while contributing real value."
+            subtitle="I am especially interested in full stack, backend/API-focused, AI product, and solutions-oriented engineering roles where I can keep growing while contributing real value."
             subtitleClassName="text-slate-300"
           />
           <div className="mt-6">

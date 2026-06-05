@@ -27,7 +27,7 @@ export default function Leadership() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,400px)] lg:items-end">
           <SectionIntro
             eyebrow="Leadership"
-            title="The goal is not just to write code well. It’s to become someone teams can rely on."
+            title="The goal is not just to write code well. It is to become someone teams can rely on."
             subtitle="My leadership growth shows up in how I communicate, how I listen, how I handle pressure, and how I keep moving when the work gets hard."
           />
 
@@ -141,7 +141,7 @@ export default function Leadership() {
           <div className="max-w-3xl">
             <SectionIntro
               eyebrow="Long-term"
-              title="I’m growing toward the kind of engineer who can solve problems, support people, and keep teams steady."
+              title="I am growing toward the kind of engineer who can solve problems, support people, and keep teams steady."
               subtitle="That means continuing to build technical depth while becoming more reliable in communication, delivery, and collaboration."
             />
           </div>

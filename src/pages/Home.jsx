@@ -24,23 +24,23 @@ import {
 const heroCards = [
   {
     icon: <Code2 className="h-5 w-5 text-teal-200" />,
-    title: "Live SaaS product",
-    body: "Built Time Ledger for real timesheet, billing, workspace, and team operations workflows.",
+    title: "Live SaaS Product",
+    body: "Built Time Ledger for real timesheet, billing, workspace, team, and client-management workflows.",
   },
   {
     icon: <Workflow className="h-5 w-5 text-teal-300" />,
-    title: "Workflow ownership",
-    body: "I like turning messy manual processes into systems that are clear, repeatable, and useful.",
+    title: "Workflow Ownership",
+    body: "I like turning manual, scattered processes into systems that are clear, repeatable, and useful.",
   },
   {
     icon: <Cpu className="h-5 w-5 text-teal-300" />,
-    title: "AI workflow experience",
-    body: "I use AI where it improves alignment, speed, and signal instead of treating it like a gimmick.",
+    title: "AI Workflow Experience",
+    body: "I use AI where it improves alignment, speed, structure, and signal instead of treating it like a gimmick.",
   },
   {
     icon: <MessageSquareText className="h-5 w-5 text-teal-300" />,
-    title: "Client-facing delivery",
-    body: "I work toward being the kind of engineer who can build clearly, explain tradeoffs, and handle feedback well.",
+    title: "Client-Facing Delivery",
+    body: "I work toward being the kind of engineer who can build clearly, explain tradeoffs, handle feedback, and deliver under pressure.",
   },
 ];
 
@@ -51,15 +51,15 @@ const skillGroups = [
   },
   {
     title: "Frontend",
-    body: "React, Next.js, Vite, Tailwind CSS, React Router, TanStack Query, Recharts",
+    body: "React, Next.js, Vite, Tailwind CSS, React Router, TanStack Query, Recharts, responsive UI",
   },
   {
-    title: "Backend & Data",
-    body: "FastAPI, Node.js, Express, REST APIs, GraphQL, PostgreSQL, MySQL, Supabase, SQLAlchemy, Prisma",
+    title: "Backend, APIs & Auth",
+    body: "Node.js, Express, Fastify, FastAPI, REST APIs, GraphQL, JWT, OAuth, RBAC, Supabase Auth",
   },
   {
-    title: "AI, Auth & Delivery",
-    body: "LLM APIs, RAG concepts, pgvector, Supabase Auth, RBAC, Docker, Railway, Netlify, GitHub Actions",
+    title: "Data, AI & Delivery",
+    body: "PostgreSQL, MySQL, SQLAlchemy, Alembic, Prisma, pgvector, RAG, LLM APIs, Docker, Railway, Netlify, GitHub Actions, Git",
   },
 ];
 
@@ -117,20 +117,21 @@ export default function Home() {
             />
 
             <p className="mt-8 max-w-2xl text-xl leading-8 text-slate-800 sm:text-2xl">
-              I build full-stack products that connect real workflows, backend
-              systems, data, and UI into software people can actually use.
+              I build full-stack products that turn messy workflows into clear,
+              usable systems across frontend, backend, data, authentication,
+              and AI-enabled workflows.
             </p>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
               My strongest work sits at the intersection of product thinking
               and engineering execution: live SaaS products, client dashboards,
-              AI-supported workflows, authentication, data modeling, and clear
-              user flows.
+              AI-supported workflows, secure authentication, relational data
+              modeling, and clear user flows.
             </p>
 
             <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-              Looking for strong teams where I can keep shipping, keep learning,
-              and keep raising my technical bar.
+              I am looking for strong teams where I can keep shipping, keep
+              learning, and keep raising my technical bar.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -184,8 +185,9 @@ export default function Home() {
                   Target roles
                 </p>
                 <p className="mt-3 text-sm leading-6 text-slate-200">
-                  Full Stack Software Engineer, backend and API-focused roles,
-                  and solutions or consulting-oriented engineering work.
+                  Full Stack Software Engineer, backend/API-focused roles, AI
+                  product engineering roles, and solutions or
+                  consulting-oriented engineering work.
                 </p>
               </div>
             </div>
@@ -252,9 +254,11 @@ export default function Home() {
         </div>
 
         <div className="mt-8 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
-          My background and experiences have shaped how I think about systems:
-          design with intention, build for reliability, and always keep the user
-          in mind.
+          I am a full stack software engineer who likes building systems that
+          solve real problems. My path into software, along with my experience
+          in industrial work, client delivery, and leadership development,
+          shaped me into a builder who values structure, resilience, and
+          real-world impact.
         </div>
       </Section>
 
@@ -376,7 +380,7 @@ export default function Home() {
             eyebrowClassName="text-teal-200"
             title="If you're looking for someone who learns fast, thinks in systems, and takes ownership, I'd love to connect."
             titleClassName="text-white"
-            subtitle="I'm looking for strong teams, meaningful product work, and environments that value clarity, performance, and growth."
+            subtitle="I'm looking for strong teams, meaningful product work, and environments that value clarity, reliability, and growth."
             subtitleClassName="text-slate-300"
           />
 
