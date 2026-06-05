@@ -78,9 +78,13 @@ export default function Contact() {
       </Section>
 
       <Section tone="subtle">
-        <div className="grid gap-4 lg:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
           {contactLinks.map((link) => (
-            <Card key={link.label} title={link.label}>
+            <Card
+              key={link.label}
+              title={link.label}
+              className="flex min-h-[7.5rem] flex-col justify-center !p-4 sm:!p-5"
+            >
               <a
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : "_self"}
@@ -94,14 +98,24 @@ export default function Contact() {
             </Card>
           ))}
 
-          <Card title="Resume">
-            <p className="mb-4">
-              For a quick summary of my experience, projects, and current
-              direction, download my latest resume.
-            </p>
-            <Button href={resumePdf} download variant="secondary">
-              Download Resume
-            </Button>
+          <Card
+            title="Resume"
+            className="flex min-h-[7.5rem] flex-col justify-center !p-4 sm:!p-5"
+          >
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm leading-5">
+                For a quick summary of my experience, projects, and current
+                direction, download my latest resume.
+              </p>
+              <Button
+                href={resumePdf}
+                download
+                variant="secondary"
+                className="shrink-0 px-4 py-2.5"
+              >
+                Download Resume
+              </Button>
+            </div>
           </Card>
         </div>
       </Section>

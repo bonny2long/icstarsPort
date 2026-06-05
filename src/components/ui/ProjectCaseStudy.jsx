@@ -5,7 +5,7 @@ import ProjectImagePreview from "./ProjectImagePreview";
 
 function DetailBlock({ items, text, title }) {
   return (
-    <Card className="flex h-full min-h-[14.5rem] flex-col" title={title}>
+    <Card className="flex h-full flex-col" title={title}>
       {text ? <p className={items?.length ? "mb-4" : ""}>{text}</p> : null}
       {items?.length ? (
         <ul className="space-y-2">
@@ -119,14 +119,16 @@ export default function ProjectCaseStudy({ index = 0, project }) {
           </div>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="flex flex-col gap-4">
           <DetailBlock text={project.problem} title="What problem it solves" />
-          <DetailBlock
-            items={project.system}
-            text={project.systemText}
-            title={project.systemTitle}
-          />
-          <DetailBlock items={project.owned} title="What I owned" />
+          <div className="grid gap-4 md:grid-cols-2">
+            <DetailBlock
+              items={project.system}
+              text={project.systemText}
+              title={project.systemTitle}
+            />
+            <DetailBlock items={project.owned} title="What I owned" />
+          </div>
           <DetailBlock items={project.decisions} title="Technical decisions that mattered" />
         </div>
 
