@@ -1,19 +1,17 @@
 import chefBonBonImage from "../assets/photos/chefbot.png";
-import geekWeekImage from "../assets/photos/geekweek2.jpg";
-import headshotImage from "../assets/photos/headshot_contact.jpg";
 import syncUpDashboardImage from "../assets/photos/syncupV30.png";
 import syncUpDirectoryImage from "../assets/photos/syncupV31.png";
 import syncUpProjectImage from "../assets/photos/syncupV32.png";
 import syncUpAdminImage from "../assets/photos/syncupV33.png";
-import teaHostImage from "../assets/photos/teaguest.jpg";
-import teamWeekImage from "../assets/photos/teamweek.jpg";
 import timeLedgerPrimaryImage from "../assets/photos/timeledger1 2.png";
 import timeLedgerSecondaryImage from "../assets/photos/timeledger2.png";
-import unitedTeamImage from "../assets/photos/winning_team.jpg";
 import unitedImage from "../assets/photos/dasha.png";
 import workingImage from "../assets/photos/working.png";
+import bmRadioAudiobookImage from "../assets/projects/bm-radio/bm-radio-audiobook.jpg";
+import bmRadioLibraryImage from "../assets/projects/bm-radio/bm-radio-library.jpg";
+import bmRadioNowPlayingImage from "../assets/projects/bm-radio/bm-radio-now-playing.jpg";
 
-export const portfolioProjects = [
+export const projects = [
   {
     slug: "time-ledger",
     eyebrow: "Full-stack SaaS",
@@ -58,14 +56,178 @@ export const portfolioProjects = [
       "Time Ledger is the strongest portfolio proof point because it covers the real surface area of a SaaS product: tenancy, auth, invites, role-aware behavior, data modeling, billing logic, reporting, onboarding, deployment, and lifecycle safeguards.",
     note: "The live product is public at timeledger.me. The repository is private, so this case study focuses on architecture, workflow decisions, and product behavior rather than source-code access.",
     status: "Live product",
+    workMeta: "React 19 · FastAPI · PostgreSQL · Multi-tenant SaaS",
     image: timeLedgerPrimaryImage,
     imageAlt: "Time Ledger workspace dashboard and timesheet interface",
+    media: {
+      kind: "dashboard",
+      tone: "ink",
+      indexAspect: "aspect-[16/9]",
+      objectPosition: "object-top",
+    },
     liveHref: "https://timeledger.me/",
     gallery: [
       {
         image: timeLedgerSecondaryImage,
         alt: "Time Ledger billing and reporting interface",
         title: "Billing and reporting view",
+        caption:
+          "A supporting view of the reporting workflow that turns tracked time into client-ready output.",
+      },
+    ],
+  },
+  {
+    slug: "nas-media-platform",
+    eyebrow: "Multi-service systems engineering",
+    title: "Personal Media Infrastructure Platform",
+    shortTitle: "Personal Media Infrastructure",
+    summary:
+      "Designed and built a four-service personal media infrastructure platform that moves digital media from safe intake through human-reviewed organization into private listener-facing libraries.",
+    secondary:
+      "Final local software acceptance complete. Physical TrueNAS deployment is intentionally deferred.",
+    productSummary:
+      "BM Radio provides the music and audiobook experience, while Intake Watcher, Archive Assistant, and Cleaner independently manage stability, archive organization, and evidence-driven cleanup.",
+    highlights: [
+      "Four independently owned services with final local workflow acceptance.",
+      "21-file real-media canary completed with zero SHA-256 mismatches.",
+      "Clear write boundaries, human-approved final moves, and fail-closed cleanup behavior.",
+      "BM Radio indexed 275 physical tracks as 261 logical recordings using PostgreSQL.",
+    ],
+    problem:
+      "A long-term personal media archive needs more than storage. It needs safe intake, classification, human review, final-library organization, listener-facing access, auditability, and conservative leftover handling without accidental deletion.",
+    systemTitle: "Four-service architecture",
+    systemText:
+      "Each application owns a narrow responsibility so upload handling, classification, playback, and cleanup evidence do not blur into one unsafe process.",
+    system: [
+      "Intake Watcher promotes stable completed uploads without deep classification or final-library ownership.",
+      "Archive Assistant reconstructs and classifies non-photo media, supports human approval, performs final moves, and records manifests.",
+      "BM Radio provides music and audiobook listening, playlists, history, and progress using PostgreSQL with read-only final-library media access.",
+      "Cleaner reads post-move evidence and produces dry-run leftover reports; destructive deletion is disabled.",
+    ],
+    services: [
+      {
+        name: "Intake Watcher",
+        responsibility: "Stable upload promotion",
+        details: [
+          "Checks upload stability before promotion into a ready state.",
+          "Does not perform deep classification.",
+          "Does not own final-library placement.",
+        ],
+      },
+      {
+        name: "Archive Assistant",
+        responsibility: "Review and final moves",
+        details: [
+          "Reconstructs and classifies non-photo media.",
+          "Supports metadata review and human approval.",
+          "Performs approved final moves and records manifests for audit.",
+        ],
+      },
+      {
+        name: "BM Radio",
+        responsibility: "Listener-facing playback",
+        details: [
+          "Provides music and audiobook library, radio, playlists, history, and progress.",
+          "Uses PostgreSQL and preferred physical-source selection.",
+          "Treats final-library media as read-only.",
+        ],
+      },
+      {
+        name: "Cleaner",
+        responsibility: "Conservative leftover review",
+        details: [
+          "Reads Archive Assistant post-move evidence.",
+          "Classifies leftovers and produces dry-run reports.",
+          "Fails closed; destructive deletion remains disabled.",
+        ],
+      },
+    ],
+    owned: [
+      "Designed the ownership and write boundaries across all four applications.",
+      "Built acceptance around real media, duplicate handling, hashes, regression baselines, and recovery documentation.",
+      "Kept human approval in front of final Archive Assistant moves and cleanup fail-closed.",
+      "Chose PostgreSQL for BM Radio and SQLite for Archive Assistant based on their different responsibilities.",
+    ],
+    decisions: [
+      "Only Cleaner may eventually gain deletion authority; deletion is currently disabled.",
+      "Archive Assistant final moves require human approval and retain evidence for later review.",
+      "Playback remains outside the cleanup path and uses read-only access to final media.",
+      "Local acceptance is stated separately from deferred physical TrueNAS deployment.",
+    ],
+    proof: [
+      {
+        label: "Independently owned services",
+        value: "4",
+        detail: "Narrow contracts across intake, organization, playback, and cleanup",
+      },
+      {
+        label: "Real-media acceptance",
+        value: "21 / 21",
+        detail: "Copied files completed",
+      },
+      {
+        label: "SHA-256 mismatches",
+        value: "0",
+        detail: "Every acceptance file verified",
+      },
+      {
+        label: "Logical recordings indexed",
+        value: "261",
+        detail: "From 275 physical tracks",
+      },
+    ],
+    supportingProof: [
+      {
+        label: "BM Radio",
+        value: "63 passed · 0 failed · 4 skipped",
+      },
+      {
+        label: "Intake Watcher",
+        value: "14 / 14 passed",
+      },
+      {
+        label: "Cleaner",
+        value: "9 / 9 passed · deletion disabled",
+      },
+    ],
+    interesting:
+      "This platform demonstrates systems engineering beyond a single application: service boundaries, data ownership, conservative automation, multiple intentional database choices, real-media verification, testing, and recovery discipline.",
+    note:
+      "Cleaner destructive actions remain disabled. Playback is isolated from cleanup, and BM Radio cannot mutate archive media.",
+    status: "Local acceptance passed",
+    workMeta: "4 services · 21 / 21 files · 0 hash mismatches",
+    imageAlt:
+      "BM Radio listener interface representing the product layer of the personal media infrastructure platform",
+    visualLabels: ["Intake Watcher", "Archive Assistant", "BM Radio", "Cleaner"],
+    media: {
+      kind: "mobile-stack",
+      tone: "violet",
+      images: {
+        nowPlaying: bmRadioNowPlayingImage,
+        library: bmRadioLibraryImage,
+        audiobook: bmRadioAudiobookImage,
+      },
+    },
+    repositories: [
+      {
+        name: "BM Radio",
+        responsibility: "Listener-facing music and audiobook product",
+        href: "https://github.com/bonny2long/BM_radio",
+      },
+      {
+        name: "Archive Assistant",
+        responsibility: "Human-reviewed organization and final moves",
+        href: "https://github.com/bonny2long/archive_assistant",
+      },
+      {
+        name: "Cleaner",
+        responsibility: "Evidence-driven, report-only leftover review",
+        href: "https://github.com/bonny2long/cleaner",
+      },
+      {
+        name: "Intake Watcher",
+        responsibility: "Stable upload promotion",
+        href: "https://github.com/bonny2long/intake-watcher",
       },
     ],
   },
@@ -115,32 +277,45 @@ export const portfolioProjects = [
     interesting:
       "This project shows ownership beyond feature building. It required product direction, role semantics, data modeling, admin workflows, authentication decisions, mobile UX, production readiness, and a clear understanding of how a real community might operate inside software.",
     status: "Active platform build",
+    workMeta: "React · Supabase · RBAC · Community operations",
     image: syncUpDashboardImage,
     imageAlt: "ICAA Headquarters dashboard interface",
+    media: {
+      kind: "workflow",
+      tone: "sand",
+      indexAspect: "aspect-[16/10]",
+      objectPosition: "object-top",
+    },
     gallery: [
       {
         image: syncUpDirectoryImage,
         alt: "ICAA Headquarters community directory interface",
         title: "Community directory",
+        caption:
+          "Role-aware member discovery designed around a real community operating model.",
       },
       {
         image: syncUpProjectImage,
         alt: "ICAA Headquarters project and collaboration interface",
         title: "Project collaboration",
+        caption:
+          "Projects and collaboration workflows connect members to active work.",
       },
       {
         image: syncUpAdminImage,
         alt: "ICAA Headquarters admin workflow interface",
         title: "Admin workflow",
+        caption:
+          "Administrative controls make lifecycle and governance responsibilities visible.",
       },
     ],
     githubHref: "https://github.com/bonny2long/SyncUp",
   },
   {
-    slug: "united-airlines-dashboard",
-    eyebrow: "Client delivery",
-    title: "United Airlines Dashboard",
-    shortTitle: "United Airlines Dashboard",
+    slug: "united-airlines-customer-insights",
+    eyebrow: "i.c.stars client / RFP delivery",
+    title: "United Airlines Customer Insights",
+    shortTitle: "United Customer Insights",
     summary:
       "A full-stack analytics platform built during i.c.stars for United Airlines to help executives and analysts understand customer feedback, sentiment, and operational insights.",
     secondary:
@@ -180,8 +355,16 @@ export const portfolioProjects = [
     interesting:
       "This is one of the strongest proof points because it combines frontend architecture, product thinking, AI-supported workflows, business translation, and client-facing delivery pressure in one project.",
     note: "Winning solution delivered as part of a real client engagement with United Airlines through i.c.stars.",
+    status: "Winning client delivery",
+    workMeta: "React · AI insights · KPI dashboards · Winning RFP",
     image: unitedImage,
     imageAlt: "United Airlines customer analytics dashboard interface",
+    media: {
+      kind: "data",
+      tone: "blue",
+      indexAspect: "aspect-[4/3]",
+      objectPosition: "object-top",
+    },
     liveHref: "https://dash-by-metis.netlify.app/",
     githubHref: "https://github.com/bonny2long/Metis",
   },
@@ -285,82 +468,3 @@ export const portfolioProjects = [
     githubHref: "https://github.com/bonny2long/ChefBonBon",
   },
 ];
-
-export const buildPrinciples = [
-  {
-    title: "Start With the Real Problem",
-    body: "Every project starts with understanding what is actually broken, who feels the friction, and what the system needs to support before I start adding features.",
-  },
-  {
-    title: "Map the Data Flow",
-    body: "I think through entities, relationships, state, permissions, and API responsibilities early so the product can grow without getting tangled.",
-  },
-  {
-    title: "Build for Clarity",
-    body: "I prefer understandable systems over clever ones. Clear structure makes performance, maintenance, debugging, and collaboration easier later.",
-  },
-  {
-    title: "Make the Interface Serve the Workflow",
-    body: "Once the backend shape and system flow are solid, I use the UI to make the product easier to understand, faster to navigate, and more useful in real work.",
-  },
-];
-
-export const aboutSignals = [
-  {
-    title: "Systems-Minded",
-    body: "I approach problems from the ground up, focusing on architecture, data flow, permissions, and product usefulness before surface polish.",
-  },
-  {
-    title: "Reliability-Focused",
-    body: "My industrial and electrical background shaped how I think about systems: plan carefully, protect what matters, diagnose issues, and build things that hold up under pressure.",
-  },
-  {
-    title: "Maintainability-Focused",
-    body: "The goal is not just to ship once. I want to leave behind code, structure, and documentation that a team can keep building on.",
-  },
-];
-
-export const leadershipPillars = [
-  {
-    title: "Communication",
-    body: "I keep technical conversations clear, direct, and grounded in the problem so teams and stakeholders can move faster.",
-  },
-  {
-    title: "Listening",
-    body: "A lot of better engineering starts with listening well: hearing what users need, what teammates are seeing, and where the real friction is.",
-  },
-  {
-    title: "Client-facing growth",
-    body: "Real delivery work taught me how to translate constraints, feedback, and business context into better product decisions.",
-  },
-  {
-    title: "Resilience",
-    body: "Pressure has made me steadier. When something breaks or a deadline tightens, I reset, adapt, and keep moving.",
-  },
-];
-
-export const contactLinks = [
-  {
-    label: "Email",
-    href: "mailto:bmakaniankhondo@icstars.org",
-    value: "bmakaniankhondo@icstars.org",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/bonny2long",
-    value: "github.com/bonny2long",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/bonny-makaniankhondo-bb95a3321/",
-    value: "linkedin.com/in/bonny-makaniankhondo",
-  },
-];
-
-export const leadershipImages = {
-  geekWeek: geekWeekImage,
-  headshot: headshotImage,
-  teaHost: teaHostImage,
-  teamWeek: teamWeekImage,
-  unitedTeam: unitedTeamImage,
-};

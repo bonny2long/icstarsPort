@@ -4,6 +4,7 @@ export default function Section({
   id,
   innerClassName = "",
   tone = "default",
+  ...sectionProps
 }) {
   const tones = {
     default: "bg-transparent",
@@ -16,6 +17,7 @@ export default function Section({
     <section
       id={id}
       className={`relative py-16 sm:py-20 lg:py-24 ${tones[tone]} ${className}`}
+      {...sectionProps}
     >
       <div className={`mx-auto w-full max-w-7xl px-4 sm:px-5 lg:px-8 ${innerClassName}`}>
         {children}

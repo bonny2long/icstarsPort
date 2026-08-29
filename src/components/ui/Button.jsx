@@ -27,7 +27,7 @@ export default function Button({
 
   if (to) {
     return (
-      <Link to={to} className={classNameValue}>
+      <Link to={to} className={classNameValue} onClick={onClick}>
         {children}
       </Link>
     );

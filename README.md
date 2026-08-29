@@ -1,105 +1,72 @@
-# Bonny Makaniankhondo Portfolio
+# Bonny Makaniankhondo — Portfolio V2.1
 
-A React portfolio site for presenting my work as a systems-minded full stack engineer. The site combines project case studies, leadership experience, and contact information in a polished single-page style experience with dedicated routes for deeper reading.
+A React portfolio presenting my current work across software engineering, data and analytics, and AI-enabled systems.
 
-## About
+## Current Profile
 
-This portfolio is designed to show more than screenshots. It focuses on how I think about systems, product workflows, backend structure, and real-world delivery.
+I am a Software Engineer and Data & Analytics Apprentice at Aon within its Construction & Infrastructure practice in Chicago. The portfolio connects current enterprise analytics development with my background in full-stack products, backend systems, client-facing delivery, and applied AI workflows.
 
-The current project lineup includes:
+## Featured Work
 
-- **Time Ledger** - a live full-stack SaaS product for weekly timesheets, client billing, project tracking, team invites, and workspace operations
-- **ICAA Headquarters / SyncUp** - an active community operations platform for alumni, residents, mentors, projects, events, and collaboration workflows
-- **United Airlines Dashboard** - a client-facing analytics product built under real delivery constraints
-- **ChefBonBon** - an AI recipe product redesigned around a stronger relational backend
-- **Resume Agent** - an AI-assisted workflow system for tailored job application materials
+- **Time Ledger** — a live multi-workspace SaaS product for time tracking, teams, clients, projects, reporting, and billing workflows
+- **Personal Media Infrastructure Platform** — a locally proven four-service system with BM Radio as its listener-facing product layer and conservative intake, organization, and cleanup boundaries underneath
+- **United Airlines Customer Insights** — a client/RFP analytics and AI-supported insight solution delivered through i.c.stars
+- **ICAA Headquarters / SyncUp** — a role-aware community operations platform for members, projects, bookings, collaboration, and administration
+- **Resume Agent** and **Chef BonBon** — additional applied-AI and product engineering work
 
-## Live Project Highlight
+## Stack
 
-- **Time Ledger Live App**: https://timeledger.me/
+- React 19 and React Router 7
+- Vite 7
+- Tailwind CSS 4 and custom application styles
+- Lucide React
+- `@chenglou/pretext` for selected editorial headings
 
-## Tech Stack
-
-- **Frontend**: React 19, React Router 7
-- **Styling**: Tailwind CSS 4 and custom application styles
-- **Build Tool**: Vite 7
-- **Typography / Experimental UI**: `@chenglou/pretext`
-- **Icons**: Lucide React
-
-## Site Features
-
-- Responsive layout across desktop and mobile
-- Project cards on the home page with deeper case studies on the projects page
-- Image preview modals for portfolio screenshots
-- Leadership and growth storytelling alongside technical work
-- Resume download and direct contact links
-- Shared data-driven project content powering multiple pages
+No component framework or new runtime dependency was added for the V2 redesign.
 
 ## Routes
 
-- **Home (`/`)** - introduction, featured work, engineering approach, and leadership highlights
-- **Projects (`/projects`)** - full project case studies including Time Ledger
-- **Leadership (`/leadership`)** - leadership experience, growth, and team-facing context
-- **Contact (`/contact`)** - ways to connect
+- `/` — Home
+- `/work` — flagship and additional work
+- `/work/:slug` — reusable project case studies
+- `/experience` — experience, education, and professional development
+- `/about` — systems approach, technical background, working style, and the `#contact` action section
+- `/contact` — legacy redirect to `/about#contact`
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18 or higher
-- npm
-
-### Installation
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/bonny2long/icstarsPort.git
-   cd icstarsPort
-   ```
-
-2. Install dependencies
-   ```bash
-   npm install
-   ```
-
-3. Start the development server
-   ```bash
-   npm run dev
-   ```
-
-4. Open `http://localhost:5173`
-
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start the Vite development server |
-| `npm run build` | Build the site for production |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint |
+Legacy paths (`/projects`, `/leadership`, `/career`, `/client`, `/geekweek`, `/wellness`, and `/contact`) redirect to the appropriate current route.
 
 ## Project Structure
 
 ```text
+docs/
+  resume/       Canonical 2026 resume source, print template, and drafts
 src/
-  assets/         Static images and media
-  components/
-    layout/       Shared page layout components
-    ui/           Reusable interface components
-  data/           Portfolio content and resume assets
-  pages/          Route-level page components
-  App.jsx         Application routes
-  index.css       Global styles
-  main.jsx        React entry point
+  assets/       Portfolio imagery, including original BM Radio evidence
+  components/   Shared layout, UI, and editorial project-media components
+  data/         Profile, projects, experience, education, skills, and leadership data
+  pages/        Home, Work, WorkDetail, Experience, and About
 ```
 
-## Author
+## Local Development
 
-**Bonny Makaniankhondo**
+```bash
+npm install
+npm run dev
+```
 
-- LinkedIn: [linkedin.com/in/bonny-makaniankhondo-bb95a3321](https://www.linkedin.com/in/bonny-makaniankhondo-bb95a3321/)
-- GitHub: [github.com/bonny2long](https://github.com/bonny2long)
+Production checks:
 
-## License
+```bash
+npm run lint
+npm run build
+npm run preview
+```
 
-This project is open source and available under the MIT License.
+There is currently no automated unit-test script in `package.json`.
+
+## Links
+
+- Portfolio: [bonnymak.tech](https://bonnymak.tech)
+- Time Ledger: [timeledger.me](https://timeledger.me)
+- LinkedIn: [Bonny Makaniankhondo](https://www.linkedin.com/in/bonny-makaniankhondo-bb95a3321/)
+- GitHub: [bonny2long](https://github.com/bonny2long)

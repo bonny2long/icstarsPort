@@ -7,16 +7,25 @@ export default function ScrollManager() {
   useEffect(() => {
     const timer = window.setTimeout(() => {
       if (hash) {
-        const target = document.querySelector(hash);
+        const targetId = decodeURIComponent(hash.slice(1));
+        const target = document.getElementById(targetId);
 
         if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
+
+          target.focus({ preventScroll: true });
+          target.scrollIntoView({
+            behavior: reduceMotion ? "auto" : "smooth",
+            block: "start",
+          });
           return;
         }
       }
 
       window.scrollTo({ top: 0, behavior: "auto" });
-    }, 40);
+    }, 0);
 
     return () => window.clearTimeout(timer);
   }, [hash, pathname]);
