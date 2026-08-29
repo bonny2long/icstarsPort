@@ -1,10 +1,10 @@
 # Bonny Makaniankhondo
 
 **Software Engineer | Data & Analytics | AI-Enabled Systems**  
-Chicago, IL | 312-966-9631 | bmakaniankhondo@icstars.org  
+Chicago, IL | 312-966-9631 | bonnymak@icloud.com  
 [bonnymak.tech](https://bonnymak.tech) | [LinkedIn](https://www.linkedin.com/in/bonny-makaniankhondo-bb95a3321/) | [GitHub](https://github.com/bonny2long)
 
-> Targeted one-page draft. TODO: Confirm the primary email before final export.
+> Targeted one-page draft.
 
 ## Summary
 
@@ -42,4 +42,3 @@ Chicago, IL | Aug 2025 – Dec 2025
 **Data:** Python, SQL, Power BI, Excel, PostgreSQL, Databricks (current training)  
 **Engineering:** TypeScript, JavaScript, React, Vite, FastAPI, SQLAlchemy, Node.js, Express, REST APIs, Supabase, Docker  
 **AI:** LLM APIs, RAG, embeddings, semantic search, pgvector, structured AI workflows
-

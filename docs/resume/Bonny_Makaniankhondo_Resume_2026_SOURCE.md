@@ -1,10 +1,8 @@
 # Bonny Makaniankhondo
 
 **Software Engineer | Data & Analytics | AI-Enabled Systems**  
-Chicago, IL | 312-966-9631 | bmakaniankhondo@icstars.org  
+Chicago, IL | 312-966-9631 | bonnymak@icloud.com  
 [bonnymak.tech](https://bonnymak.tech) | [LinkedIn](https://www.linkedin.com/in/bonny-makaniankhondo-bb95a3321/) | [GitHub](https://github.com/bonny2long)
-
-> TODO: Confirm whether `bmakaniankhondo@icstars.org` should remain the primary email address.
 
 ## Summary
 

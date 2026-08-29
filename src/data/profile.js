@@ -19,7 +19,7 @@ export const profile = {
     "Applied AI workflows",
   ],
   phone: "312-966-9631",
-  email: "bmakaniankhondo@icstars.org",
+  email: "bonnymak@icloud.com",
   website: "https://bonnymak.tech",
   links: {
     github: "https://github.com/bonny2long",

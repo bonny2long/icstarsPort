@@ -166,7 +166,5 @@ This repository-local tracker records execution of the master plan stored outsid
 
 ### Remaining review
 
-- Confirm the primary email address.
-- Decide whether the deliberately spacious BM Radio mobile stack should remain long-form.
 - Monitor the largest existing SyncUp and United screenshots for production performance.
 - Keep physical TrueNAS deployment and Cleaner destructive authority explicitly deferred.

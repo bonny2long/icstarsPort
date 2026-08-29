@@ -88,26 +88,71 @@ export default function MobileProductStack({ compact = false, images }) {
       image: images.audiobook,
     },
   ];
-  const layoutClassName = compact
-    ? "grid grid-cols-[0.78fr_1fr_0.72fr] items-center"
-    : "grid grid-cols-1 items-center gap-10 md:grid-cols-[0.82fr_1fr_0.78fr] md:gap-0";
-  const layoutClasses = compact
-    ? compactLayoutClasses
-    : fullLayoutClasses;
+  if (compact) {
+    return (
+      <div className="grid grid-cols-[0.78fr_1fr_0.72fr] items-center">
+        {items.map((item) => (
+          <PublicSafeMobileScreenshot
+            key={item.key}
+            alt={item.alt}
+            className={compactLayoutClasses[item.key]}
+            crop={item.key}
+            image={item.image}
+            label={item.label}
+            showLabel={false}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  const nowPlaying = items.find((item) => item.key === "nowPlaying");
+  const supportingViews = items.filter((item) => item.key !== "nowPlaying");
 
   return (
-    <div className={layoutClassName}>
-      {items.map((item) => (
+    <>
+      <div className="md:hidden">
         <PublicSafeMobileScreenshot
-          key={item.key}
-          alt={item.alt}
-          className={layoutClasses[item.key]}
-          crop={item.key}
-          image={item.image}
-          label={item.label}
-          showLabel={!compact}
+          alt={nowPlaying.alt}
+          className="z-20 mx-auto w-full max-w-[20rem]"
+          crop={nowPlaying.key}
+          image={nowPlaying.image}
+          label={nowPlaying.label}
+          showLabel
         />
-      ))}
-    </div>
+        <div
+          aria-label="Supporting BM Radio product views"
+          className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 pr-8"
+          role="region"
+          tabIndex={0}
+        >
+          {supportingViews.map((item) => (
+            <PublicSafeMobileScreenshot
+              key={item.key}
+              alt={item.alt}
+              className="w-[72%] max-w-[13rem] shrink-0 snap-center first:snap-start"
+              crop={item.key}
+              image={item.image}
+              label={item.label}
+              showLabel
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="hidden items-center md:grid md:grid-cols-[0.82fr_1fr_0.78fr] md:gap-0">
+        {items.map((item) => (
+          <PublicSafeMobileScreenshot
+            key={item.key}
+            alt={item.alt}
+            className={fullLayoutClasses[item.key]}
+            crop={item.key}
+            image={item.image}
+            label={item.label}
+            showLabel
+          />
+        ))}
+      </div>
+    </>
   );
 }

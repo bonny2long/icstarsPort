@@ -1,7 +1,4 @@
-import geekWeekImage from "../assets/photos/geekweek2.jpg";
 import headshotImage from "../assets/photos/headshot_contact.jpg";
-import teaHostImage from "../assets/photos/teaguest.jpg";
-import teamWeekImage from "../assets/photos/teamweek.jpg";
 import unitedTeamImage from "../assets/photos/winning_team.jpg";
 
 export const leadershipPillars = [
@@ -24,9 +21,6 @@ export const leadershipPillars = [
 ];
 
 export const leadershipImages = {
-  geekWeek: geekWeekImage,
   headshot: headshotImage,
-  teaHost: teaHostImage,
-  teamWeek: teamWeekImage,
   unitedTeam: unitedTeamImage,
 };

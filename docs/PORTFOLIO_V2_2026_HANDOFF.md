@@ -190,9 +190,7 @@ Updated areas include routing, navigation, scrolling, About, Home links, Experie
 
 ## Remaining TODOs
 
-1. Confirm whether `bmakaniankhondo@icstars.org` should remain the primary email address.
-2. Review the deliberate long-form mobile BM Radio stack and the compact Work-index preview to decide whether an even denser presentation is preferred.
-3. Revisit larger SyncUp and United image assets if measured production performance shows they need compression; below-the-fold project images lazy-load.
+1. Revisit larger SyncUp and United image assets if measured production performance shows they need compression; below-the-fold project images lazy-load.
 4. Confirm the production domain still resolves to `https://bonnymak.tech/` before deployment if hosting configuration has changed.
 5. Physical TrueNAS deployment remains intentionally deferred, and Cleaner destructive actions must remain disabled until separately authorized and validated.
 
