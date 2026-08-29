@@ -77,7 +77,13 @@ export default function ProjectImagePreview({
         className={`relative block w-full overflow-hidden bg-slate-950 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 ${frameClassName}`}
         aria-label={`Preview ${title}`}
       >
-        <img src={image} alt={alt} className={`h-full w-full ${imageClassName}`} />
+        <img
+          src={image}
+          alt={alt}
+          className={`h-full w-full ${imageClassName}`}
+          decoding="async"
+          loading="lazy"
+        />
         <span className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/60 to-transparent" />
         <span className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-slate-950/78 px-3 py-1.5 text-xs font-semibold text-white shadow-lg shadow-slate-950/30">
           <Expand className="h-3.5 w-3.5" />

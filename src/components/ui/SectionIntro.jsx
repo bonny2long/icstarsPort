@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import PretextHeading from "./PretextHeading";
 
 export default function SectionIntro({
@@ -33,13 +34,14 @@ export default function SectionIntro({
           sizes={titleSizes}
           text={title}
         />
-      ) : (
-        <h2
-          className={`text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl ${titleClassName}`}
-        >
-          {title}
-        </h2>
-      )}
+      ) :
+        createElement(
+          titleAs,
+          {
+            className: `text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl ${titleClassName}`,
+          },
+          title,
+        )}
 
       {subtitle ? (
         <p

@@ -17,7 +17,7 @@
   }
 
   body {
-    @apply min-h-screen bg-stone-50 text-slate-700 antialiased;
+    @apply min-h-screen overflow-x-hidden bg-stone-50 text-slate-700 antialiased;
     background-image:
       radial-gradient(circle at top left, rgba(13, 148, 136, 0.12), transparent 34%),
       radial-gradient(circle at 85% 12%, rgba(245, 158, 11, 0.12), transparent 24%),
@@ -34,6 +34,21 @@
 
   img {
     @apply block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

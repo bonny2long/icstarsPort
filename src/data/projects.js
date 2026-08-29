@@ -1,19 +1,14 @@
 import chefBonBonImage from "../assets/photos/chefbot.png";
-import geekWeekImage from "../assets/photos/geekweek2.jpg";
-import headshotImage from "../assets/photos/headshot_contact.jpg";
 import syncUpDashboardImage from "../assets/photos/syncupV30.png";
 import syncUpDirectoryImage from "../assets/photos/syncupV31.png";
 import syncUpProjectImage from "../assets/photos/syncupV32.png";
 import syncUpAdminImage from "../assets/photos/syncupV33.png";
-import teaHostImage from "../assets/photos/teaguest.jpg";
-import teamWeekImage from "../assets/photos/teamweek.jpg";
 import timeLedgerPrimaryImage from "../assets/photos/timeledger1 2.png";
 import timeLedgerSecondaryImage from "../assets/photos/timeledger2.png";
-import unitedTeamImage from "../assets/photos/winning_team.jpg";
 import unitedImage from "../assets/photos/dasha.png";
 import workingImage from "../assets/photos/working.png";
 
-export const portfolioProjects = [
+export const projects = [
   {
     slug: "time-ledger",
     eyebrow: "Full-stack SaaS",
@@ -68,6 +63,123 @@ export const portfolioProjects = [
         title: "Billing and reporting view",
       },
     ],
+  },
+  {
+    slug: "nas-media-platform",
+    eyebrow: "Multi-service systems engineering",
+    title: "Personal Media & NAS Automation Platform",
+    shortTitle: "NAS Media Automation Platform",
+    summary:
+      "A four-application media-ingestion, review, playback, and cleanup system designed around explicit ownership boundaries and conservative data safety.",
+    secondary:
+      "Locally proven with real copied media; physical TrueNAS deployment is intentionally deferred.",
+    highlights: [
+      "Final local four-application workflow acceptance: PASS.",
+      "21-file real-media canary completed with zero SHA-256 mismatches.",
+      "Clear write boundaries, human-approved final moves, and fail-closed cleanup behavior.",
+      "BM Radio accepted 275 physical tracks and 261 logical recordings using PostgreSQL.",
+    ],
+    problem:
+      "A long-term personal media archive needs more than storage. It needs safe intake, classification, human review, final-library organization, listener-facing access, auditability, and conservative leftover handling without accidental deletion.",
+    systemTitle: "Four-service architecture",
+    systemText:
+      "Each application owns a narrow responsibility so upload handling, classification, playback, and cleanup evidence do not blur into one unsafe process.",
+    system: [
+      "Intake Watcher promotes stable completed uploads without deep classification or final-library ownership.",
+      "Archive Assistant reconstructs and classifies non-photo media, supports human approval, performs final moves, and records manifests.",
+      "BM Radio provides music and audiobook listening, playlists, history, and progress using PostgreSQL with read-only final-library media access.",
+      "Cleaner reads post-move evidence and produces dry-run leftover reports; destructive deletion is disabled.",
+    ],
+    services: [
+      {
+        name: "Intake Watcher",
+        responsibility: "Stable upload promotion",
+        details: [
+          "Checks upload stability before promotion into a ready state.",
+          "Does not perform deep classification.",
+          "Does not own final-library placement.",
+        ],
+      },
+      {
+        name: "Archive Assistant",
+        responsibility: "Review and final moves",
+        details: [
+          "Reconstructs and classifies non-photo media.",
+          "Supports metadata review and human approval.",
+          "Performs approved final moves and records manifests for audit.",
+        ],
+      },
+      {
+        name: "BM Radio",
+        responsibility: "Listener-facing playback",
+        details: [
+          "Provides music and audiobook library, radio, playlists, history, and progress.",
+          "Uses PostgreSQL and preferred physical-source selection.",
+          "Treats final-library media as read-only.",
+        ],
+      },
+      {
+        name: "Cleaner",
+        responsibility: "Conservative leftover review",
+        details: [
+          "Reads Archive Assistant post-move evidence.",
+          "Classifies leftovers and produces dry-run reports.",
+          "Fails closed; destructive deletion remains disabled.",
+        ],
+      },
+    ],
+    owned: [
+      "Designed the ownership and write boundaries across all four applications.",
+      "Built acceptance around real media, duplicate handling, hashes, regression baselines, and recovery documentation.",
+      "Kept human approval in front of final Archive Assistant moves and cleanup fail-closed.",
+      "Chose PostgreSQL for BM Radio and SQLite for Archive Assistant based on their different responsibilities.",
+    ],
+    decisions: [
+      "Only Cleaner may eventually gain deletion authority; deletion is currently disabled.",
+      "Archive Assistant final moves require human approval and retain evidence for later review.",
+      "Playback remains outside the cleanup path and uses read-only access to final media.",
+      "Local acceptance is stated separately from deferred physical TrueNAS deployment.",
+    ],
+    proof: [
+      {
+        label: "Workflow acceptance",
+        value: "PASS",
+        detail: "Final local four-application workflow",
+      },
+      {
+        label: "Real-media canary",
+        value: "0 mismatches",
+        detail: "21 copied files verified with SHA-256",
+      },
+      {
+        label: "BM Radio library",
+        value: "275 / 261",
+        detail: "Physical tracks / logical recordings",
+      },
+      {
+        label: "BM Radio regression",
+        value: "63 / 0 / 4",
+        detail: "Passed / failed / skipped",
+      },
+      {
+        label: "Intake Watcher",
+        value: "14 / 14",
+        detail: "Tests passed",
+      },
+      {
+        label: "Cleaner",
+        value: "9 / 9",
+        detail: "Tests passed · deletion disabled",
+      },
+    ],
+    interesting:
+      "This platform demonstrates systems engineering beyond a single application: service boundaries, data ownership, conservative automation, multiple intentional database choices, real-media verification, testing, and recovery discipline.",
+    note:
+      "Local software platform proven. Physical TrueNAS deployment is intentionally deferred. GitHub links will be added when their public URLs are confirmed.",
+    status: "Local acceptance passed",
+    imageAlt:
+      "Conceptual four-service flow for the Personal Media and NAS Automation Platform",
+    visualLabels: ["Intake Watcher", "Archive Assistant", "BM Radio", "Cleaner"],
   },
   {
     slug: "syncup",
@@ -285,82 +397,3 @@ export const portfolioProjects = [
     githubHref: "https://github.com/bonny2long/ChefBonBon",
   },
 ];
-
-export const buildPrinciples = [
-  {
-    title: "Start With the Real Problem",
-    body: "Every project starts with understanding what is actually broken, who feels the friction, and what the system needs to support before I start adding features.",
-  },
-  {
-    title: "Map the Data Flow",
-    body: "I think through entities, relationships, state, permissions, and API responsibilities early so the product can grow without getting tangled.",
-  },
-  {
-    title: "Build for Clarity",
-    body: "I prefer understandable systems over clever ones. Clear structure makes performance, maintenance, debugging, and collaboration easier later.",
-  },
-  {
-    title: "Make the Interface Serve the Workflow",
-    body: "Once the backend shape and system flow are solid, I use the UI to make the product easier to understand, faster to navigate, and more useful in real work.",
-  },
-];
-
-export const aboutSignals = [
-  {
-    title: "Systems-Minded",
-    body: "I approach problems from the ground up, focusing on architecture, data flow, permissions, and product usefulness before surface polish.",
-  },
-  {
-    title: "Reliability-Focused",
-    body: "My industrial and electrical background shaped how I think about systems: plan carefully, protect what matters, diagnose issues, and build things that hold up under pressure.",
-  },
-  {
-    title: "Maintainability-Focused",
-    body: "The goal is not just to ship once. I want to leave behind code, structure, and documentation that a team can keep building on.",
-  },
-];
-
-export const leadershipPillars = [
-  {
-    title: "Communication",
-    body: "I keep technical conversations clear, direct, and grounded in the problem so teams and stakeholders can move faster.",
-  },
-  {
-    title: "Listening",
-    body: "A lot of better engineering starts with listening well: hearing what users need, what teammates are seeing, and where the real friction is.",
-  },
-  {
-    title: "Client-facing growth",
-    body: "Real delivery work taught me how to translate constraints, feedback, and business context into better product decisions.",
-  },
-  {
-    title: "Resilience",
-    body: "Pressure has made me steadier. When something breaks or a deadline tightens, I reset, adapt, and keep moving.",
-  },
-];
-
-export const contactLinks = [
-  {
-    label: "Email",
-    href: "mailto:bmakaniankhondo@icstars.org",
-    value: "bmakaniankhondo@icstars.org",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/bonny2long",
-    value: "github.com/bonny2long",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/bonny-makaniankhondo-bb95a3321/",
-    value: "linkedin.com/in/bonny-makaniankhondo",
-  },
-];
-
-export const leadershipImages = {
-  geekWeek: geekWeekImage,
-  headshot: headshotImage,
-  teaHost: teaHostImage,
-  teamWeek: teamWeekImage,
-  unitedTeam: unitedTeamImage,
-};

@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import Button from "./Button";
 import Card from "./Card";
 import ProjectImagePreview from "./ProjectImagePreview";
+import ProjectVisual from "./ProjectVisual";
 
 function DetailBlock({ items, text, title }) {
   return (
@@ -31,7 +32,7 @@ export default function ProjectCaseStudy({ index = 0, project }) {
       ? { label: "GitHub", href: project.githubHref, primary: !project.liveHref }
       : null,
   ].filter(Boolean);
-  const galleryItems = project.gallery?.length
+  const galleryItems = project.image && project.gallery?.length
     ? [
         {
           image: project.image,
@@ -54,13 +55,7 @@ export default function ProjectCaseStudy({ index = 0, project }) {
           }`}
         >
           <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950">
-            <ProjectImagePreview
-              alt={project.imageAlt}
-              frameClassName="aspect-[16/10]"
-              image={project.image}
-              imageClassName="object-cover object-top"
-              title={project.title}
-            />
+            <ProjectVisual project={project} />
           </div>
 
           <div className="flex h-full flex-col">
@@ -75,9 +70,9 @@ export default function ProjectCaseStudy({ index = 0, project }) {
               ) : null}
             </div>
 
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            <h1 className="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
               {project.title}
-            </h2>
+            </h1>
 
             <div className="mt-5 flex flex-1 flex-col">
               <div className="space-y-4">

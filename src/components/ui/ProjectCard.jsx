@@ -1,7 +1,7 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
-import ProjectImagePreview from "./ProjectImagePreview";
+import ProjectVisual from "./ProjectVisual";
 
 export default function ProjectCard({ featured = false, project }) {
   return (
@@ -12,13 +12,7 @@ export default function ProjectCard({ featured = false, project }) {
     >
       <div className={`grid h-full ${featured ? "lg:grid-cols-[1.05fr_0.95fr]" : ""}`}>
         <div className="overflow-hidden bg-slate-950">
-          <ProjectImagePreview
-            alt={project.imageAlt}
-            frameClassName={featured ? "aspect-[16/10] lg:h-full" : "aspect-[16/10]"}
-            image={project.image}
-            imageClassName="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
-            title={project.shortTitle ?? project.title}
-          />
+          <ProjectVisual compact={!featured} project={project} />
         </div>
 
         <div className="flex h-full flex-col p-6 sm:p-7">
@@ -80,7 +74,7 @@ export default function ProjectCard({ featured = false, project }) {
           </div>
 
           <Link
-            to={`/projects#${project.slug}`}
+            to={`/work/${project.slug}`}
             className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-slate-950 transition group-hover:text-teal-700"
           >
             View case study
