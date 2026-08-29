@@ -14,8 +14,8 @@ Deployment was not performed as part of this work.
 | `/work` | Flagship Work and compact More Work index |
 | `/work/:slug` | Reusable direct case-study route |
 | `/experience` | Aon-first experience timeline, prior technical background, education, and professional development |
-| `/about` | Systems approach, career transition, communication, and current development |
-| `/contact` | Contact links and 2026 resume access |
+| `/about` | Systems approach, career path, working style, current direction, and the `#contact` action section |
+| `/contact` | Legacy redirect to `/about#contact` |
 
 Legacy redirects are preserved:
 
@@ -23,6 +23,8 @@ Legacy redirects are preserved:
 - `/leadership`, `/geekweek`, `/wellness` → `/about`
 - `/career` → `/experience`
 - `/client` → `/work`
+- `/contact` → `/about#contact`
+- `/work/united-airlines-dashboard` → `/work/united-airlines-customer-insights`
 
 ## Key Content Changes
 
@@ -99,7 +101,7 @@ Original project and leadership image assets were preserved.
 
 No project dependency was added or removed. React, Vite, Tailwind, React Router, Lucide, and Pretext remain the application foundation.
 
-Temporary PDF extraction/rendering tools were installed only under `C:\tmp` for verification and are not project dependencies.
+Temporary PDF extraction/rendering tools were installed only outside the project for verification and are not project dependencies.
 
 ## Validation
 
@@ -116,13 +118,83 @@ Temporary PDF extraction/rendering tools were installed only under `C:\tmp` for 
 - Image QA: no broken images on checked routes
 - Mobile menu QA: keyboard focus, expanded ARIA state, visible panel, and all navigation actions confirmed
 
+## PORTFOLIO V2.1 REFINEMENT
+
+### Information architecture
+
+- About and Contact no longer compete as duplicate biography pages.
+- `src/pages/Contact.jsx` was removed.
+- `/contact` remains compatible through a redirect to `/about#contact`.
+- Desktop and mobile navigation present Contact as a stronger action next to the separate Resume action.
+- `ScrollManager` now resolves hash targets by ID, respects reduced-motion preferences, focuses the destination section, and reliably reaches Contact from Home, Work, Work details, Experience, About, and the mobile menu.
+- About now has distinct sections for systems thinking, career progression, working style, and concise contact actions. The professional portrait appears only in the About hero.
+
+### Project-media system
+
+- Added reusable media components under `src/components/ui/project-media/`: `ProductCanvas`, `ProductScreenshot`, `MobileProductStack`, `ProjectMedia`, and `ProjectMediaGallery`.
+- Product views now use editorial canvases, real aspect ratios, deliberate crops, asymmetric supporting layouts, and restrained project-specific atmosphere.
+- Repeated white screenshot cards and forced repeated 16:10 galleries were removed from active case-study presentation.
+- Time Ledger uses a wide product/dashboard treatment.
+- United uses a clean data/dashboard treatment and is explicitly labeled as i.c.stars client/RFP work.
+- ICAA Headquarters / SyncUp uses a light workflow canvas with role-aware supporting views.
+- Resume Agent and Chef BonBon remain visually subordinate in compact More Work rows.
+
+### BM Radio and Personal Media Infrastructure
+
+- Added the three original JPEGs under `src/assets/projects/bm-radio/`.
+- The public presentation uses CSS crop boundaries that exclude mobile browser chrome, the private local address, and bottom browser controls without stretching, recoloring, or altering the source screenshots.
+- Now Playing is dominant, Library is secondary, and Audiobook is supporting.
+- The case study is now titled **Personal Media Infrastructure Platform**.
+- BM Radio leads as the listener-facing product; Intake Watcher, Archive Assistant, and Cleaner remain supporting infrastructure with narrow ownership contracts.
+- Architecture, safety decisions, primary proof, supporting regression proof, honest deployment status, and Cleaner’s disabled destructive authority remain visible.
+- Confirmed public repositories are listed in a dedicated Source section rather than the hero.
+
+### Work hierarchy
+
+- Flagship order is Time Ledger, Personal Media Infrastructure Platform, United Airlines Customer Insights, and ICAA Headquarters / SyncUp.
+- Each flagship has a project number, project type, distinct visual, concise summary, key stack/proof line, and direct case-study action.
+- Resume Agent and Chef BonBon use smaller editorial rows.
+- The United detail route is now `/work/united-airlines-customer-insights`; the former dashboard slug redirects for compatibility.
+
+### Files added and removed
+
+Added:
+
+- `src/assets/projects/bm-radio/bm-radio-now-playing.jpg`
+- `src/assets/projects/bm-radio/bm-radio-library.jpg`
+- `src/assets/projects/bm-radio/bm-radio-audiobook.jpg`
+- all five reusable files under `src/components/ui/project-media/`
+
+Removed:
+
+- `src/pages/Contact.jsx`
+
+Updated areas include routing, navigation, scrolling, About, Home links, Experience heading behavior, Work, all project case-study media, NAS architecture/proof/source content, project data, footer copy, shared UI behavior, README, and this documentation.
+
+### V2.1 validation
+
+- Baseline Git status: `portfolio-v2-2026...origin/portfolio-v2-2026`; only the three supplied BM Radio images were untracked before refinement.
+- Baseline lint: PASS.
+- Baseline build: PASS outside the filesystem sandbox; the sandbox-only attempt could not let Vite/esbuild inspect a parent directory.
+- Final lint: PASS.
+- Final production build: PASS.
+- Production preview: PASS at `127.0.0.1:4173`.
+- Responsive browser checks: PASS at 390, 430, 768, 1024, 1280, and 1440 pixels.
+- Horizontal overflow: none on checked pages and widths.
+- Heading structure: exactly one `h1` on every checked route.
+- Contact routing: direct `/about#contact`, legacy `/contact`, desktop Contact clicks, and mobile-menu Contact all reached and focused `#contact`.
+- Reduced motion: hash navigation resolved with `scroll-behavior: auto`.
+- BM Radio: no local IP in rendered page text; visual review confirmed browser/local-network chrome stays outside the public crop at desktop and mobile widths.
+- Visual review covered Work, Time Ledger, BM Radio/NAS, SyncUp supporting media, About, and Contact at desktop and mobile sizes.
+- No deployment, commit, push, merge, or history reset occurred.
+
 ## Remaining TODOs
 
 1. Confirm whether `bmakaniankhondo@icstars.org` should remain the primary email address.
-2. Add public-safe screenshots to the NAS case study when real assets are ready.
-3. Add separate public GitHub URLs for Archive Assistant, BM Radio, Intake Watcher, and Cleaner only after each URL is confirmed.
-4. Revisit larger SyncUp and United image assets if measured production performance shows they need compression; current below-the-fold project images lazy-load.
-5. Confirm the production domain still resolves to `https://bonnymak.tech/` before deployment if hosting configuration has changed.
+2. Review the deliberate long-form mobile BM Radio stack and the compact Work-index preview to decide whether an even denser presentation is preferred.
+3. Revisit larger SyncUp and United image assets if measured production performance shows they need compression; below-the-fold project images lazy-load.
+4. Confirm the production domain still resolves to `https://bonnymak.tech/` before deployment if hosting configuration has changed.
+5. Physical TrueNAS deployment remains intentionally deferred, and Cleaner destructive actions must remain disabled until separately authorized and validated.
 
 ## Future Aon Updates
 
@@ -140,6 +212,5 @@ Do not add production ownership, savings, revenue, client outcomes, or Databrick
 
 - The Vite foundation and `public/_redirects` were preserved.
 - `dist/` was generated locally for validation and should follow the repository's existing ignore/deployment policy.
-- No Git commit, push, merge, reset, or repository initialization was performed.
-- Git status could not be recorded because this working copy did not contain Git metadata.
-
+- Work is on the Git-enabled `portfolio-v2-2026` branch.
+- No Git commit, push, merge, or history reset was performed during V2.1.

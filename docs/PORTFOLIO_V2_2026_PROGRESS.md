@@ -94,3 +94,79 @@ This repository-local tracker records execution of the master plan stored outsid
 - `README.md` — current portfolio identity, routes, work, and development notes.
 - `docs/PORTFOLIO_V2_2026_HANDOFF.md` — final implementation, validation, TODO, and deployment handoff.
 - Final lint/build, preview, route redirects, seven responsive widths, flagship details, headings, images, overflow, and mobile navigation all passed.
+
+## PORTFOLIO V2.1 REFINEMENT
+
+### Status
+
+**PASS — implementation and local validation complete. No deployment occurred.**
+
+| Refinement | Status | Validation | Notes |
+|---|---|---|---|
+| About/Contact consolidation | PASS | route, hash, focus, desktop/mobile click QA | Contact is now an action at `/about#contact`; `/contact` redirects. |
+| BM Radio asset setup | PASS | source/destination hashes and rendered crop QA | Three original JPEGs retained; public views exclude browser chrome and the local IP. |
+| Project-media system | PASS | lint/build/visual QA | Editorial canvases, natural-ratio evidence, mobile stack, and asymmetric galleries added. |
+| NAS case-study redesign | PASS | content, architecture, proof, repository, desktop/mobile visual QA | BM Radio leads the Personal Media Infrastructure Platform as the public product layer. |
+| Work hierarchy | PASS | responsive visual and overflow QA | Four numbered flagships receive distinct treatments; More Work is compact. |
+| Non-NAS media refinement | PASS | Time Ledger and SyncUp visual QA | Primary UI is dominant; supporting views no longer repeat one generic frame. |
+| Routing and scroll behavior | PASS | direct redirect plus all required Contact click sources | Hash target receives focus; reduced motion is respected. |
+| Accessibility/responsiveness | PASS | 390, 430, 768, 1024, 1280, 1440 | One H1 per route, descriptive alt text, no horizontal overflow. |
+| Final checks | PASS | lint/build/preview | No unit-test script exists, so none is claimed. |
+
+### Added
+
+- `src/assets/projects/bm-radio/bm-radio-now-playing.jpg`
+- `src/assets/projects/bm-radio/bm-radio-library.jpg`
+- `src/assets/projects/bm-radio/bm-radio-audiobook.jpg`
+- `src/components/ui/project-media/ProductCanvas.jsx`
+- `src/components/ui/project-media/ProductScreenshot.jsx`
+- `src/components/ui/project-media/MobileProductStack.jsx`
+- `src/components/ui/project-media/ProjectMedia.jsx`
+- `src/components/ui/project-media/ProjectMediaGallery.jsx`
+
+### Removed
+
+- `src/pages/Contact.jsx`
+
+### Updated
+
+- `src/App.jsx`
+- `src/pages/Home.jsx`
+- `src/pages/Work.jsx`
+- `src/pages/About.jsx`
+- `src/pages/Experience.jsx`
+- `src/components/layout/Navbar.jsx`
+- `src/components/layout/Footer.jsx`
+- `src/components/layout/ScrollManager.jsx`
+- `src/components/layout/Section.jsx`
+- `src/components/ui/Button.jsx`
+- `src/components/ui/NasCaseStudy.jsx`
+- `src/components/ui/SystemDiagram.jsx`
+- `src/components/ui/ProjectCard.jsx`
+- `src/components/ui/ProjectCaseStudy.jsx`
+- `src/components/ui/ProjectVisual.jsx`
+- `src/components/ui/ProjectImagePreview.jsx`
+- `src/data/projects.js`
+- `src/data/leadership.js`
+- `README.md`
+- V2 handoff/progress documentation
+
+### Validation record
+
+- Required baseline `git status`: recorded on `portfolio-v2-2026`.
+- Baseline `npm.cmd run lint`: PASS.
+- Baseline `npm.cmd run build`: PASS outside the filesystem sandbox after a sandbox-only config-resolution denial.
+- Final `npm.cmd run lint`: PASS.
+- Final `npm.cmd run build`: PASS.
+- Required `npm.cmd run preview`: PASS at `127.0.0.1:4173`.
+- Checked `/`, `/work`, `/work/time-ledger`, `/work/nas-media-platform`, `/work/united-airlines-customer-insights`, `/work/syncup`, `/experience`, `/about`, `/about#contact`, and `/contact`.
+- Contact navigation passed from Home, Work, Work detail, Experience, About, and the mobile menu.
+- No local IP appeared in rendered text or any inspected public crop.
+- No commit, push, merge, reset, or deployment was performed.
+
+### Remaining review
+
+- Confirm the primary email address.
+- Decide whether the deliberately spacious BM Radio mobile stack should remain long-form.
+- Monitor the largest existing SyncUp and United screenshots for production performance.
+- Keep physical TrueNAS deployment and Cleaner destructive authority explicitly deferred.

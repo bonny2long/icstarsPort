@@ -1,0 +1,113 @@
+const cropSettings = {
+  nowPlaying: {
+    aspectRatio: "53 / 100",
+    transform: "translateY(-9.4%)",
+  },
+  library: {
+    aspectRatio: "60 / 100",
+    transform: "translateY(-12.2%)",
+  },
+  audiobook: {
+    aspectRatio: "60 / 100",
+    transform: "translateY(-12.2%)",
+  },
+};
+
+const fullLayoutClasses = {
+  library:
+    "order-2 mx-auto w-full max-w-[19rem] md:order-1 md:translate-x-8 md:scale-[0.88] md:opacity-90",
+  nowPlaying:
+    "order-1 z-20 mx-auto w-full max-w-[20rem] md:order-2",
+  audiobook:
+    "order-3 mx-auto w-full max-w-[19rem] md:-translate-x-8 md:scale-[0.84] md:opacity-90",
+};
+
+const compactLayoutClasses = {
+  library: "z-0 translate-x-4 scale-[0.84] opacity-80",
+  nowPlaying: "z-20",
+  audiobook: "z-10 -translate-x-4 scale-[0.8] opacity-80",
+};
+
+function PublicSafeMobileScreenshot({
+  alt,
+  className,
+  crop,
+  image,
+  label,
+  showLabel,
+}) {
+  const cropSetting = cropSettings[crop];
+
+  return (
+    <figure className={className}>
+      <figcaption
+        className={
+          showLabel
+            ? "mb-3 text-center text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-violet-100"
+            : "sr-only"
+        }
+      >
+        {label}
+      </figcaption>
+      <div
+        className="relative overflow-hidden rounded-[1.6rem] border border-white/15 bg-[#05040d] shadow-[0_30px_80px_-30px_rgba(76,29,149,0.9)]"
+        style={{ aspectRatio: cropSetting.aspectRatio }}
+      >
+        <img
+          src={image}
+          alt={alt}
+          className="absolute left-0 top-0 h-auto w-full max-w-none"
+          style={{ transform: cropSetting.transform }}
+          decoding="async"
+          loading="lazy"
+          draggable="false"
+        />
+      </div>
+    </figure>
+  );
+}
+
+export default function MobileProductStack({ compact = false, images }) {
+  const items = [
+    {
+      key: "library",
+      label: "Library",
+      alt: "BM Radio artist library with browsing and playback controls",
+      image: images.library,
+    },
+    {
+      key: "nowPlaying",
+      label: "Now playing",
+      alt: "BM Radio now-playing interface with album art and audio controls",
+      image: images.nowPlaying,
+    },
+    {
+      key: "audiobook",
+      label: "Audiobooks",
+      alt: "BM Radio audiobook playback interface with progress and speed controls",
+      image: images.audiobook,
+    },
+  ];
+  const layoutClassName = compact
+    ? "grid grid-cols-[0.78fr_1fr_0.72fr] items-center"
+    : "grid grid-cols-1 items-center gap-10 md:grid-cols-[0.82fr_1fr_0.78fr] md:gap-0";
+  const layoutClasses = compact
+    ? compactLayoutClasses
+    : fullLayoutClasses;
+
+  return (
+    <div className={layoutClassName}>
+      {items.map((item) => (
+        <PublicSafeMobileScreenshot
+          key={item.key}
+          alt={item.alt}
+          className={layoutClasses[item.key]}
+          crop={item.key}
+          image={item.image}
+          label={item.label}
+          showLabel={!compact}
+        />
+      ))}
+    </div>
+  );
+}

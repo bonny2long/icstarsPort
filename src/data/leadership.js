@@ -14,12 +14,12 @@ export const leadershipPillars = [
     body: "Better engineering starts with hearing what users need, what teammates see, and where the actual friction lives.",
   },
   {
-    title: "Client-facing growth",
-    body: "Delivery work strengthened my ability to translate constraints, feedback, and business context into product decisions.",
+    title: "Reliability and ownership",
+    body: "I make responsibilities visible, follow through on decisions, and communicate early when a risk could affect the work.",
   },
   {
-    title: "Resilience",
-    body: "When something breaks or pressure rises, I reset, communicate, adapt, and keep the work moving.",
+    title: "Learning quickly",
+    body: "I connect new tools to the underlying system, test what I understand, ask precise questions, and turn learning into useful delivery.",
   },
 ];
 
@@ -30,4 +30,3 @@ export const leadershipImages = {
   teamWeek: teamWeekImage,
   unitedTeam: unitedTeamImage,
 };
-

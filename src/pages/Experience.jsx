@@ -82,7 +82,7 @@ export default function Experience() {
             eyebrow="Experience"
             title="Building range across software, data, analytics, and real-world systems."
             titleAs="h1"
-            experimental
+            titleClassName="!text-4xl sm:!text-5xl"
             subtitle="My current work adds enterprise analytics development to a background in full-stack engineering, client delivery, electrical systems, and industrial operations."
           />
           <Card eyebrow="Current chapter" title="Aon · Chicago">

@@ -7,6 +7,9 @@ import timeLedgerPrimaryImage from "../assets/photos/timeledger1 2.png";
 import timeLedgerSecondaryImage from "../assets/photos/timeledger2.png";
 import unitedImage from "../assets/photos/dasha.png";
 import workingImage from "../assets/photos/working.png";
+import bmRadioAudiobookImage from "../assets/projects/bm-radio/bm-radio-audiobook.jpg";
+import bmRadioLibraryImage from "../assets/projects/bm-radio/bm-radio-library.jpg";
+import bmRadioNowPlayingImage from "../assets/projects/bm-radio/bm-radio-now-playing.jpg";
 
 export const projects = [
   {
@@ -53,31 +56,42 @@ export const projects = [
       "Time Ledger is the strongest portfolio proof point because it covers the real surface area of a SaaS product: tenancy, auth, invites, role-aware behavior, data modeling, billing logic, reporting, onboarding, deployment, and lifecycle safeguards.",
     note: "The live product is public at timeledger.me. The repository is private, so this case study focuses on architecture, workflow decisions, and product behavior rather than source-code access.",
     status: "Live product",
+    workMeta: "React 19 · FastAPI · PostgreSQL · Multi-tenant SaaS",
     image: timeLedgerPrimaryImage,
     imageAlt: "Time Ledger workspace dashboard and timesheet interface",
+    media: {
+      kind: "dashboard",
+      tone: "ink",
+      indexAspect: "aspect-[16/9]",
+      objectPosition: "object-top",
+    },
     liveHref: "https://timeledger.me/",
     gallery: [
       {
         image: timeLedgerSecondaryImage,
         alt: "Time Ledger billing and reporting interface",
         title: "Billing and reporting view",
+        caption:
+          "A supporting view of the reporting workflow that turns tracked time into client-ready output.",
       },
     ],
   },
   {
     slug: "nas-media-platform",
     eyebrow: "Multi-service systems engineering",
-    title: "Personal Media & NAS Automation Platform",
-    shortTitle: "NAS Media Automation Platform",
+    title: "Personal Media Infrastructure Platform",
+    shortTitle: "Personal Media Infrastructure",
     summary:
-      "A four-application media-ingestion, review, playback, and cleanup system designed around explicit ownership boundaries and conservative data safety.",
+      "Designed and built a four-service personal media infrastructure platform that moves digital media from safe intake through human-reviewed organization into private listener-facing libraries.",
     secondary:
-      "Locally proven with real copied media; physical TrueNAS deployment is intentionally deferred.",
+      "Final local software acceptance complete. Physical TrueNAS deployment is intentionally deferred.",
+    productSummary:
+      "BM Radio provides the music and audiobook experience, while Intake Watcher, Archive Assistant, and Cleaner independently manage stability, archive organization, and evidence-driven cleanup.",
     highlights: [
-      "Final local four-application workflow acceptance: PASS.",
+      "Four independently owned services with final local workflow acceptance.",
       "21-file real-media canary completed with zero SHA-256 mismatches.",
       "Clear write boundaries, human-approved final moves, and fail-closed cleanup behavior.",
-      "BM Radio accepted 275 physical tracks and 261 logical recordings using PostgreSQL.",
+      "BM Radio indexed 275 physical tracks as 261 logical recordings using PostgreSQL.",
     ],
     problem:
       "A long-term personal media archive needs more than storage. It needs safe intake, classification, human review, final-library organization, listener-facing access, auditability, and conservative leftover handling without accidental deletion.",
@@ -142,44 +156,80 @@ export const projects = [
     ],
     proof: [
       {
-        label: "Workflow acceptance",
-        value: "PASS",
-        detail: "Final local four-application workflow",
+        label: "Independently owned services",
+        value: "4",
+        detail: "Narrow contracts across intake, organization, playback, and cleanup",
       },
       {
-        label: "Real-media canary",
-        value: "0 mismatches",
-        detail: "21 copied files verified with SHA-256",
+        label: "Real-media acceptance",
+        value: "21 / 21",
+        detail: "Copied files completed",
       },
       {
-        label: "BM Radio library",
-        value: "275 / 261",
-        detail: "Physical tracks / logical recordings",
+        label: "SHA-256 mismatches",
+        value: "0",
+        detail: "Every acceptance file verified",
       },
       {
-        label: "BM Radio regression",
-        value: "63 / 0 / 4",
-        detail: "Passed / failed / skipped",
+        label: "Logical recordings indexed",
+        value: "261",
+        detail: "From 275 physical tracks",
+      },
+    ],
+    supportingProof: [
+      {
+        label: "BM Radio",
+        value: "63 passed · 0 failed · 4 skipped",
       },
       {
         label: "Intake Watcher",
-        value: "14 / 14",
-        detail: "Tests passed",
+        value: "14 / 14 passed",
       },
       {
         label: "Cleaner",
-        value: "9 / 9",
-        detail: "Tests passed · deletion disabled",
+        value: "9 / 9 passed · deletion disabled",
       },
     ],
     interesting:
       "This platform demonstrates systems engineering beyond a single application: service boundaries, data ownership, conservative automation, multiple intentional database choices, real-media verification, testing, and recovery discipline.",
     note:
-      "Local software platform proven. Physical TrueNAS deployment is intentionally deferred. GitHub links will be added when their public URLs are confirmed.",
+      "Cleaner destructive actions remain disabled. Playback is isolated from cleanup, and BM Radio cannot mutate archive media.",
     status: "Local acceptance passed",
+    workMeta: "4 services · 21 / 21 files · 0 hash mismatches",
     imageAlt:
-      "Conceptual four-service flow for the Personal Media and NAS Automation Platform",
+      "BM Radio listener interface representing the product layer of the personal media infrastructure platform",
     visualLabels: ["Intake Watcher", "Archive Assistant", "BM Radio", "Cleaner"],
+    media: {
+      kind: "mobile-stack",
+      tone: "violet",
+      images: {
+        nowPlaying: bmRadioNowPlayingImage,
+        library: bmRadioLibraryImage,
+        audiobook: bmRadioAudiobookImage,
+      },
+    },
+    repositories: [
+      {
+        name: "BM Radio",
+        responsibility: "Listener-facing music and audiobook product",
+        href: "https://github.com/bonny2long/BM_radio",
+      },
+      {
+        name: "Archive Assistant",
+        responsibility: "Human-reviewed organization and final moves",
+        href: "https://github.com/bonny2long/archive_assistant",
+      },
+      {
+        name: "Cleaner",
+        responsibility: "Evidence-driven, report-only leftover review",
+        href: "https://github.com/bonny2long/cleaner",
+      },
+      {
+        name: "Intake Watcher",
+        responsibility: "Stable upload promotion",
+        href: "https://github.com/bonny2long/intake-watcher",
+      },
+    ],
   },
   {
     slug: "syncup",
@@ -227,32 +277,45 @@ export const projects = [
     interesting:
       "This project shows ownership beyond feature building. It required product direction, role semantics, data modeling, admin workflows, authentication decisions, mobile UX, production readiness, and a clear understanding of how a real community might operate inside software.",
     status: "Active platform build",
+    workMeta: "React · Supabase · RBAC · Community operations",
     image: syncUpDashboardImage,
     imageAlt: "ICAA Headquarters dashboard interface",
+    media: {
+      kind: "workflow",
+      tone: "sand",
+      indexAspect: "aspect-[16/10]",
+      objectPosition: "object-top",
+    },
     gallery: [
       {
         image: syncUpDirectoryImage,
         alt: "ICAA Headquarters community directory interface",
         title: "Community directory",
+        caption:
+          "Role-aware member discovery designed around a real community operating model.",
       },
       {
         image: syncUpProjectImage,
         alt: "ICAA Headquarters project and collaboration interface",
         title: "Project collaboration",
+        caption:
+          "Projects and collaboration workflows connect members to active work.",
       },
       {
         image: syncUpAdminImage,
         alt: "ICAA Headquarters admin workflow interface",
         title: "Admin workflow",
+        caption:
+          "Administrative controls make lifecycle and governance responsibilities visible.",
       },
     ],
     githubHref: "https://github.com/bonny2long/SyncUp",
   },
   {
-    slug: "united-airlines-dashboard",
-    eyebrow: "Client delivery",
-    title: "United Airlines Dashboard",
-    shortTitle: "United Airlines Dashboard",
+    slug: "united-airlines-customer-insights",
+    eyebrow: "i.c.stars client / RFP delivery",
+    title: "United Airlines Customer Insights",
+    shortTitle: "United Customer Insights",
     summary:
       "A full-stack analytics platform built during i.c.stars for United Airlines to help executives and analysts understand customer feedback, sentiment, and operational insights.",
     secondary:
@@ -292,8 +355,16 @@ export const projects = [
     interesting:
       "This is one of the strongest proof points because it combines frontend architecture, product thinking, AI-supported workflows, business translation, and client-facing delivery pressure in one project.",
     note: "Winning solution delivered as part of a real client engagement with United Airlines through i.c.stars.",
+    status: "Winning client delivery",
+    workMeta: "React · AI insights · KPI dashboards · Winning RFP",
     image: unitedImage,
     imageAlt: "United Airlines customer analytics dashboard interface",
+    media: {
+      kind: "data",
+      tone: "blue",
+      indexAspect: "aspect-[4/3]",
+      objectPosition: "object-top",
+    },
     liveHref: "https://dash-by-metis.netlify.app/",
     githubHref: "https://github.com/bonny2long/Metis",
   },

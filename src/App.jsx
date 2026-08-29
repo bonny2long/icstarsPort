@@ -3,7 +3,6 @@ import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import ScrollManager from "./components/layout/ScrollManager";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
 import Experience from "./pages/Experience";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
@@ -19,10 +18,22 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/work" element={<Work />} />
+          <Route
+            path="/work/united-airlines-dashboard"
+            element={
+              <Navigate
+                to="/work/united-airlines-customer-insights"
+                replace
+              />
+            }
+          />
           <Route path="/work/:slug" element={<WorkDetail />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/contact"
+            element={<Navigate to="/about#contact" replace />}
+          />
           <Route path="/projects" element={<Navigate to="/work" replace />} />
           <Route path="/leadership" element={<Navigate to="/about" replace />} />
           <Route path="/career" element={<Navigate to="/experience" replace />} />

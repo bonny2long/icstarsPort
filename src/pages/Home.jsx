@@ -34,7 +34,7 @@ const proofPoints = [
 const selectedSlugs = [
   "time-ledger",
   "nas-media-platform",
-  "united-airlines-dashboard",
+  "united-airlines-customer-insights",
 ];
 
 const selectedWork = selectedSlugs
@@ -117,7 +117,7 @@ export default function Home() {
                 Experience
               </Button>
               <Button
-                to="/contact"
+                to="/about#contact"
                 variant="ghost"
                 className="w-full justify-center sm:w-auto"
               >
