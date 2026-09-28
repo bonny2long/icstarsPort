@@ -1,10 +1,20 @@
-import chefBonBonImage from "../assets/photos/chefbot.png";
+import chefBonBonCookBuilderImage from "../assets/projects/chefbonbon/chefbonbon-cook-builder.jpg";
+import chefBonBonCookModeImage from "../assets/projects/chefbonbon/chefbonbon-cook-mode.jpg";
+import chefBonBonCookTimerImage from "../assets/projects/chefbonbon/chefbonbon-cook-timer.jpg";
+import chefBonBonGeneratingImage from "../assets/projects/chefbonbon/chefbonbon-generating.jpg";
+import chefBonBonProfileImage from "../assets/projects/chefbonbon/chefbonbon-profile.jpg";
+import chefBonBonRecipeDetailImage from "../assets/projects/chefbonbon/chefbonbon-recipe-detail.jpg";
+import chefBonBonSavedRecipesImage from "../assets/projects/chefbonbon/chefbonbon-saved-recipes.jpg";
 import syncUpDashboardImage from "../assets/photos/syncupV30.png";
 import syncUpDirectoryImage from "../assets/photos/syncupV31.png";
 import syncUpProjectImage from "../assets/photos/syncupV32.png";
 import syncUpAdminImage from "../assets/photos/syncupV33.png";
-import timeLedgerPrimaryImage from "../assets/photos/timeledger1 2.png";
-import timeLedgerSecondaryImage from "../assets/photos/timeledger2.png";
+import timeLedgerBillingImage from "../assets/projects/time-ledger/time-ledger-billing.png";
+import timeLedgerClientsImage from "../assets/projects/time-ledger/time-ledger-clients.png";
+import timeLedgerInsightsImage from "../assets/projects/time-ledger/time-ledger-insights.png";
+import timeLedgerProjectsImage from "../assets/projects/time-ledger/time-ledger-projects.png";
+import timeLedgerSignInImage from "../assets/projects/time-ledger/time-ledger-sign-in.png";
+import timeLedgerTimesheetsImage from "../assets/projects/time-ledger/time-ledger-timesheets.png";
 import unitedImage from "../assets/photos/dasha.png";
 import workingImage from "../assets/photos/working.png";
 import bmRadioAudiobookImage from "../assets/projects/bm-radio/bm-radio-audiobook.jpg";
@@ -18,47 +28,49 @@ export const projects = [
     title: "Time Ledger",
     shortTitle: "Time Ledger",
     summary:
-      "A live full-stack SaaS product for weekly timesheets, client billing, project tracking, team invites, workspace switching, and operational reporting.",
+      "A live multi-tenant time tracking and billing platform rebuilt through a production V2 rollout, with weekly timesheets, direct invoice delivery, shared-team billing, access recovery, and operational reporting.",
     secondary:
-      "Built across React 19, TypeScript, FastAPI, Supabase Auth, PostgreSQL, SQLAlchemy, Alembic, TanStack Query, Railway, and Netlify.",
+      "Production V2 combines server-authoritative billing, audited email delivery, multi-workspace isolation, and responsive workflows for small teams.",
     highlights: [
-      "Live product at timeledger.me for time tracking and billing workflows.",
+      "Live V2 product at timeledger.me with a rebuilt responsive application shell and workflow-specific views.",
       "Multi-workspace SaaS architecture with organization-level data isolation.",
-      "Authenticated workflows for workspaces, team members, clients, projects, time entries, and billing summaries.",
-      "Invite and onboarding flows, weekly timesheet review, drawer-based editing, archive states, and invoice-ready text generation.",
-      "Used by i.c.stars participants to track real contract work and reduce unclear manual time reporting.",
+      "Server-authoritative invoice review, short or detailed email delivery, idempotency protection, and delivery history.",
+      "Shared-team rates, incomplete-time warnings that name missing teammates, and one-time reminder emails.",
+      "Google and password access, password setup and recovery, invites, onboarding, archive states, and account safeguards.",
     ],
     problem:
       "Small teams and independent contractors often manage clients, projects, hours, and billing across disconnected spreadsheets, messages, and notes. Time Ledger centralizes that workflow so teams can track work, review weekly totals, manage clients and projects, and generate cleaner client-ready billing summaries from one system.",
     systemTitle: "Architecture / stack",
     systemText:
-      "Time Ledger is structured as a product-grade SaaS system: a React and TypeScript frontend, a FastAPI service layer, Supabase Auth for identity, and PostgreSQL-backed relational workflows for workspaces, memberships, clients, projects, time entries, archive states, and billing summaries.",
+      "Time Ledger is structured as a product-grade SaaS system: a React and TypeScript frontend, a FastAPI service layer, Supabase Auth for identity, and PostgreSQL-backed relational workflows for workspaces, memberships, clients, projects, time entries, invoice delivery, reminders, and reporting.",
     system: [
       "Multi-tenant workspace model with every workflow scoped by organization.",
       "React 19, TypeScript, Vite, TanStack Query, Recharts, and Tailwind on the frontend.",
       "FastAPI, SQLAlchemy 2.x, Alembic, Pydantic settings, and PostgreSQL on the backend.",
-      "Supabase Auth for user identity, login, protected workflows, and account access.",
-      "Invite flows, onboarding, archived record handling, weekly review, and account lifecycle protections.",
+      "Supabase Auth for Google or password access, protected workflows, password setup, and recovery.",
+      "Server-generated billing totals, audited invoice delivery, shared-team reminders, and required work descriptions.",
     ],
     owned: [
       "Built the product end to end across frontend, backend, database, authentication, deployment, and workflow design.",
       "Designed the workspace, membership, client, project, invitation, time-entry, archive, and billing data flows.",
-      "Implemented the workflows that turn tracked time into weekly summaries and invoice-ready client communication.",
+      "Implemented the workflows that turn tracked time into weekly summaries, shared-team billing review, and directly delivered client invoices.",
+      "Rebuilt the product through a phased V2 rollout with contract tests protecting permissions, billing rules, and account lifecycle behavior.",
       "Connected user-facing product decisions to backend models so the system stayed maintainable as features grew.",
     ],
     decisions: [
       "Designed around multi-tenant workspace isolation instead of treating permissions as an afterthought.",
-      "Kept billing and reporting close to the time-entry workflow so users can move from logged work to client-ready output quickly.",
+      "Kept billing authority on the server so invoice totals, line items, recipients, and send history are based on persisted records.",
+      "Used idempotency records and delivery history so retries cannot silently send the same invoice twice.",
       "Used migrations, archive states, account lifecycle rules, and guarded data flows to make the product easier to maintain.",
       "Chose practical product workflows over unnecessary complexity so the app could support real users sooner.",
     ],
     interesting:
-      "Time Ledger is the strongest portfolio proof point because it covers the real surface area of a SaaS product: tenancy, auth, invites, role-aware behavior, data modeling, billing logic, reporting, onboarding, deployment, and lifecycle safeguards.",
-    note: "The live product is public at timeledger.me. The repository is private, so this case study focuses on architecture, workflow decisions, and product behavior rather than source-code access.",
-    status: "Live product",
-    workMeta: "React 19 · FastAPI · PostgreSQL · Multi-tenant SaaS",
-    image: timeLedgerPrimaryImage,
-    imageAlt: "Time Ledger workspace dashboard and timesheet interface",
+      "Time Ledger is the strongest portfolio proof point because it covers the real surface area of a production SaaS product: tenancy, auth, invoice delivery, shared-team billing, reminders, data modeling, reporting, deployment, testing, and lifecycle safeguards.",
+    note: "The live product and public repository document the production V2 architecture, billing invariants, rollout decisions, and tested account workflows.",
+    status: "Live V2 product",
+    workMeta: "React 19 · FastAPI · PostgreSQL · Production V2",
+    image: timeLedgerTimesheetsImage,
+    imageAlt: "Time Ledger weekly timesheet workspace",
     media: {
       kind: "dashboard",
       tone: "ink",
@@ -66,13 +78,42 @@ export const projects = [
       objectPosition: "object-top",
     },
     liveHref: "https://timeledger.me/",
+    githubHref: "https://github.com/bonny2long/timeledger",
     gallery: [
       {
-        image: timeLedgerSecondaryImage,
-        alt: "Time Ledger billing and reporting interface",
-        title: "Billing and reporting view",
+        image: timeLedgerBillingImage,
+        alt: "Time Ledger client billing and invoice delivery workflow",
+        title: "Billing delivery",
         caption:
-          "A supporting view of the reporting workflow that turns tracked time into client-ready output.",
+          "A scoped client-and-period workflow moves recorded work into invoice review, delivery, and a persistent audit trail.",
+      },
+      {
+        image: timeLedgerInsightsImage,
+        alt: "Time Ledger workspace reporting and insights dashboard",
+        title: "Workspace insights",
+        caption:
+          "Read-only reporting filters recorded time and amount patterns by client and period without rewriting historical rate behavior.",
+      },
+      {
+        image: timeLedgerClientsImage,
+        alt: "Time Ledger client records workspace",
+        title: "Client records",
+        caption:
+          "Searchable active and archived client states keep billing identity and downstream project relationships explicit.",
+      },
+      {
+        image: timeLedgerProjectsImage,
+        alt: "Time Ledger project management workspace",
+        title: "Client-first projects",
+        caption:
+          "Project creation respects the data model: an active client must exist before project work can begin.",
+      },
+      {
+        image: timeLedgerSignInImage,
+        alt: "Time Ledger secure workspace sign-in screen",
+        title: "Workspace access",
+        caption:
+          "The production access surface supports email and password, recovery, account creation, and Google sign-in.",
       },
     ],
   },
@@ -90,8 +131,9 @@ export const projects = [
     highlights: [
       "Four independently owned services with final local workflow acceptance.",
       "21-file real-media canary completed with zero SHA-256 mismatches.",
-      "Clear write boundaries, human-approved final moves, and fail-closed cleanup behavior.",
+      "Clear write boundaries, human-approved final moves, quarantine evidence, and production-gated empty-folder cleanup.",
       "BM Radio indexed 275 physical tracks as 261 logical recordings using PostgreSQL.",
+      "September production work corrected suite navigation, shipped multi-disc audiobook chapter ordering, completed the quarantine lifecycle and gated empty-folder execution, and synchronized current-state documentation with NAS runbook v12.",
     ],
     problem:
       "A long-term personal media archive needs more than storage. It needs safe intake, classification, human review, final-library organization, listener-facing access, auditability, and conservative leftover handling without accidental deletion.",
@@ -100,9 +142,9 @@ export const projects = [
       "Each application owns a narrow responsibility so upload handling, classification, playback, and cleanup evidence do not blur into one unsafe process.",
     system: [
       "Intake Watcher promotes stable completed uploads without deep classification or final-library ownership.",
-      "Archive Assistant reconstructs and classifies non-photo media, supports human approval, performs final moves, and records manifests.",
-      "BM Radio provides music and audiobook listening, playlists, history, and progress using PostgreSQL with read-only final-library media access.",
-      "Cleaner reads post-move evidence and produces dry-run leftover reports; destructive deletion is disabled.",
+      "Archive Assistant classifies non-photo media, groups multi-disc releases, manages quarantine review, requires human approval, performs final moves, and records manifests.",
+      "BM Radio provides music and audiobook listening, playlists, history, progress, and correct multi-disc audiobook ordering using PostgreSQL with read-only final-library media access.",
+      "Cleaner reads post-move evidence and remains report-only for files; reviewed empty folders can be removed only when every production gate is enabled.",
     ],
     services: [
       {
@@ -118,16 +160,16 @@ export const projects = [
         name: "Archive Assistant",
         responsibility: "Review and final moves",
         details: [
-          "Reconstructs and classifies non-photo media.",
-          "Supports metadata review and human approval.",
-          "Performs approved final moves and records manifests for audit.",
+          "Classifies non-photo media and groups multi-disc albums and audiobooks as single releases.",
+          "Supports metadata review, quarantine/restore/discard states, and human approval.",
+          "Performs approved final moves and writes move manifests plus append-only disposition records.",
         ],
       },
       {
         name: "BM Radio",
         responsibility: "Listener-facing playback",
         details: [
-          "Provides music and audiobook library, radio, playlists, history, and progress.",
+          "Provides music and audiobook library, radio, playlists, history, progress, and multi-disc chapter ordering.",
           "Uses PostgreSQL and preferred physical-source selection.",
           "Treats final-library media as read-only.",
         ],
@@ -137,20 +179,22 @@ export const projects = [
         responsibility: "Conservative leftover review",
         details: [
           "Reads Archive Assistant post-move evidence.",
-          "Classifies leftovers and produces dry-run reports.",
-          "Fails closed; destructive deletion remains disabled.",
+          "Classifies leftovers and produces reviewable plan reports with a 30-day default age gate.",
+          "Never deletes files; reviewed empty folders require four explicit production gates and fresh evidence.",
         ],
       },
     ],
     owned: [
       "Designed the ownership and write boundaries across all four applications.",
       "Built acceptance around real media, duplicate handling, hashes, regression baselines, and recovery documentation.",
-      "Kept human approval in front of final Archive Assistant moves and cleanup fail-closed.",
+      "Kept human approval in front of final Archive Assistant moves, quarantine dispositions, and Cleaner execution.",
       "Chose PostgreSQL for BM Radio and SQLite for Archive Assistant based on their different responsibilities.",
+      "Closed a coordinated production pass across all four repositories without weakening the system's read-only and human-approval boundaries.",
     ],
     decisions: [
-      "Only Cleaner may eventually gain deletion authority; deletion is currently disabled.",
+      "Kept file deletion out of Cleaner while allowing only reviewed empty-folder removal behind four production gates.",
       "Archive Assistant final moves require human approval and retain evidence for later review.",
+      "Quarantine actions append disposition records so restore, discard, and recovery decisions remain auditable.",
       "Playback remains outside the cleanup path and uses read-only access to final media.",
       "Local acceptance is stated separately from deferred physical TrueNAS deployment.",
     ],
@@ -187,13 +231,13 @@ export const projects = [
       },
       {
         label: "Cleaner",
-        value: "9 / 9 passed · deletion disabled",
+        value: "Files report-only · empty folders gated",
       },
     ],
     interesting:
       "This platform demonstrates systems engineering beyond a single application: service boundaries, data ownership, conservative automation, multiple intentional database choices, real-media verification, testing, and recovery discipline.",
     note:
-      "Cleaner destructive actions remain disabled. Playback is isolated from cleanup, and BM Radio cannot mutate archive media.",
+      "Cleaner never deletes files. Its only executable cleanup is reviewed empty-folder removal behind four production gates. Playback remains isolated from cleanup, and BM Radio cannot mutate archive media.",
     status: "Local acceptance passed",
     workMeta: "4 services · 21 / 21 files · 0 hash mismatches",
     imageAlt:
@@ -221,7 +265,7 @@ export const projects = [
       },
       {
         name: "Cleaner",
-        responsibility: "Evidence-driven, report-only leftover review",
+        responsibility: "Evidence-driven review with production-gated empty-folder cleanup",
         href: "https://github.com/bonny2long/cleaner",
       },
       {
@@ -237,47 +281,49 @@ export const projects = [
     title: "ICAA Headquarters / SyncUp",
     shortTitle: "ICAA Headquarters",
     summary:
-      "A community operations platform evolving from SyncUp into an ICAA headquarters for alumni, residents, mentors, administrators, projects, bookings, newsletters, and collaboration workflows.",
+      "A full-stack ICAA community operations platform connecting collaboration, mentorship, chat, member discovery, opportunities, project portfolios, newsletters, evidence-based skill tracking, and administration.",
     secondary:
-      "Built around role-aware dashboards, Supabase Auth, Supabase Postgres, protected routes, member visibility, admin workflows, and production-readiness planning.",
+      "A September production-stability pass added CI quality gates, security upgrades, consolidated analytics queries, safer transaction handling, and mentorship scheduling that rejects expired time slots.",
     highlights: [
-      "Role-aware dashboards for alumni, residents, mentors, and administrators.",
-      "Supabase Auth and Supabase Postgres direction for authentication, role management, and maintainable data workflows.",
-      "Member directory, public projects, bookings, collaboration, newsletter integration, and admin workflow foundations.",
-      "Improved mobile UX, protected routes, verification flows, role semantics, SMTP/email planning, and production-readiness checklists.",
-      "Admin workflow planning for intern lifecycle, resident conversion, and community governance responsibilities.",
+      "Ten role-aware platform areas spanning administration, collaboration, SyncChat, member discovery, newsletters, opportunities, mentorship, project portfolios, the Intern Lobby, and skill tracking.",
+      "Mentorship Bridge supports availability, session requests, and rescheduling through shared date/time controls with server-side rejection of expired bookings.",
+      "Supabase authentication and PostgreSQL-backed workflows support protected community, project, lifecycle, and governance operations.",
+      "Production hardening upgraded the React, Vite, React Router, Express, charting, rate-limit, upload, email, and PDF foundations while closing dependency vulnerabilities.",
+      "GitHub Actions now gates releases with client lint/build, server tests, and PostgreSQL SQL validation; consolidated analytics queries and deferred requests reduce dashboard overhead.",
     ],
     problem:
       "Strong communities can still struggle when the systems around them are scattered. ICAA Headquarters is designed to centralize member visibility, collaboration, mentorship, projects, bookings, communication, and operational workflows so the community has a stronger digital home.",
-    systemTitle: "Stack / system",
+    systemTitle: "Production architecture",
     systemText:
-      "The platform is structured around real community roles and operational workflows. The goal is not just a directory or social page, but a system that supports alumni, residents, mentors, administrators, projects, bookings, newsletters, and long-term community coordination.",
+      "The platform pairs a React 19 and Vite 8 client with an Express 5 API, a Supabase authentication bridge, and PostgreSQL-backed operational workflows. Role-aware product areas share services and domain rules without collapsing community, mentorship, project, skill, and admin responsibilities into one oversized surface.",
     system: [
-      "React 19, Vite, and Tailwind CSS on the frontend.",
-      "Node.js and Express for API structure.",
-      "Supabase Auth for login, verification, protected routes, and account access.",
-      "Supabase Postgres for relational workflows and long-term maintainability.",
-      "RBAC / role-based access control for alumni, residents, mentors, and administrators.",
-      "Newsletter, SMTP/email, booking, directory, project, and admin-dashboard workflow foundations.",
+      "React 19.2, Vite 8, Tailwind CSS 4, React Router 7, AG Charts 14, and Lucide React on the client.",
+      "Node.js 20+, Express 5, PostgreSQL, Supabase bearer-token authentication, rate limiting, and Swagger/OpenAPI on the server.",
+      "Role-based access separates interns, residents, alumni, mentors, and administrators across protected workflows.",
+      "Mentorship date/time validation is shared across availability, booking, profile, and rescheduling flows, with authoritative server checks and regression tests.",
+      "GitHub Actions runs deterministic client lint/build checks, server tests, and a PostgreSQL SQL guard before release work merges.",
+      "Consolidated admin and headquarters analytics queries, deferred system requests, and a trimmed chart bundle reduce avoidable client and API work.",
     ],
     owned: [
-      "Owned the architecture direction and day-to-day development.",
-      "Drove discovery, requirements, data modeling, interface behavior, and iteration.",
-      "Refined role semantics, onboarding flows, protected routes, admin behavior, and verification flows.",
-      "Improved mobile UX, newsletter integration, and production-readiness planning.",
-      "Treated the product as a system design problem, not just a collection of pages.",
+      "Owned architecture and day-to-day delivery across the client, API, authentication bridge, relational workflows, and release process.",
+      "Built and refined ten connected product areas around distinct community roles instead of a generic one-size-fits-all dashboard.",
+      "Strengthened mentorship scheduling across availability, requests, profiles, and rescheduling while enforcing expired-time rules on the server.",
+      "Stabilized production through dependency and security upgrades, analytics query consolidation, request deferral, bundle trimming, and CI quality gates.",
+      "Hardened lifecycle operations with retryable cohort cleanup, transaction savepoints, and test coverage for best-effort work.",
     ],
     decisions: [
       "Model roles clearly so the platform can grow without confusing permissions and responsibilities.",
-      "Move toward Supabase Postgres and Supabase Auth to simplify authentication, role management, and production deployment.",
+      "Use Supabase authentication and PostgreSQL-backed services to keep account identity and relational operations maintainable.",
+      "Reject expired mentorship times on the server even when the interface already filters them out.",
+      "Consolidate analytics queries and defer non-critical admin requests to reduce avoidable dashboard load.",
+      "Protect best-effort lifecycle work with savepoints and retries so one secondary failure does not corrupt the larger operation.",
       "Keep the product centered on useful community workflows instead of vanity features.",
-      "Design admin and lifecycle workflows early so the system can support real operations later.",
-      "Preserve long-term maintainability through documentation, smoke tests, and launch checklists.",
+      "Make linting, builds, server tests, and PostgreSQL SQL validation release gates instead of manual afterthoughts.",
     ],
     interesting:
-      "This project shows ownership beyond feature building. It required product direction, role semantics, data modeling, admin workflows, authentication decisions, mobile UX, production readiness, and a clear understanding of how a real community might operate inside software.",
-    status: "Active platform build",
-    workMeta: "React · Supabase · RBAC · Community operations",
+      "SyncUp demonstrates both product breadth and operational depth: ten connected community surfaces, role and lifecycle semantics, mentorship domain rules, evidence-based skill data, production performance work, security maintenance, and automated release checks.",
+    status: "Production-hardened active build",
+    workMeta: "React 19 · Vite 8 · Express 5 · Supabase",
     image: syncUpDashboardImage,
     imageAlt: "ICAA Headquarters dashboard interface",
     media: {
@@ -421,50 +467,118 @@ export const projects = [
   },
   {
     slug: "chefbonbon",
-    eyebrow: "AI product",
+    eyebrow: "Live AI consumer product",
     title: "Chef BonBon",
     shortTitle: "Chef BonBon",
     summary:
-      "An AI-powered recipe application that generates recipes from available ingredients and cooking method choices, then evolved toward a more scalable PostgreSQL/Supabase backend pattern.",
+      "A production mobile-first recipe product that turns ingredients already in the kitchen into structured food or drink recipes, then supports saving, sharing, remixing, and step-by-step cooking.",
     secondary:
-      "Originally built as an MVP, then improved as my understanding of backend structure, data modeling, and long-term maintainability matured.",
+      "Chef BonBon V2 is live at chefbonbon.com as an installable PWA with structured AI output, a saved library, guided cook mode, social workflows, and production guardrails.",
     highlights: [
-      "AI-assisted recipe generation from ingredients and cooking method choices.",
-      "React frontend with Node.js and Express backend.",
-      "LLM API integration, rate limiting, and CORS configuration.",
-      "Backend direction moved from Firebase-style storage toward PostgreSQL/Supabase patterns.",
-      "Reworked architecture thinking around scalability, data isolation, and maintainability.",
+      "Live at chefbonbon.com with a mobile-first app shell, dark/light themes, and installable PWA behavior.",
+      "Strict structured recipe generation through the OpenAI Responses API, including quantities, servings, timed steps, tips, and drink-specific fields.",
+      "Full-screen cook mode with ingredient checklists, servings scaling, Wake Lock support, and per-step timers with chime and vibration.",
+      "Supabase Auth, Postgres, Row Level Security, profiles, saved recipes, feeds, reactions, comments, follows, remixes, and Mystery Basket challenges.",
+      "Layered food-only guardrails, moderation, quotas, rate limits, and safe error recovery around the AI workflow.",
     ],
     problem:
-      "The app helps people cook from what they already have. The deeper engineering challenge was making the product structure strong enough to support future features, saved recipes, user data, and cleaner data access over time.",
-    systemTitle: "Stack / system",
+      "Most recipe apps begin with a dish and send people shopping. Chef BonBon begins with what someone already has, then has to turn inconsistent ingredient input into a safe, structured recipe that remains useful through saving, sharing, scaling, and the actual cooking session on a phone.",
+    systemTitle: "Production V2 architecture",
     systemText:
-      "Chef BonBon started as an AI recipe MVP, but it became more valuable as a learning project when the backend direction changed. It shows growth from simply getting an AI feature working toward thinking more carefully about data structure, reliability, and maintainability.",
+      "The browser owns product interaction and reads social data directly through Supabase policies. A focused Express API verifies the caller, enforces quotas and guardrails, and turns ingredient requests into a strict recipe schema through the OpenAI Responses API.",
     system: [
-      "React-based frontend workflow.",
-      "Node.js and Express backend API.",
-      "AI recipe generation tied to ingredient and cooking method input.",
-      "Rate limiting and CORS configuration for safer API behavior.",
-      "PostgreSQL/Supabase backend direction for more scalable data handling.",
+      "React 19, Vite, Tailwind CSS, React Router, PWA manifest, and mobile safe-area-aware navigation on Netlify.",
+      "Node.js and Express on Railway for authenticated recipe generation, remixes, health checks, quotas, moderation, and rate limiting.",
+      "OpenAI Responses API with strict JSON Schema output so every recipe has a predictable, cookable structure.",
+      "Supabase Auth, anonymous guest sessions, Postgres, Storage, realtime updates, and Row Level Security for private and public data.",
+      "Shareable recipe and profile routes, link previews, resilient loading/error states, and stale-deploy recovery.",
     ],
     owned: [
-      "Built the original MVP.",
-      "Added cooking method choices after feedback.",
-      "Designed API flow from user input to AI-generated output.",
-      "Reconsidered the backend approach once the product's data needs became clearer.",
-      "Used the migration direction as a chance to improve architecture instead of only swapping tools.",
+      "Rebuilt the original MVP into the production V2 product across interaction design, frontend, API, data model, security policies, and deployment.",
+      "Designed the ingredient-to-recipe workflow, strict recipe schema, generation sequence, recipe detail view, and full-screen cook mode.",
+      "Implemented saved recipes, social feeds, profiles, follows, reactions, comments, remixes, cook-photo posts, and weekly challenges.",
+      "Migrated the product toward one relational recipe model with visibility rules instead of duplicating private and public records.",
+      "Added production safeguards for unsafe or off-topic requests, prompt injection patterns, guest quotas, request abuse, and recoverable failures.",
     ],
     decisions: [
-      "Move away from the original backend direction once the data model outgrew it.",
-      "Choose relational structure for cleaner querying and stronger long-term maintainability.",
-      "Keep AI output structured enough to be useful in the interface.",
-      "Treat feedback as a reason to improve the product workflow, not just patch the UI.",
+      "Chose a mobile-first PWA so the product works immediately on a phone while retaining an upgrade path to a native client.",
+      "Required strict structured output instead of parsing free-form model text, enabling scaling, checklists, timers, feed cards, and consistent storage.",
+      "Kept recipe generation in a narrow API while ordinary product data flows directly through Supabase and Row Level Security.",
+      "Used anonymous Supabase sessions plus server-side quotas so guests can try the product without making cost controls browser-dependent.",
+      "Built safety as a layered server concern: input screening, moderation, schema-level refusal, rate limiting, and food-handling constraints.",
     ],
     interesting:
-      "The strongest part of Chef BonBon is the backend rethink. It shows a willingness to revisit earlier choices and rebuild around better structure once the product's needs are clearer.",
-    image: chefBonBonImage,
-    imageAlt: "Chef BonBon recipe application interface",
-    liveHref: "https://chefbonbon.netlify.app/",
+      "Chef BonBon now demonstrates a complete consumer AI product rather than an isolated generation demo: constrained model output, relational data and permissions, a mobile interaction system, social loops, real cooking utilities, safety controls, and independent frontend/API deployment.",
+    note:
+      "The public V2 product is live on its own domain. The screenshots below show the production mobile workflow from ingredient entry through generation, saving, and timed cook mode.",
+    status: "Live V2 product",
+    workMeta: "React 19 · OpenAI Responses API · Supabase · Mobile PWA",
+    imageAlt: "Chef BonBon mobile recipe generation and guided cooking interface",
+    media: {
+      kind: "mobile-showcase",
+      tone: "terracotta",
+      screens: [
+        {
+          image: chefBonBonCookBuilderImage,
+          label: "Build from ingredients",
+          alt: "Chef BonBon ingredient and cooking-method builder",
+        },
+        {
+          image: chefBonBonRecipeDetailImage,
+          label: "Structured recipe",
+          alt: "Chef BonBon structured recipe with servings and cooking actions",
+          primary: true,
+        },
+        {
+          image: chefBonBonCookModeImage,
+          label: "Guided cook mode",
+          alt: "Chef BonBon step-by-step cook mode with an integrated timer action",
+        },
+      ],
+    },
+    gallery: [
+      {
+        image: chefBonBonGeneratingImage,
+        alt: "Chef BonBon staged recipe-generation progress screen",
+        title: "Designed generation state",
+        caption:
+          "A staged progress sequence makes the model wait understandable instead of leaving the cook with a generic spinner.",
+        frameClassName: "aspect-[45/64]",
+        imageClassName:
+          "absolute left-0 top-0 h-auto w-full max-w-none -translate-y-[9.8%]",
+      },
+      {
+        image: chefBonBonSavedRecipesImage,
+        alt: "Chef BonBon saved recipe library with search and filters",
+        title: "Searchable saved library",
+        caption:
+          "Saved recipes can be searched and filtered by food or drink type and cooking method.",
+        frameClassName: "aspect-[45/64]",
+        imageClassName:
+          "absolute left-0 top-0 h-auto w-full max-w-none -translate-y-[9.8%]",
+      },
+      {
+        image: chefBonBonProfileImage,
+        alt: "Chef BonBon public profile and shared recipe area",
+        title: "Profiles and sharing",
+        caption:
+          "Profiles connect shared recipes, follows, reactions, comments, and cook-photo posts to a visible identity.",
+        frameClassName: "aspect-[45/64]",
+        imageClassName:
+          "absolute left-0 top-0 h-auto w-full max-w-none -translate-y-[9.8%]",
+      },
+      {
+        image: chefBonBonCookTimerImage,
+        alt: "Chef BonBon cook mode with an active step timer",
+        title: "Cooking-aware timers",
+        caption:
+          "Timers live inside the active recipe step and continue alongside the ingredient checklist and serving state.",
+        frameClassName: "aspect-[45/64]",
+        imageClassName:
+          "absolute left-0 top-0 h-auto w-full max-w-none -translate-y-[9.8%]",
+      },
+    ],
+    liveHref: "https://chefbonbon.com/",
     githubHref: "https://github.com/bonny2long/ChefBonBon",
   },
 ];

@@ -42,7 +42,9 @@ export default function ProjectMediaGallery({ project }) {
               "rounded-[1.25rem] p-3 sm:p-4 " +
               (project.gallery.length === 1
                 ? "lg:col-span-12"
-                : placements[index] ?? "lg:col-span-6")
+                : project.gallery.length >= 4
+                  ? "lg:col-span-6"
+                  : placements[index] ?? "lg:col-span-6")
             }
             tone={project.media?.tone}
           >
@@ -53,6 +55,8 @@ export default function ProjectMediaGallery({ project }) {
                 usesLightCanvas ? "text-slate-600" : "text-slate-300"
               }
               image={item.image}
+              frameClassName={item.frameClassName}
+              imageClassName={item.imageClassName}
               title={item.title}
             />
             <p

@@ -25,7 +25,7 @@ const profileIcons = {
 };
 
 const proofPoints = [
-  ["Shipped", "Live SaaS product"],
+  ["Shipped", "Time Ledger + Chef BonBon"],
   ["Delivered", "United Airlines client/RFP work"],
   ["Current", "Aon Data & Analytics apprenticeship"],
   ["Proven locally", "Four-application NAS platform"],
@@ -33,8 +33,8 @@ const proofPoints = [
 
 const selectedSlugs = [
   "time-ledger",
+  "chefbonbon",
   "nas-media-platform",
-  "united-airlines-customer-insights",
 ];
 
 const selectedWork = selectedSlugs
