@@ -7,12 +7,12 @@ import { projects } from "../data/projects";
 
 const flagshipOrder = [
   "time-ledger",
+  "chefbonbon",
   "nas-media-platform",
   "united-airlines-customer-insights",
-  "syncup",
 ];
 
-const moreWorkOrder = ["resume-agent", "chefbonbon"];
+const moreWorkOrder = ["syncup", "resume-agent"];
 
 const getOrderedProjects = (slugs) =>
   slugs
@@ -114,12 +114,12 @@ export default function Work() {
             title="Products and systems built around real operations."
             titleAs="h1"
             titleClassName="!text-4xl sm:!text-5xl lg:!text-6xl"
-            subtitle="Four flagship case studies show how I approach architecture, workflows, product decisions, and evidence. Smaller builds follow with intentionally lighter visual weight."
+            subtitle="Four flagship case studies show how I approach architecture, workflows, product decisions, and evidence. Additional builds follow with intentionally lighter visual weight."
           />
           <p className="border-l border-slate-300 pl-5 text-sm leading-6 text-slate-600">
-            From a live multi-tenant SaaS product to private media
-            infrastructure, client analytics, and a role-aware community
-            platform.
+            From live business and consumer products to private media
+            infrastructure and client analytics delivered under real
+            constraints.
           </p>
         </div>
       </Section>
@@ -151,8 +151,8 @@ export default function Work() {
         <div className="grid gap-8 lg:grid-cols-[minmax(220px,0.45fr)_minmax(0,1.55fr)]">
           <SectionIntro
             eyebrow="More work"
-            title="Focused builds and product experiments."
-            subtitle="Smaller projects that demonstrate applied AI and iterative product learning without competing with the flagship work."
+            title="Additional systems and focused builds."
+            subtitle="Community operations and AI workflow projects with intentionally lighter visual weight than the current flagship set."
           />
           <div>
             {moreWork.map((project) => (

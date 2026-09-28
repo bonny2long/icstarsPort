@@ -3,6 +3,7 @@ const tones = {
   violet: "border-violet-400/20",
   blue: "border-sky-300/25",
   sand: "border-amber-200/50",
+  terracotta: "border-orange-200/25",
 };
 
 const backgrounds = {
@@ -13,6 +14,8 @@ const backgrounds = {
     "radial-gradient(circle at 75% 15%, rgba(56, 189, 248, 0.22), transparent 36%), linear-gradient(145deg, #082f49, #0f172a 58%, #020617)",
   sand:
     "radial-gradient(circle at 20% 10%, rgba(20, 184, 166, 0.2), transparent 32%), linear-gradient(145deg, #f5efe1, #dfe9e7)",
+  terracotta:
+    "radial-gradient(circle at 50% 18%, rgba(209, 117, 87, 0.34), transparent 35%), radial-gradient(circle at 12% 82%, rgba(120, 53, 35, 0.22), transparent 42%), #11100f",
 };
 
 export default function ProductCanvas({

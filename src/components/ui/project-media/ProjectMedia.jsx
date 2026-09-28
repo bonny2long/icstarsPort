@@ -1,4 +1,5 @@
 import MobileProductStack from "./MobileProductStack";
+import MobileAppShowcase from "./MobileAppShowcase";
 import ProductCanvas from "./ProductCanvas";
 import ProductScreenshot from "./ProductScreenshot";
 
@@ -54,6 +55,21 @@ export default function ProjectMedia({ project, variant = "hero" }) {
         tone="violet"
       >
         <MobileProductStack compact={isIndex} images={media.images} />
+      </ProductCanvas>
+    );
+  }
+
+  if (media.kind === "mobile-showcase") {
+    return (
+      <ProductCanvas
+        className={
+          isIndex
+            ? "rounded-[1.25rem] px-3 py-5 sm:px-5"
+            : "rounded-[1.5rem] px-5 py-8 sm:px-8 sm:py-10"
+        }
+        tone={media.tone}
+      >
+        <MobileAppShowcase compact={isIndex} screens={media.screens} />
       </ProductCanvas>
     );
   }
